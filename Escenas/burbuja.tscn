@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk5ukewnrg21m"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_jk7vh"]
+
+[node name="burbuja" type="Area2D"]
+position = Vector2(21, 9)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 80.375)
+scale = Vector2(1, 164.75)
+region_enabled = true
+region_rect = Rect2(-206, -80, 187, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = SubResource("Texture2DRD_jk7vh")
