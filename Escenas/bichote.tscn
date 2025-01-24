@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Escenas/bichote.gd" id="1_i3vpt"]
 [ext_resource type="Texture2D" uid="uid://cieshuo4pecqy" path="res://assets/sprite escarabajo.png" id="2_aybd6"]
-[ext_resource type="Texture2D" uid="uid://ctnbe3h30o4i0" path="res://assets/sprite escarabajo1.png" id="2_fxwlf"]
-[ext_resource type="Texture2D" uid="uid://dx6tnfd8cy3ua" path="res://assets/sprite escarabajo2.png" id="3_0jt5l"]
-[ext_resource type="Texture2D" uid="uid://8inotxuoe4te" path="res://assets/sprite escarabajo3.png" id="4_hfhqk"]
-[ext_resource type="Texture2D" uid="uid://vn46nppkhhdc" path="res://assets/sprite escarabajo4.png" id="5_tkqh8"]
+[ext_resource type="Texture2D" uid="uid://drw47wer6kmir" path="res://assets/sprite escarabajo1.png" id="2_fxwlf"]
+[ext_resource type="Texture2D" uid="uid://104r5ot4niny" path="res://assets/sprite escarabajo2.png" id="3_0jt5l"]
+[ext_resource type="Texture2D" uid="uid://bkmtlcdtt6js0" path="res://assets/sprite escarabajo3.png" id="4_hfhqk"]
+[ext_resource type="Texture2D" uid="uid://ddteoij488dbs" path="res://assets/sprite escarabajo4.png" id="5_tkqh8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x84nh"]
 animations = [{

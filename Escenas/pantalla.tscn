@@ -1,13 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy5tmfyxlb5ud"]
+[gd_scene load_steps=4 format=3 uid="uid://cy5tmfyxlb5ud"]
 
 [ext_resource type="PackedScene" uid="uid://dk5ukewnrg21m" path="res://Escenas/burbuja.tscn" id="1_0vsu3"]
 [ext_resource type="PackedScene" uid="uid://3pf7wj8m276" path="res://Escenas/bichote.tscn" id="2_ro8sn"]
+[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="3_pkjjg"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(538, 320)
 
-[node name="burbuja" parent="." instance=ExtResource("1_0vsu3")]
+[node name="bichote" parent="." instance=ExtResource("2_ro8sn")]
+position = Vector2(21, 9)
 
-[node name="bichote" parent="burbuja" instance=ExtResource("2_ro8sn")]
+[node name="burbuja" parent="bichote" instance=ExtResource("1_0vsu3")]
+z_index = -1
+position = Vector2(0, 0)
 
-[connection signal="area_exited" from="burbuja" to="burbuja" method="_on_area_exited"]
+[node name="Camera2D" type="Camera2D" parent="bichote"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -553.0
+offset_top = -3952.0
+offset_right = 599.0
+offset_bottom = 336.0
+texture = ExtResource("3_pkjjg")
+stretch_mode = 1
+
+[connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
