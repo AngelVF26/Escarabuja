@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk5ukewnrg21m"]
+[gd_scene load_steps=4 format=3 uid="uid://dk5ukewnrg21m"]
 
-[sub_resource type="Texture2DRD" id="Texture2DRD_jk7vh"]
+[ext_resource type="Script" path="res://Escenas/burbuja.gd" id="1_7ocxo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fr803"]
+radius = 172.003
+
+[sub_resource type="SphereMesh" id="SphereMesh_cxn40"]
 
 [node name="burbuja" type="Area2D"]
 position = Vector2(21, 9)
+script = ExtResource("1_7ocxo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7, 80.375)
@@ -12,6 +18,9 @@ region_enabled = true
 region_rect = Rect2(-206, -80, 187, 104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fr803")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-texture = SubResource("Texture2DRD_jk7vh")
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-1.50001, 1.00004)
+scale = Vector2(343.389, 342)
+mesh = SubResource("SphereMesh_cxn40")
