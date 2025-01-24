@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://3pf7wj8m276"]
 
-[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="1_3vvs4"]
 [ext_resource type="Script" path="res://Escenas/bichote.gd" id="1_i3vpt"]
+[ext_resource type="Texture2D" uid="uid://drw47wer6kmir" path="res://assets/sprite escarabajo1.png" id="2_vr2f2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vohhh"]
 size = Vector2(124, 126)
@@ -10,7 +10,9 @@ size = Vector2(124, 126)
 script = ExtResource("1_i3vpt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3vvs4")
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_vr2f2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vohhh")
