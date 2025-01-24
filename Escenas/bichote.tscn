@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://3pf7wj8m276"]
+[gd_scene load_steps=9 format=3 uid="uid://3pf7wj8m276"]
 
-[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="1_3vvs4"]
 [ext_resource type="Script" path="res://Escenas/bichote.gd" id="1_i3vpt"]
+[ext_resource type="Texture2D" uid="uid://cieshuo4pecqy" path="res://assets/sprite escarabajo.png" id="2_aybd6"]
+[ext_resource type="Texture2D" uid="uid://ctnbe3h30o4i0" path="res://assets/sprite escarabajo1.png" id="2_fxwlf"]
+[ext_resource type="Texture2D" uid="uid://dx6tnfd8cy3ua" path="res://assets/sprite escarabajo2.png" id="3_0jt5l"]
+[ext_resource type="Texture2D" uid="uid://8inotxuoe4te" path="res://assets/sprite escarabajo3.png" id="4_hfhqk"]
+[ext_resource type="Texture2D" uid="uid://vn46nppkhhdc" path="res://assets/sprite escarabajo4.png" id="5_tkqh8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x84nh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fxwlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0jt5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hfhqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tkqh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aybd6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vohhh"]
 size = Vector2(124, 126)
@@ -9,8 +41,11 @@ size = Vector2(124, 126)
 [node name="bichote" type="CharacterBody2D"]
 script = ExtResource("1_i3vpt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3vvs4")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_x84nh")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vohhh")
