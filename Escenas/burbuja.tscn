@@ -24,3 +24,5 @@ shape = SubResource("CircleShape2D_fr803")
 position = Vector2(-1.50001, 1.00004)
 scale = Vector2(343.389, 342)
 mesh = SubResource("SphereMesh_cxn40")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -9,3 +9,5 @@ position = Vector2(538, 320)
 [node name="burbuja" parent="." instance=ExtResource("1_0vsu3")]
 
 [node name="bichote" parent="burbuja" instance=ExtResource("2_ro8sn")]
+
+[connection signal="area_exited" from="burbuja" to="burbuja" method="_on_area_exited"]
