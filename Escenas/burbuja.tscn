@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk5ukewnrg21m"]
+[gd_scene load_steps=5 format=3 uid="uid://dk5ukewnrg21m"]
 
 [ext_resource type="Script" path="res://Escenas/burbuja.gd" id="1_7ocxo"]
 [ext_resource type="Texture2D" uid="uid://cu83o0mqk31cr" path="res://assets/burbuja.png" id="2_4i76x"]
+[ext_resource type="Texture2D" uid="uid://dpndta8jq5676" path="res://assets/burbuja borde.png" id="3_8b18s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr803"]
 radius = 21.1896
@@ -14,8 +15,12 @@ script = ExtResource("1_7ocxo")
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_fr803")
 
-[node name="Burbuja" type="Sprite2D" parent="."]
+[node name="Burbuja" type="Sprite2D" parent="." groups=["Spawneable"]]
 texture_filter = 1
 texture = ExtResource("2_4i76x")
+
+[node name="BurbujaBorde" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_8b18s")
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

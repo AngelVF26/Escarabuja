@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch2tl1bvoj3h5"]
+
+[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="1_5g3ed"]
+[ext_resource type="Script" path="res://Escenas/matamoscas.gd" id="1_emgb8"]
+
+[node name="Matamoscas" type="Node2D"]
+script = ExtResource("1_emgb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Spawneable"]]
+modulate = Color(0, 0, 1, 1)
+texture = ExtResource("1_5g3ed")
