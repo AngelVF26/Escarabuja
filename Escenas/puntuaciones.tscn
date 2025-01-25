@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://bigyguom7ggbr"]
+
+[ext_resource type="Texture2D" uid="uid://d2auoqqgak6p1" path="res://assets/nube venenosa3.png" id="1_g7xci"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l13yl"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_5fefk"]
+font_size = 45
+outline_size = 9
+outline_color = Color(2.40654e-06, 0.747599, 0.328622, 1)
+
+[node name="Puntuaciones" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_g7xci")
+
+[node name="puntazos" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l13yl")
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PUNTAZOS"
+label_settings = SubResource("LabelSettings_5fefk")
+
+[node name="Segundos" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l13yl")
+offset_left = 716.0
+offset_top = 5.0
+offset_right = 960.0
+offset_bottom = 68.0
+text = "SEGUNDOS"
+label_settings = SubResource("LabelSettings_5fefk")
+
+[node name="totalPuntos" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l13yl")
+offset_left = 4.0
+offset_top = 71.0
+offset_right = 427.0
+offset_bottom = 134.0
+text = "aqui van los puntos
+"
+label_settings = SubResource("LabelSettings_5fefk")
+
+[node name="totalSegundos" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l13yl")
+offset_left = 655.0
+offset_top = 74.0
+offset_right = 1043.0
+offset_bottom = 137.0
+text = "aqui los segundos
+"
+label_settings = SubResource("LabelSettings_5fefk")
+
+[node name="marcador" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l13yl")
+offset_left = 360.0
+offset_top = 293.0
+offset_right = 748.0
+offset_bottom = 356.0
+text = "MARCADOR"
+label_settings = SubResource("LabelSettings_5fefk")
