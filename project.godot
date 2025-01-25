@@ -15,6 +15,10 @@ run/main_scene="res://Escenas/inicio.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/sprite escarabajo.png"
 
+[display]
+
+window/size/borderless=true
+
 [global_group]
 
 Persist=""
