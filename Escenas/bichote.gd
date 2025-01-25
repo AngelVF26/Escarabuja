@@ -32,7 +32,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -SPEED * 0.8
 	
 	move_and_slide()
-
-
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	
+func sacabao():
+	pass
