@@ -38,7 +38,7 @@ font_size = 36
 font_color = Color(1, 1, 0, 1)
 outline_color = Color(0.109804, 0, 1, 1)
 
-[node name="Inicio" type="Node2D" groups=["Persist"]]
+[node name="Inicio" type="Node2D"]
 script = ExtResource("1_cqrg6")
 
 [node name="Ilustracion" type="TextureRect" parent="."]

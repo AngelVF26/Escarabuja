@@ -1,13 +1,15 @@
-extends Node
+extends Node2D
 
-var file = "C://Users//Brayan//savegame.save"
+var file = "user://save_game.dat"
 var blSaveLoad = null
+
 
 var default_dict = {
 		"Nombre" : {
 			"tiempo" : 0,
 		}
 	}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not FileAccess.file_exists(file):
@@ -16,6 +18,8 @@ func _ready() -> void:
 		load_game()
 	else:
 		pass
+	pass # Replace with function body.
+
 
 func save_game(datos_nuevos: Dictionary):
 	var json_string
