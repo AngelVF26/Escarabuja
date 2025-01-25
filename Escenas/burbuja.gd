@@ -26,7 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.nombre == "Nube":
 		print("nubecita")
 		texture_progress_bar.value +=-5
-		
+		pass
 	if body.nombre == "Burbuja":
 		print("burbujita oh oh")
 		texture_progress_bar.value +=10

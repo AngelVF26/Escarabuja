@@ -39,6 +39,7 @@ animations = [{
 size = Vector2(26.1667, 27)
 
 [node name="bichote" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_i3vpt")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
