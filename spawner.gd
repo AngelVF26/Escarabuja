@@ -8,7 +8,7 @@ var Nube
 var Matamoscas
 var spawneados: Array
 @onready var timer_spawns: Timer = $TimerSpawns
-const BURBUJA = preload("res://Escenas/burbuja.tscn")
+const BURBUJA = preload("res://Escenas/burbuja_pickup.tscn")
 const NUBE = preload("res://Escenas/nube.tscn")
 const MATAMOSCAS = preload("res://Escenas/matamoscas.tscn")
 var listaSpawn: Array = [BURBUJA, NUBE, MATAMOSCAS]
@@ -38,7 +38,8 @@ func _on_timer_spawns_timeout() -> void:
 	
 	var new_spawn = spawneados.back().instantiate()
 	new_spawn.global_position = Vector2(randf_range(100,1000),100)
-	$Area2D.add_child(new_spawn)
+	new_spawn
+	call_deferred("add_sibling",new_spawn)
 	
 	if spawneados.size() > 5:
 		spawneados.remove_at(0)

@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-var nombre: String = "Nube"
-# Called when the node enters the scene tree for the first time.
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 

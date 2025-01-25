@@ -1,12 +1,17 @@
-extends Node2D
+extends CharacterBody2D
 
 var nombre: String = "Matamoscas"
-
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta: float) -> void:
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	#var direction_x := Input.get_axis("paizquierda", "paderecha")
+	#var direction_y:=Input.get_axis("parriba", "pabajo")
+	velocity.y = SPEED * 0.8
+	
+	move_and_slide()

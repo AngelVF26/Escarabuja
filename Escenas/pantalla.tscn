@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy5tmfyxlb5ud"]
+[gd_scene load_steps=11 format=3 uid="uid://cy5tmfyxlb5ud"]
 
 [ext_resource type="PackedScene" uid="uid://dk5ukewnrg21m" path="res://Escenas/burbuja.tscn" id="1_0vsu3"]
 [ext_resource type="Script" path="res://Escenas/pantalla.gd" id="1_6khms"]
 [ext_resource type="PackedScene" uid="uid://3pf7wj8m276" path="res://Escenas/bichote.tscn" id="2_ro8sn"]
 [ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="3_pkjjg"]
+[ext_resource type="PackedScene" uid="uid://bggmqqxxbnud" path="res://spawner.tscn" id="5_302w5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bvj52"]
 
@@ -23,15 +24,6 @@ size = Vector2(1139, 20)
 [node name="Nivel" type="Area2D"]
 position = Vector2(537, 327)
 script = ExtResource("1_6khms")
-
-[node name="bichote" parent="." instance=ExtResource("2_ro8sn")]
-position = Vector2(22, -49)
-
-[node name="burbuja" parent="bichote" instance=ExtResource("1_0vsu3")]
-z_index = -1
-position = Vector2(0, 0)
-
-[node name="Camera2D" type="Camera2D" parent="bichote"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
@@ -65,5 +57,37 @@ position = Vector2(-68.5, 0)
 scale = Vector2(1.01342, -17.2065)
 shape = SubResource("RectangleShape2D_hd3bl")
 
-[connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
+[node name="Cronometro" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[node name="GameWorld" type="CanvasLayer" parent="."]
+
+[node name="bichote" parent="." instance=ExtResource("2_ro8sn")]
+position = Vector2(22, -49)
+
+[node name="burbuja" parent="bichote" instance=ExtResource("1_0vsu3")]
+z_index = -1
+position = Vector2(0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="bichote"]
+drag_horizontal_enabled = true
+drag_left_margin = 1.0
+drag_right_margin = 1.0
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Spawner" parent="GUI" instance=ExtResource("5_302w5")]
+position = Vector2(-15, -43)
+
+[node name="Label" type="Label" parent="GUI"]
+offset_left = 39.0
+offset_top = 43.0
+offset_right = 79.0
+offset_bottom = 66.0
+
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]
+[connection signal="timeout" from="Cronometro" to="." method="_on_cronometro_timeout"]
+[connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
+
+[editable path="GUI/Spawner"]

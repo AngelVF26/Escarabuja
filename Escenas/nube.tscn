@@ -7,7 +7,7 @@
 blend_mode = 1
 light_mode = 1
 
-[node name="Nube" type="Node2D" groups=["Spawneable"]]
+[node name="Nube" type="CharacterBody2D" groups=["Spawneable"]]
 script = ExtResource("1_32tg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://sl0asfojkuba"]
+
+[ext_resource type="Texture2D" uid="uid://dmajyfckuowlt" path="res://assets/burbuja borde y detalles.png" id="1_tcmno"]
+[ext_resource type="Script" path="res://Escenas/burbuja_pickup.gd" id="1_uo5bw"]
+
+[node name="burbuja_pickup" type="CharacterBody2D"]
+script = ExtResource("1_uo5bw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tcmno")
