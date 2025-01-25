@@ -1,15 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://0vt1s7ont2m4"]
+[gd_scene load_steps=6 format=3 uid="uid://bioqi1tyrmj1a"]
 
 [ext_resource type="Script" path="res://Escenas/button.gd" id="1_xaahv"]
+[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="2_ql6s7"]
+[ext_resource type="Texture2D" uid="uid://cu83o0mqk31cr" path="res://assets/burbuja.png" id="3_djfn5"]
+
+[sub_resource type="FontFile" id="FontFile_r00wm"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/78/0/ascent = 0.0
+cache/0/78/0/descent = 0.0
+cache/0/78/0/underline_position = 0.0
+cache/0/78/0/underline_thickness = 0.0
+cache/0/78/0/scale = 1.0
+cache/0/65/0/ascent = 0.0
+cache/0/65/0/descent = 0.0
+cache/0/65/0/underline_position = 0.0
+cache/0/65/0/underline_thickness = 0.0
+cache/0/65/0/scale = 1.0
+cache/0/49/0/ascent = 0.0
+cache/0/49/0/descent = 0.0
+cache/0/49/0/underline_position = 0.0
+cache/0/49/0/underline_thickness = 0.0
+cache/0/49/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_p4u2o"]
+font = SubResource("FontFile_r00wm")
+font_size = 36
+font_color = Color(1, 1, 0, 1)
+outline_color = Color(0.109804, 0, 1, 1)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
+z_index = 2
 offset_left = 482.0
 offset_top = 302.0
 offset_right = 649.0
 offset_bottom = 366.0
 text = "Iniciar"
 script = ExtResource("1_xaahv")
+
+[node name="Logo" type="TextureRect" parent="."]
+z_index = 2
+offset_left = 114.0
+offset_top = 71.0
+offset_right = 242.0
+offset_bottom = 199.0
+texture = ExtResource("2_ql6s7")
+
+[node name="Ilustracion" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_djfn5")
+
+[node name="Esto ya vere" type="TextureRect" parent="."]
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = 247.0
+offset_top = 78.0
+offset_right = 997.0
+offset_bottom = 291.0
+text = "HOSTIA PERO SI ES EL ESCARABAJO POMPERO"
+label_settings = SubResource("LabelSettings_p4u2o")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
