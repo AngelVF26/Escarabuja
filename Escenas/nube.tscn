@@ -1,26 +1,66 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmq4a8hcb8ebi"]
+[gd_scene load_steps=10 format=3 uid="uid://cmq4a8hcb8ebi"]
 
 [ext_resource type="Script" path="res://Escenas/nube.gd" id="1_32tg8"]
-[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="1_g1j2g"]
+[ext_resource type="Texture2D" uid="uid://d32sw835tljp" path="res://assets/nube venenosa1.png" id="2_0wf6g"]
+[ext_resource type="Texture2D" uid="uid://bd30dxbket0pd" path="res://assets/nube venenosa2.png" id="3_pcg8y"]
+[ext_resource type="Texture2D" uid="uid://d2auoqqgak6p1" path="res://assets/nube venenosa3.png" id="4_a7v04"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1pjj0"]
 blend_mode = 1
 light_mode = 1
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcgo0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0wf6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pcg8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a7v04")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ddrei"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpuvk"]
+_data = {
+"idle": SubResource("Animation_ddrei")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqkjo"]
-size = Vector2(122, 119)
+size = Vector2(62.5, 54.125)
 
 [node name="Nube" type="CharacterBody2D" groups=["Spawneable"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_32tg8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_1pjj0")
-texture = ExtResource("1_g1j2g")
+sprite_frames = SubResource("SpriteFrames_rcgo0")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_tpuvk")
+}
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 2)
+position = Vector2(1, 5.0625)
 shape = SubResource("RectangleShape2D_hqkjo")
 
 [node name="AreaNube" type="Area2D" parent="."]
