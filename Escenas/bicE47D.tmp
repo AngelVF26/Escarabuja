@@ -43,6 +43,7 @@ script = ExtResource("1_i3vpt")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_x84nh")
 autoplay = "default"
 
