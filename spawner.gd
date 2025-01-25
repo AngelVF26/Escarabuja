@@ -33,15 +33,15 @@ func _physics_process(delta: float) -> void:
 		#rotation_degrees = 0
 	#if Input.is_action_just_released("paizquierda"):
 		#rotation_degrees = 0
-	#if Input.is_action_pressed("sprint"):
-		#velocity.y = -SPEED *1.5
-	#if Input.is_action_just_released("sprint"):
-		#velocity.y = direction_y * SPEED
-	#if Input.is_action_pressed("pabajo"):
-		#if !Input.is_action_pressed("sprint"):
-			#velocity.y = -SPEED * 0.3
-	#if Input.is_action_just_released("pabajo"):
-		#velocity.y = -SPEED * 0.8
+	if Input.is_action_pressed("sprint"):
+		velocity.y = -SPEED *1.5
+	if Input.is_action_just_released("sprint"):
+		velocity.y = -SPEED * 0.8
+	if Input.is_action_pressed("pabajo"):
+		if !Input.is_action_pressed("sprint"):
+			velocity.y = -SPEED * 0.3
+	if Input.is_action_just_released("pabajo"):
+		velocity.y = -SPEED * 0.8
 	
 	move_and_slide()
 
