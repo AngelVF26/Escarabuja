@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+var nombre: String = "Burbuja"
+
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -18,3 +21,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("pabajo"):
 		velocity.y = SPEED * 0.8
 	move_and_slide()
+
+
+func _on_areaburbuja_area_entered(area: Area2D) -> void:
+	#print("mas aire")
+	#print(area.name)
+	pass
+
+
+func _on_areaburbuja_body_entered(body: Node2D) -> void:
+	#print("airee")
+	#print(body.name)
+	pass

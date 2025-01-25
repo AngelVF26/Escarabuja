@@ -21,7 +21,8 @@ func _process(delta: float) -> void:
 func _on_final_col_body_entered(body: Node2D) -> void:
 	if body.name == "bichote":
 		body.position = Vector2(body.position.x,70)
-		
+		print(body.name)
+	
 	pass # Replace with function body.
 
 
