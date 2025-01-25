@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpojxiuu0qrbq"]
+[gd_scene load_steps=5 format=3 uid="uid://cmq4a8hcb8ebi"]
 
 [ext_resource type="Script" path="res://Escenas/nube.gd" id="1_32tg8"]
 [ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="1_g1j2g"]
@@ -7,9 +7,16 @@
 blend_mode = 1
 light_mode = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqkjo"]
+size = Vector2(122, 119)
+
 [node name="Nube" type="CharacterBody2D" groups=["Spawneable"]]
 script = ExtResource("1_32tg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_1pjj0")
 texture = ExtResource("1_g1j2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_hqkjo")
