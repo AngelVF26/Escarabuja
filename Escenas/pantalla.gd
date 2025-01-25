@@ -17,11 +17,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_final_col_body_entered(body: Node2D) -> void:
 	if body.name == "bichote":
 		body.position = Vector2(body.position.x,70)
-		print(body.name)
+		$Spawner.position = Vector2($Spawner.position.x,-235)
 	
 	pass # Replace with function body.
 
