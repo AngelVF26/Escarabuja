@@ -2,8 +2,7 @@ extends Area2D
 
 @onready var bichote: CharacterBody2D = $bichote
 var nombre: String = "Burbuja"
-
-var bichejo_empuja: bool = false
+var burbuja_explota: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,14 +11,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+
 	
 	pass
+
+
 
 func _physics_process(delta: float) -> void:
 	pass
 
-func _on_body_exited(body: Node2D) -> void:
-
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "nube":
+		pass
+	if body.name == "burbuja_pickup":
+		pass
+	
+	if body.name == "espatula":
+		pass
 		
 	pass # Replace with function body.
