@@ -9,10 +9,11 @@ position = Vector2(538, 320)
 
 [node name="bichote" parent="." instance=ExtResource("2_ro8sn")]
 position = Vector2(21, 9)
+scale = Vector2(2, 2)
 
 [node name="burbuja" parent="bichote" instance=ExtResource("1_0vsu3")]
 z_index = -1
-position = Vector2(0, 0)
+position = Vector2(1.5, 0)
 
 [node name="Camera2D" type="Camera2D" parent="bichote"]
 
@@ -26,3 +27,5 @@ texture = ExtResource("3_pkjjg")
 stretch_mode = 1
 
 [connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
+
+[editable path="bichote/burbuja"]
