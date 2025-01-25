@@ -1,25 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch2tl1bvoj3h5"]
+[gd_scene load_steps=10 format=3 uid="uid://ch2tl1bvoj3h5"]
 
-[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="1_5g3ed"]
 [ext_resource type="Script" path="res://Escenas/matamoscas.gd" id="1_emgb8"]
+[ext_resource type="Texture2D" uid="uid://b2qaqql6codaa" path="res://assets/matabichos3.png" id="2_rej5c"]
+[ext_resource type="Texture2D" uid="uid://1r6kjijtn6qg" path="res://assets/matabichos2.png" id="3_gpqf3"]
+[ext_resource type="Texture2D" uid="uid://b27w5fpxykkbs" path="res://assets/matabichos1.png" id="4_qjhdf"]
+[ext_resource type="Texture2D" uid="uid://v6f1mgs10vx4" path="res://assets/matabichos4.png" id="5_ef2y4"]
+[ext_resource type="Texture2D" uid="uid://dj4d5jm1oxojv" path="res://assets/matabichos5.png" id="6_2g7o5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wjr1"]
-size = Vector2(134, 131)
+size = Vector2(71, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k027a"]
-size = Vector2(132.5, 133.5)
+size = Vector2(72, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_078gm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rej5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gpqf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qjhdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ef2y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2g7o5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Matamoscas" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_emgb8")
 
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["Spawneable"]]
-modulate = Color(0, 0, 1, 1)
-texture = ExtResource("1_5g3ed")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(0.5, -19)
 shape = SubResource("RectangleShape2D_8wjr1")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -27,5 +51,13 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.75, 0.25)
+position = Vector2(0, -21.5)
 shape = SubResource("RectangleShape2D_k027a")
+disabled = true
+
+[node name="AnimatedMoscas" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_078gm")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
