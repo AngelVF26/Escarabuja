@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 20.0
+const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var label: Label = $Label
 @onready var cronometro: Timer = $Cronometro
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	#velocity.y = -SPEED * 0.8
+	velocity.y = -SPEED * 0.8
 	#if Input.is_action_pressed("paizquierda"):
 		#rotation_degrees = -15
 	#if Input.is_action_pressed("paderecha"):
@@ -56,7 +56,7 @@ func _on_timer_spawns_timeout() -> void:
 		spawneados.append(listaSpawn.pick_random())
 	
 	var new_spawn = spawneados.back().instantiate()
-	new_spawn.global_position = Vector2(randf_range(100,1000),100)
+	new_spawn.global_position = Vector2(randf_range(-1000,1000),100)
 	new_spawn
 	call_deferred("add_sibling",new_spawn)
 	

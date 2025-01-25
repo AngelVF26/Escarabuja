@@ -119,7 +119,7 @@ shape = SubResource("RectangleShape2D_1jgmy")
 [node name="Spawner" parent="." instance=ExtResource("5_302w5")]
 position = Vector2(-559, -181)
 
-[node name="Label" parent="Spawner" index="0"]
+[node name="Label" parent="Spawner" index="1"]
 visible = false
 
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]
