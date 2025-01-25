@@ -22,14 +22,14 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("funciona body")
 	print(body.name)
-	if body.name == "Nube":
+	if body.nombre == "Nube":
 		print("nubecita")
 		texture_progress_bar.value +=-5
 		
-	if body.name == "Burbuja":
+	if body.nombre == "Burbuja":
 		print("burbujita oh oh")
 		texture_progress_bar.value +=10
-	if body.name == "Matamoscas":
+	if body.nombre == "Matamoscas":
 		print("MUERTE Y DESTRUCCION")
 
 
