@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dmajyfckuowlt" path="res://assets/burbuja borde y detalles.png" id="3_eeqvb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr803"]
-radius = 27.6667
+radius = 20.3333
 
 [node name="burbuja" type="Area2D"]
 position = Vector2(21, 9)
