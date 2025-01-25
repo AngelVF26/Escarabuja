@@ -1,6 +1,7 @@
 extends Area2D
 @onready var time_aire: Timer = $"../../TimeAire"
 @onready var texture_progress_bar: TextureProgressBar = $"../../GUI/Medidor Aire/TextureProgressBar"
+@onready var nivel: Area2D = $"../.."
 
 @onready var bichote: CharacterBody2D = $bichote
 var nombre: String = "Burbuja"
@@ -31,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 		texture_progress_bar.value +=10
 	if body.nombre == "Matamoscas":
 		print("MUERTE Y DESTRUCCION")
-
+		nivel.HAS_MUERTO()
 
 func _on_body_exited(body: Node2D) -> void:
 	print(body.name)

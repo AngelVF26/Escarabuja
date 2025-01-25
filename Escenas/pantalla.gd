@@ -7,6 +7,7 @@ var valorpresente : float = 0
 @onready var cronometro: Timer = $Cronometro
 @onready var label: Label = $GUI/Label
 @onready var texture_progress_bar: TextureProgressBar = $"GUI/Medidor Aire/TextureProgressBar"
+@onready var bichote: CharacterBody2D = $bichote
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +31,13 @@ func _on_cronometro_timeout() -> void:
 	label.text = str(segundos).pad_decimals(2)
 	cronometro.start
 
+func HAS_MUERTO():
+	cronometro.stop()
+	texture_progress_bar.value = 0
+	bichote.velocity.x =0
+	bichote.velocity.y =0
+	bichote.sacabao()
+	$Spawner.spawnFuera()
 
 func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
@@ -39,7 +47,10 @@ func _on_time_aire_timeout() -> void:
 		$bichote/burbuja.scale -= Vector2(0.025,0.025)
 	elif valorpasado < valorpresente:
 		$bichote/burbuja.scale += Vector2(0.025,0.025)
-	$TimeAire.start()
+	if texture_progress_bar.value ==0:
+		HAS_MUERTO()
+	else:
+		$TimeAire.start()
 	
 
 

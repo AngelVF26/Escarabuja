@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var label: Label = $Label
 @onready var cronometro: Timer = $Cronometro
@@ -61,3 +61,7 @@ func _on_timer_spawns_timeout() -> void:
 		spawneados.remove_at(0)
 	timer_spawns.start()
 	
+func spawnFuera():
+	SPEED=0
+	timer_spawns.stop()
+	spawneados.clear()
