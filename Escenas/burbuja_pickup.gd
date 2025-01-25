@@ -24,9 +24,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_areaburbuja_area_entered(area: Area2D) -> void:
-	#print("mas aire")
-	#print(area.name)
-	pass
+	$Sprite2D.set_deferred("visible",false)
+	
 
 
 func _on_areaburbuja_body_entered(body: Node2D) -> void:

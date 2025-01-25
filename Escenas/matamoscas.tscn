@@ -33,7 +33,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 2.0
+"speed": 3.0
 }]
 
 [node name="Matamoscas" type="CharacterBody2D"]
@@ -59,5 +59,3 @@ disabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_078gm")
 autoplay = "default"
-frame = 4
-frame_progress = 1.0

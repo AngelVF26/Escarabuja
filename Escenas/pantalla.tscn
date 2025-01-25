@@ -30,10 +30,11 @@ script = ExtResource("1_6khms")
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
 texture_filter = 1
-offset_left = -553.0
-offset_top = -3952.0
-offset_right = 599.0
-offset_bottom = 709.0
+offset_left = 596.0
+offset_top = 2197.0
+offset_right = 789.0
+offset_bottom = 2597.0
+rotation = -3.14159
 scale = Vector2(6, 6)
 texture = ExtResource("2_s3t2a")
 stretch_mode = 1
@@ -54,10 +55,10 @@ physics_material_override = SubResource("PhysicsMaterial_4jcib")
 shape = SubResource("WorldBoundaryShape2D_28bt4")
 
 [node name="Final_col" type="Area2D" parent="."]
-position = Vector2(96, -3744)
+position = Vector2(3599, -1982)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Final_col"]
-position = Vector2(-68.5, 0)
+position = Vector2(6078, 906)
 scale = Vector2(1.01342, -17.2065)
 shape = SubResource("RectangleShape2D_hd3bl")
 
@@ -68,7 +69,7 @@ autostart = true
 [node name="GameWorld" type="CanvasLayer" parent="."]
 
 [node name="Spawner" parent="." instance=ExtResource("5_302w5")]
-position = Vector2(-559, -181)
+position = Vector2(-529, -1011)
 
 [node name="CollisionShape2D" parent="Spawner" index="0"]
 position = Vector2(567, -204)
@@ -95,6 +96,7 @@ self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="bichote"]
+offset = Vector2(0, -200)
 drag_horizontal_enabled = true
 drag_left_margin = 1.0
 drag_right_margin = 1.0

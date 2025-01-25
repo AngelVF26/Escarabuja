@@ -18,7 +18,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	$TextureRect.size.y += 0.55
 
 func _on_final_col_body_entered(body: Node2D) -> void:
 	if body.name == "bichote":
@@ -51,6 +51,7 @@ func _on_time_aire_timeout() -> void:
 	#elif valorpasado < valorpresente:
 		#$bichote/burbuja.scale += Vector2(0.025,0.025)
 	$TimeAire.start()
+	ParallaxBackground
 	
 
 
