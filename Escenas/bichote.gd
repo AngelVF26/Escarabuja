@@ -11,13 +11,15 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction_x := Input.get_axis("paizquierda", "paderecha")
 	var direction_y:=Input.get_axis("parriba", "pabajo")
-	if direction_x:
-		velocity.x = direction_x * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if direction_y:
-		velocity.y = direction_y * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+	velocity.y = direction_y * SPEED
+	velocity.x = direction_x * SPEED
+	if Input.is_action_pressed("paizquierda"):
+		rotation_degrees = -15
+	if Input.is_action_pressed("paderecha"):
+		rotation_degrees = 15
+	if Input.is_action_just_released("paderecha"):
+		rotation_degrees = 0
+	if Input.is_action_just_released("paizquierda"):
+		rotation_degrees = 0
 
 	move_and_slide()
