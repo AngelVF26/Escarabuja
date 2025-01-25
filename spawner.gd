@@ -1,17 +1,17 @@
-extends Node2D
+extends CharacterBody2D
 
+const SPEED = 20.0
+const JUMP_VELOCITY = -400.0
 @onready var label: Label = $Label
 @onready var cronometro: Timer = $Cronometro
 var segundos: float = 0
-var Burbuja
-var Nube
-var Matamoscas
 var spawneados: Array
 @onready var timer_spawns: Timer = $TimerSpawns
-const BURBUJA = preload("res://Escenas/burbuja_pickup.tscn")
-const NUBE = preload("res://Escenas/nube.tscn")
-const MATAMOSCAS = preload("res://Escenas/matamoscas.tscn")
-var listaSpawn: Array = [BURBUJA, NUBE, MATAMOSCAS]
+
+var Burbuja = load("res://Escenas/burbuja_pickup.tscn")
+var Nube = load("res://Escenas/nube.tscn")
+var Matamoscas = load("res://Escenas/matamoscas.tscn")
+var listaSpawn: Array = [Burbuja, Nube, Matamoscas]
 #var pos_spawn = $Area2D.get_global_position()
 
 # Called when the node enters the scene tree for the first time.
@@ -19,20 +19,39 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
+func _physics_process(delta: float) -> void:
 
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	#velocity.y = -SPEED * 0.8
+	#if Input.is_action_pressed("paizquierda"):
+		#rotation_degrees = -15
+	#if Input.is_action_pressed("paderecha"):
+		#rotation_degrees = 15
+	#if Input.is_action_just_released("paderecha"):
+		#rotation_degrees = 0
+	#if Input.is_action_just_released("paizquierda"):
+		#rotation_degrees = 0
+	#if Input.is_action_pressed("sprint"):
+		#velocity.y = -SPEED *1.5
+	#if Input.is_action_just_released("sprint"):
+		#velocity.y = direction_y * SPEED
+	#if Input.is_action_pressed("pabajo"):
+		#if !Input.is_action_pressed("sprint"):
+			#velocity.y = -SPEED * 0.3
+	#if Input.is_action_just_released("pabajo"):
+		#velocity.y = -SPEED * 0.8
+	
+	move_and_slide()
 
 func _on_cronometro_timeout() -> void:
 	segundos += cronometro.wait_time
-	label.text = str(segundos).pad_decimals(2)
 	cronometro.start
 
 
 func _on_timer_spawns_timeout() -> void:
-	if spawneados.size() > 4 && !spawneados.has(BURBUJA) :
-		spawneados.append(BURBUJA)
+	if spawneados.size() > 4 && !spawneados.has(Burbuja) :
+		spawneados.append(Burbuja)
 	else:
 		spawneados.append(listaSpawn.pick_random())
 	
@@ -43,9 +62,5 @@ func _on_timer_spawns_timeout() -> void:
 	
 	if spawneados.size() > 5:
 		spawneados.remove_at(0)
-	
-
-	print(spawneados)
-
 	timer_spawns.start()
 	
