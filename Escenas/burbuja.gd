@@ -13,11 +13,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
 	
 	pass
-
-
 
 func _physics_process(delta: float) -> void:
 	pass
@@ -25,14 +22,14 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("funciona body")
 	print(body.name)
-	if body.name == "nube":
+	if body.name == "Nube":
 		print("nubecita")
 		texture_progress_bar.value +=-5
 		
-	if body.name == "burbuja_pickup":
+	if body.name == "Burbuja":
 		print("burbujita oh oh")
 		texture_progress_bar.value +=10
-	if body.name == "espatula":
+	if body.name == "Matamoscas":
 		print("MUERTE Y DESTRUCCION")
 
 
