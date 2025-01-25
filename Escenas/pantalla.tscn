@@ -98,9 +98,15 @@ offset_bottom = 66.0
 position = Vector2(402, 85)
 scale = Vector2(6, 6)
 
+[node name="TimeAire" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]
 [connection signal="timeout" from="Cronometro" to="." method="_on_cronometro_timeout"]
 [connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
+[connection signal="value_changed" from="GUI/Medidor Aire/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="timeout" from="TimeAire" to="." method="_on_time_aire_timeout"]
 
 [editable path="bichote/burbuja"]
 [editable path="GUI/Spawner"]
+[editable path="GUI/Medidor Aire"]
