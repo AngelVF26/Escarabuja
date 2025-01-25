@@ -7,11 +7,13 @@ var valorpresente : float = 0
 @onready var cronometro: Timer = $Cronometro
 @onready var label: Label = $GUI/Label
 @onready var texture_progress_bar: TextureProgressBar = $"GUI/Medidor Aire/TextureProgressBar"
-@onready var bichote: CharacterBody2D = $bichote
-
+@onready var burbuja: Area2D = $bichote/burbuja
+var escala_original: Vector2
+var valor_pasado : int = 30
+var valor_actual : int = 30
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	escala_original = $bichote/burbuja.scale
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,19 +45,22 @@ func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
 	texture_progress_bar.value -= 1
 	valorpresente = texture_progress_bar.value
-	if valorpasado > valorpresente:
-		$bichote/burbuja.scale -= Vector2(0.025,0.025)
-	elif valorpasado < valorpresente:
-		$bichote/burbuja.scale += Vector2(0.025,0.025)
-	if texture_progress_bar.value ==0:
-		HAS_MUERTO()
-	else:
-		$TimeAire.start()
+	#if valorpasado > valorpresente:
+		#$bichote/burbuja.scale -= Vector2(0.025,0.025)
+	#elif valorpasado < valorpresente:
+		#$bichote/burbuja.scale += Vector2(0.025,0.025)
+	$TimeAire.start()
 	
 
 
-#func _on_texture_progress_bar_value_changed(value: float) -> void:
-	#if valorpasado > valorpresente:
-		#$bichote/burbuja.scale -= Vector2(1,1)
-	#elif valorpasado < valorpresente:
-		#$bichote/burbuja.scale += Vector2(1,1)
+func _on_texture_progress_bar_value_changed(value: float) -> void:
+	print("valor: " + str(value))
+	valor_pasado = valor_actual
+	valor_actual = value
+	print("actual: " + str(valor_actual))
+	print("pasado: " + str(valor_pasado))
+	if value > valor_pasado:
+		$bichote/burbuja.scale += Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
+	elif value < valor_pasado:
+		$bichote/burbuja.scale -= Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
+		pass
