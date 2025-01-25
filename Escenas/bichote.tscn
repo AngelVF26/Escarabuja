@@ -36,7 +36,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vohhh"]
-size = Vector2(124, 126)
+size = Vector2(25, 27)
 
 [node name="bichote" type="CharacterBody2D"]
 script = ExtResource("1_i3vpt")
@@ -47,4 +47,5 @@ sprite_frames = SubResource("SpriteFrames_x84nh")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_vohhh")
