@@ -31,16 +31,3 @@ func _on_body_entered(body: Node2D) -> void:
 		print("MUERTE Y DESTRUCCION")
 		pass
 	pass # Replace with function body.
-
-
-func _on_area_entered(area: Area2D) -> void:
-	if area.name == "nube":
-		print("nubecita")
-		pass
-	if area.name == "burbuja_pickup":
-		print("burbujita")
-		pass
-	if area.name == "espatula":
-		print("MUERTE Y DESTRUCCION")
-		pass
-	pass # Replace with function body.
