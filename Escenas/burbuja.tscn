@@ -34,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_nqu52")
 }],
-"loop": true,
+"loop": false,
 "name": &"Explosion",
 "speed": 5.0
 }]
@@ -59,9 +59,9 @@ texture_filter = 1
 texture = ExtResource("3_eeqvb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_6ofyf")
 animation = &"Explosion"
-autoplay = "Explosion"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

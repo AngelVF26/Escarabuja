@@ -1,4 +1,5 @@
 extends Area2D
+@onready var burbujaSprite: AnimatedSprite2D = $bichote/burbuja/AnimatedSprite2D
 
 @onready var bichote: CharacterBody2D = $bichote
 var segundos: float = 0
@@ -39,9 +40,10 @@ func HAS_MUERTO():
 	bichote.velocity.x =0
 	bichote.velocity.y =0
 	bichote.sacabao()
-
 	$Spawner.spawnFuera()
-
+	$bichote/burbuja/BurbujaBorde.visible = false
+	burbujaSprite.visible = true
+	burbujaSprite.play("Explosion")
 func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
 	texture_progress_bar.value -= 1

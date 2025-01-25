@@ -8,6 +8,7 @@ var nombre: String = "Burbuja"
 var burbuja_explota: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	pass # Replace with function body.
 
 
@@ -40,3 +41,4 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	visible = false
+	set_deferred("visible",false)

@@ -95,6 +95,9 @@ position = Vector2(1, -0.5)
 self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 
+[node name="AnimatedSprite2D" parent="bichote/burbuja" index="3"]
+texture_filter = 1
+
 [node name="Camera2D" type="Camera2D" parent="bichote"]
 offset = Vector2(0, -200)
 drag_horizontal_enabled = true
