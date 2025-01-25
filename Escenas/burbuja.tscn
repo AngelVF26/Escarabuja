@@ -1,11 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk5ukewnrg21m"]
+[gd_scene load_steps=12 format=3 uid="uid://dk5ukewnrg21m"]
 
 [ext_resource type="Script" path="res://Escenas/burbuja.gd" id="1_7ocxo"]
 [ext_resource type="Texture2D" uid="uid://cu83o0mqk31cr" path="res://assets/burbuja.png" id="2_4i76x"]
 [ext_resource type="Texture2D" uid="uid://dmajyfckuowlt" path="res://assets/burbuja borde y detalles.png" id="3_eeqvb"]
+[ext_resource type="Texture2D" uid="uid://cpvobvuhy7k1i" path="res://assets/burbuja1.png" id="4_ult5j"]
+[ext_resource type="Texture2D" uid="uid://b5c3f1ug4pxv2" path="res://assets/burbuja2.png" id="5_dqx31"]
+[ext_resource type="Texture2D" uid="uid://35okkoc3dixh" path="res://assets/burbuja4.png" id="6_hskxv"]
+[ext_resource type="Texture2D" uid="uid://kqa8udpynkrt" path="res://assets/burbuja5.png" id="7_2jiv6"]
+[ext_resource type="Texture2D" uid="uid://cmxhe58o3nuxb" path="res://assets/burbuja6.png" id="8_npidp"]
+[ext_resource type="Texture2D" uid="uid://c0u5hcpo2b0af" path="res://assets/burbuja7.png" id="9_nqu52"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr803"]
 radius = 20.3333
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ofyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ult5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dqx31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hskxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2jiv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_npidp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nqu52")
+}],
+"loop": true,
+"name": &"Explosion",
+"speed": 5.0
+}]
 
 [node name="burbuja" type="Area2D"]
 position = Vector2(21, 9)
@@ -26,6 +58,12 @@ texture = ExtResource("2_4i76x")
 texture_filter = 1
 texture = ExtResource("3_eeqvb")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ofyf")
+animation = &"Explosion"
+autoplay = "Explosion"
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

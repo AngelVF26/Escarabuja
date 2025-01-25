@@ -36,3 +36,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	print(body.name)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	visible = false
