@@ -11,6 +11,7 @@ var valorpresente : float = 0
 var escala_original: Vector2
 var valor_pasado : int = 30
 var valor_actual : int = 30
+@onready var bichote: CharacterBody2D = $bichote
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	escala_original = $bichote/burbuja.scale
@@ -39,6 +40,7 @@ func HAS_MUERTO():
 	bichote.velocity.x =0
 	bichote.velocity.y =0
 	bichote.sacabao()
+
 	$Spawner.spawnFuera()
 
 func _on_time_aire_timeout() -> void:
