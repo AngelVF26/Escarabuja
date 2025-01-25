@@ -69,12 +69,21 @@ autostart = true
 [node name="Spawner" parent="." instance=ExtResource("5_302w5")]
 position = Vector2(-559, -181)
 
+[node name="CollisionShape2D" parent="Spawner" index="0"]
+position = Vector2(567, -204)
+
+[node name="Area2D" parent="Spawner" index="1"]
+position = Vector2(-3, -167)
+
+[node name="CollisionShape2D" parent="Spawner/Area2D" index="0"]
+position = Vector2(576, -42)
+
 [node name="bichote" parent="." instance=ExtResource("2_ro8sn")]
 position = Vector2(19, 134)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" parent="bichote" index="1"]
-position = Vector2(-2, 1.5)
+position = Vector2(0.583328, -1.5)
 
 [node name="burbuja" parent="bichote" instance=ExtResource("1_0vsu3")]
 z_index = -1
@@ -100,6 +109,20 @@ offset_bottom = 66.0
 [node name="Medidor Aire" parent="GUI" instance=ExtResource("5_metew")]
 position = Vector2(402, 85)
 scale = Vector2(6, 6)
+
+[node name="TextureProgressBar" parent="GUI/Medidor Aire" index="0"]
+offset_left = 80.6667
+offset_top = 67.8333
+offset_right = 130.667
+offset_bottom = 117.833
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" parent="GUI/Medidor Aire" index="1"]
+offset_left = 87.6667
+offset_top = 74.8333
+offset_right = 107.667
+offset_bottom = 97.8333
+scale = Vector2(0.5, 0.5)
 
 [node name="TimeAire" type="Timer" parent="."]
 autostart = true

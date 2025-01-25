@@ -1,6 +1,6 @@
 extends Area2D
 
-
+@onready var bichote: CharacterBody2D = $bichote
 var segundos: float = 0
 var valorpasado: float = 0
 var valorpresente : float = 0
