@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Escarabuja"
-run/main_scene="res://Escenas/pantalla.tscn"
+run/main_scene="res://Escenas/inicio.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/sprite escarabajo.png"
+
+[global_group]
+
+Persist=""
 
 [input]
 
