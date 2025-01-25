@@ -59,7 +59,8 @@ texture_filter = 1
 texture = ExtResource("3_eeqvb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
+texture_filter = 1
+position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_6ofyf")
 animation = &"Explosion"
 
