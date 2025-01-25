@@ -61,8 +61,10 @@ func _on_texture_progress_bar_value_changed(value: float) -> void:
 	valor_actual = value
 	print("actual: " + str(valor_actual))
 	print("pasado: " + str(valor_pasado))
-	if value > valor_pasado:
+	if value<=0:
+		HAS_MUERTO()
+	elif value > valor_pasado:
 		$bichote/burbuja.scale += Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
 	elif value < valor_pasado:
 		$bichote/burbuja.scale -= Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
-		pass
+		
