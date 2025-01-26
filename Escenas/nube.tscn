@@ -40,9 +40,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqkjo"]
-size = Vector2(62.5, 54.125)
+size = Vector2(62.5, 37.0625)
 
 [node name="Nube" type="CharacterBody2D" groups=["Spawneable"]]
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_32tg8")
@@ -69,5 +70,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaNube"]
-position = Vector2(-28, -124)
+position = Vector2(-28, -115.469)
 shape = SubResource("RectangleShape2D_hqkjo")
