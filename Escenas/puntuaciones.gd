@@ -59,7 +59,10 @@ func _on_submit_pressed() -> void:
 		#while truedic["nombre"+str(nombre_libre)] != "" && nombre_libre < 9:
 			#nombre_libre+=1
 		truedic["nombre"] = nombre
-		save(truedic)
+		save((truedic["nombre"]))
+		print(str(load_game()))
+		save((truedic["puntos"]))
+		
 		print(str(load_game()))
 		#lista_nombres.text = str(truedic)
 		
@@ -81,12 +84,14 @@ func save(content):
 	if FileAccess.file_exists(file):
 		print("existe")
 		filo = FileAccess.open(file,FileAccess.READ_WRITE)
-		filo.seek_end(filo.get_length())
+		print(filo.get_position())
+		filo.seek(filo.get_length())
+		print(filo.get_position())
+
 	else:
 		print("no existe")
 		filo = FileAccess.open(file,FileAccess.WRITE)
 	filo.store_var(content)
-	filo.store_string("\n")
 	
 	filo = null
 
@@ -101,9 +106,8 @@ func save(content):
 		
 func load_game():
 	var fila = FileAccess.open(file,FileAccess.READ)
+	fila.seek(0)
 	var content = fila.get_var()
-	while fila.get_position() < fila.get_length():
-		content += fila.get_var()
 	return content
 	
 func _on_rejugar_pressed() -> void:
