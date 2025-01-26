@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca07exltknr5h"
+path="res://.godot/imported/ESCARABUJA_MAIN_THEME.mp3-823f15f17c696c5931e1bb64eb1f239e.mp3str"
+
+[deps]
+
+source_file="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_MAIN_THEME.mp3"
+dest_files=["res://.godot/imported/ESCARABUJA_MAIN_THEME.mp3-823f15f17c696c5931e1bb64eb1f239e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

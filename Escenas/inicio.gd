@@ -2,6 +2,7 @@ extends Node2D
 
 var file = "user://savegame.save"
 var blSaveLoad = null
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 #var default_dict = {
@@ -12,6 +13,7 @@ var blSaveLoad = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	audio_stream_player.play()
 	#if not FileAccess.file_exists(file):
 		#save_game(default_dict)
 	#elif blSaveLoad == false:

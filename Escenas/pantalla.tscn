@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cy5tmfyxlb5ud"]
+[gd_scene load_steps=22 format=3 uid="uid://cy5tmfyxlb5ud"]
 
 [ext_resource type="PackedScene" uid="uid://dk5ukewnrg21m" path="res://Escenas/burbuja.tscn" id="1_0vsu3"]
 [ext_resource type="Script" path="res://Escenas/pantalla.gd" id="1_6khms"]
@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_vhn0k"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="7_x6iwt"]
 [ext_resource type="Texture2D" uid="uid://deyqojvpbwn58" path="res://assets/relleno burbuja dorada2.png" id="8_ops8e"]
-[ext_resource type="AudioStream" uid="uid://tjkwrj3rhmaf" path="res://SOUNDS ESCARABUJA/TRANSFORMATION.mp3" id="14_46hqv"]
+[ext_resource type="AudioStream" uid="uid://bwct7kcky28vx" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_POWER_UP.mp3" id="12_e0oj1"]
+[ext_resource type="AudioStream" uid="uid://ca07exltknr5h" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_MAIN_THEME.mp3" id="13_3tmpu"]
 
 [sub_resource type="Animation" id="Animation_tmixp"]
 length = 0.001
@@ -231,7 +232,10 @@ autostart = true
 position = Vector2(193, 26)
 
 [node name="AudioTransformacion" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_46hqv")
+stream = ExtResource("12_e0oj1")
+
+[node name="AudioMusica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_3tmpu")
 
 [connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]

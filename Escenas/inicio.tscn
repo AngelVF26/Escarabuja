@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="6_btpb2"]
 [ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_8cw3f"]
 [ext_resource type="Texture2D" uid="uid://bkbcnbrgplq6d" path="res://assets/logo.png" id="7_x0thh"]
-[ext_resource type="AudioStream" uid="uid://g4hrr7ocyd3t" path="res://SOUNDS ESCARABUJA/smack-sound-192020.mp3" id="8_cmy43"]
+[ext_resource type="AudioStream" uid="uid://d31kvvomt6ir5" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_MENU_THEME.mp3" id="8_sb3rd"]
 
 [sub_resource type="Animation" id="Animation_h60v3"]
 length = 0.001
@@ -376,7 +376,7 @@ text = "JUGAR"
 label_settings = SubResource("LabelSettings_ed5v4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_cmy43")
+stream = ExtResource("8_sb3rd")
 
 [node name="botonInstrucciones" type="TextureButton" parent="."]
 z_index = 6
