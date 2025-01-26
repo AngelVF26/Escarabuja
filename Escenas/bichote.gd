@@ -4,6 +4,7 @@ extends CharacterBody2D
 var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@export var bichodorado: bool = false
 
 
 func _physics_process(delta: float) -> void:

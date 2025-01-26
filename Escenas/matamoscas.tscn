@@ -22,7 +22,7 @@ animations = [{
 "duration": 2.0,
 "texture": ExtResource("3_gpqf3")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("4_qjhdf")
 }, {
 "duration": 1.0,

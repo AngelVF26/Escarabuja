@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-var nombre: String = "Burbuja"
+var nombre: String = "Burbuja_Dorada"
 
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-var random: float = randf_range(0,3)
-var dorada: bool = false
+
+
 func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
@@ -22,11 +22,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = SPEED * 0.8
 	move_and_slide()
 
-func _ready() -> void:
-	print(random)
-	if random > 1.3:
-		dorada = true
-		$Sprite2D.texture = load("res://assets/burbuja dorada borde2.png")
 
 func _on_areaburbuja_area_entered(area: Area2D) -> void:
 	$Sprite2D.set_deferred("visible",false)
