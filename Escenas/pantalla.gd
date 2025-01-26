@@ -18,7 +18,7 @@ var valor_actual : int = 30
 func _ready() -> void:
 	escala_original = $bichote/burbuja.scale
 	#$bichote/burbuja/CollisionShape2D.disabled = true
-
+	$AudioMusica.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -71,7 +71,9 @@ func _on_time_aire_timeout() -> void:
 		print("patata")
 		$bichote/Sprite2D.play("bichodorado")
 		$"GUI/Medidor Aire2".call_deferred("set_visible",true)
-		$AudioTransformacion.play()
+		if($AudioMusica.stream_paused == false):
+			$AudioTransformacion.play()
+			$AudioMusica.stream_paused = true
 		
 		texture_progress_dorada.value -=1
 	elif $bichote/burbuja.tocodorada == false:
@@ -79,6 +81,8 @@ func _on_time_aire_timeout() -> void:
 		print("falsisimo")
 		$"GUI/Medidor Aire2".call_deferred("set_visible",false)
 		
+		$AudioMusica.stream_paused = false
+	
 
 	#if valorpasado > valorpresente:
 		#$bichote/burbuja.scale -= Vector2(0.025,0.025)
