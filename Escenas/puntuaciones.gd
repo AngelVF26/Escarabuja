@@ -1,12 +1,13 @@
 extends Node2D
 @onready var cronometro: Timer = $Cronometro
 var nombre : String = ""
-@onready var lista_nombres: Label = $puntuacionesFinales/listaNombres
+@onready var lista_nombres: RichTextLabel = $puntuacionesFinales/listaNombres
 var file = "user://scores.cfg"
 var nombre_libre : int = 1
 var dictPunt : Dictionary
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
+var dictOrdenado : Dictionary
 #var save_file = FileAccess.open("user://savegame.save", FileAccess.READ_WRITE)
 #var load_file = FileAccess.open(file, FileAccess.READ)
 # Called when the node enters the scene tree for the first time.
@@ -34,9 +35,11 @@ func _on_submit_pressed() -> void:
 		$puntuacionesFinales.visible = true
 		$"Añade tu nombre".visible = false
 		nombre = $LineEdit.text
-		
+		print(str(Scoreboard.dictTemp))
+		Scoreboard.dictTemp = Scoreboard.datos_originales
 		Scoreboard.dictTemp[nombre] = Scoreboard._getPuntos()
-		
+		print(str(Scoreboard.dictTemp))
+
 		#Scoreboard.load_game()
 		Scoreboard.save_game(Scoreboard.dictTemp)
 		dictPunt = Scoreboard.load_game()
@@ -45,6 +48,7 @@ func _on_submit_pressed() -> void:
 		sort_dict(dictPunt)
 		dictPunt=sorted_dict(dictPunt)
 		print(str(dictPunt))
+		
 		for i in dictPunt:
 			lista_nombres.text += str(i) + "\n"
 			$puntuacionesFinales/totalSegundos.text += str(dictPunt[i]).pad_decimals(2) + "\n"
@@ -54,7 +58,9 @@ func _on_submit_pressed() -> void:
 
 func sort_dict(dict: Dictionary) -> void:
 	var pairs = dict.keys().map(func (key): return [key, dict[key]])
+	print(str(pairs))
 	pairs.sort()
+	print(str(pairs))
 	dict.clear()
 	for p in pairs:
 		print(str(p))

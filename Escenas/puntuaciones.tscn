@@ -399,27 +399,29 @@ text = "Tiempo"
 label_settings = SubResource("LabelSettings_5fefk")
 horizontal_alignment = 1
 
-[node name="listaNombres" type="Label" parent="puntuacionesFinales"]
+[node name="listaNombres" type="RichTextLabel" parent="puntuacionesFinales"]
 texture_filter = 1
-offset_left = 48.0
-offset_top = 66.0
-offset_right = 471.0
-offset_bottom = 405.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-label_settings = SubResource("LabelSettings_5fefk")
-horizontal_alignment = 1
+offset_left = 160.0
+offset_top = 65.0
+offset_right = 528.0
+offset_bottom = 404.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/normal_font_size = 40
+text_direction = 1
 
-[node name="totalSegundos" type="Label" parent="puntuacionesFinales"]
+[node name="totalSegundos" type="RichTextLabel" parent="puntuacionesFinales"]
 texture_filter = 1
-offset_left = 765.0
-offset_top = 74.0
-offset_right = 1153.0
-offset_bottom = 411.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-label_settings = SubResource("LabelSettings_5fefk")
-horizontal_alignment = 1
+layout_direction = 2
+offset_left = 886.0
+offset_top = 62.0
+offset_right = 1112.0
+offset_bottom = 399.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/normal_font_size = 40
 
 [node name="marcador" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
@@ -471,6 +473,7 @@ text = "Ver Créditos
 label_settings = SubResource("LabelSettings_myohp")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 z_index = 7
 offset_left = 2.0
 offset_top = 2.0
