@@ -3,7 +3,7 @@ extends Node
 var blSaveLoad = null
 var puntos 
 var pos_dict = {}
-
+var datos_originales
 var Scores = {
 	"nombre1" : "", "puntos1" : 0,
 	"nombre2" : "", "puntos2" : 0,
@@ -15,8 +15,8 @@ var Scores = {
 	"nombre8" : "", "puntos8" : 0,
 	"nombre9" : "", "puntos9" : 0
 }
-
-var dictTemp : Dictionary
+var dat_pasados
+var dictTemp : Dictionary 
 
 func _setPuntos(points):
 	puntos = points
@@ -24,52 +24,18 @@ func _getPuntos():
 	return puntos
 	
 	
-var file = "user://savegame.save"
+var file = "user://scores.cfg"
 var default_dict = {
-		"Player 1" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 2" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 3" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 4" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 5" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 6" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 7" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 8" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 9" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		},
-		"Player 10" : {
-			"nombre" : "",
-			"puntuacion" : 0
-		}
+		"Javi" : 0
+		,
+		"Manu" : 0
+		
 	}
 func _ready():
+	dat_pasados = datos_originales
 	#borrarPartida()
 	if not FileAccess.file_exists(file):
+		print("holiwi")
 		save_game(default_dict)
 	elif blSaveLoad == false:
 		load_game()
@@ -81,24 +47,47 @@ func save_game(datos_nuevos: Dictionary):
 	if not FileAccess.file_exists(file):
 		json_string = JSON.stringify(default_dict)
 	else:
-		var datos_originales = load_game()
-		for datos in datos_originales.keys():
-			for dato in datos_originales[datos]:
-				if datos_nuevos[datos][dato] < datos_originales[datos][dato]:
-					datos_nuevos[datos][dato] = datos_originales[datos][dato]
-				else:
-					print("datos_nuevos superiores")
+		datos_originales = load_game()
+		print(str(datos_originales))
+		#dictTemp = datos_originales
+		
+					#print("datos_nuevos superiores")
 		json_string = JSON.stringify(datos_nuevos)
-	var saveGame = FileAccess.open_encrypted_with_pass(file, FileAccess.WRITE, "kebab")
+	var saveGame = FileAccess.open(file, FileAccess.WRITE)
 	saveGame.store_line(json_string)
 	
 func load_game():
 	if not FileAccess.file_exists(file):
+		print("no retorna")
 		return
-	
-	var loadGame = FileAccess.open_encrypted_with_pass(file, FileAccess.READ, "kebab")
+	print("si retorna")
+	var loadGame = FileAccess.open(file, FileAccess.READ)
 	var datos = read(loadGame)
 	return datos
+	#var score_data = {}
+	#var config = ConfigFile.new()
+## Load data from a file.
+	#var err = config.load("user://scores.cfg")
+#
+## If the file didn't load, ignore it.
+	#if err != OK:
+		#print("error")
+		##save(nombre)
+		#return
+#
+## Iterate over all sections.
+	#for player in config.get_sections():
+		## Fetch the data for each section.
+		#var player_name = config.get_value(player, "player_name")
+		#var player_score = config.get_value(player, "score")
+		#score_data[player_name] = player_score
+		##nombre_libre += 1
+		#for i in score_data:
+			#print("score data 1")
+			#print(str(i))
+			#print(str(player_score))
+		#
+		#return score_data
 	
 
 func borrarPartida():
