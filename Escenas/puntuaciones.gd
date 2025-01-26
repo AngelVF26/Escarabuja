@@ -2,10 +2,10 @@ extends Node2D
 @onready var cronometro: Timer = $Cronometro
 var nombre : String = ""
 @onready var lista_nombres: Label = $puntuacionesFinales/listaNombres
-var file = "user://savegame.txt"
+var file = "user://scores.cfg"
 var nombre_libre : int = 1
+var dictPunt : Dictionary
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-
 
 #var save_file = FileAccess.open("user://savegame.save", FileAccess.READ_WRITE)
 #var load_file = FileAccess.open(file, FileAccess.READ)
@@ -35,24 +35,33 @@ func _on_submit_pressed() -> void:
 		$"Añade tu nombre".visible = false
 		nombre = $LineEdit.text
 		
-		load_game()
-		Scoreboard.dictTemp
-		save(nombre)
+		Scoreboard.dictTemp[nombre] = Scoreboard._getPuntos()
 		
-		print(str(load_game()))
+		#Scoreboard.load_game()
+		Scoreboard.save_game(Scoreboard.dictTemp)
+		dictPunt = Scoreboard.load_game()
+		
+		for i in Scoreboard.load_game():
+			lista_nombres.text += str(i) + "\n"
+			$puntuacionesFinales/totalSegundos.text += str(dictPunt[i]) + "\n"
+		#Scoreboard.dictTemp += load_game()
+		print(str(Scoreboard.dictTemp))
+		
+		#print(str(load_game()))
 
 
 	
-func save(nombre):
+func save(dict : Dictionary):
 	# Create new ConfigFile object.
 	var config = ConfigFile.new()
 	#if config.get_value(player, "player_name") != null:
 		
 # Store some values.nombre_libre:
-	print("Player " + str(nombre_libre) + nombre)
-	print("Player " + str(nombre_libre) + str(Scoreboard._getPuntos()))
-	config.set_value("Player" + str(nombre_libre), "player_name", nombre)
-	config.set_value("Player" + str(nombre_libre), "score", Scoreboard._getPuntos())
+	#print("Player " + str(nombre_libre) + nombre)
+	#print("Player " + str(nombre_libre) + str(Scoreboard._getPuntos()))
+	for i in dict:
+		config.set_value("Player", str(i), str(dict.get(nombre)) )
+		
 	
 	#config.set_value("Player2", "player_name", "V3geta")
 	#config.set_value("Player2", "score", 9001)
@@ -72,7 +81,7 @@ func load_game():
 # If the file didn't load, ignore it.
 	if err != OK:
 		print("error")
-		save(nombre)
+	#save(nombre)
 		return
 
 # Iterate over all sections.
