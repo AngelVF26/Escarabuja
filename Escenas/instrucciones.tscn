@@ -1,9 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx2cd02cow81x"]
+[gd_scene load_steps=16 format=3 uid="uid://dx2cd02cow81x"]
 
 [ext_resource type="PackedScene" uid="uid://bioqi1tyrmj1a" path="res://Escenas/inicio.tscn" id="1_bxso6"]
 [ext_resource type="Script" path="res://Escenas/instrucciones.gd" id="1_lvtcr"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="2_w0ypc"]
+[ext_resource type="FontFile" uid="uid://bljosobunt31s" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="3_bd3qo"]
 [ext_resource type="AudioStream" uid="uid://g4hrr7ocyd3t" path="res://SOUNDS ESCARABUJA/smack-sound-192020.mp3" id="4_bw5jk"]
+[ext_resource type="FontFile" uid="uid://cxaeoatk6vopw" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="4_fafqh"]
+[ext_resource type="Texture2D" uid="uid://csnxicmss7r04" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0120.png" id="5_0fa1l"]
+[ext_resource type="Texture2D" uid="uid://mxggkjowneuq" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0121.png" id="6_gshce"]
+[ext_resource type="Texture2D" uid="uid://b1e1dlh4h136a" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0122.png" id="7_6fpnk"]
+[ext_resource type="Texture2D" uid="uid://gkury60enog6" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0086.png" id="8_mnmyv"]
+[ext_resource type="Texture2D" uid="uid://b66so6g1ssu3f" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0235.png" id="9_fik3k"]
+[ext_resource type="Texture2D" uid="uid://cj2gt47c1w1s8" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0236.png" id="10_60j6h"]
+[ext_resource type="Texture2D" uid="uid://8lp0skhaji2i" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0237.png" id="11_0t5ag"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f7adn"]
 font_size = 30
@@ -28,58 +37,179 @@ offset_left = 2.0
 offset_top = 2.0
 offset_right = 1153.0
 offset_bottom = 653.0
-color = Color(0.111197, 0.111197, 0.111197, 0.639216)
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Inicio/ColorRect2"]
-layout_mode = 0
-offset_left = 168.0
-offset_top = 324.0
-offset_right = 1034.0
-offset_bottom = 448.0
-text = "WASD o teclas de dirección para moverte
-
-Barra espaciadora para Sprint"
+color = Color(0, 0, 0, 0.639216)
 
 [node name="Label" type="Label" parent="Inicio/ColorRect2"]
 layout_mode = 0
-offset_left = 397.0
-offset_top = 46.0
-offset_right = 775.0
-offset_bottom = 88.0
-text = "¡Bienvenidos A Escarabuja!"
+offset_left = 341.0
+offset_top = 30.0
+offset_right = 844.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_bd3qo")
+text = "¡Bienvenidos a Escarabuja!"
 label_settings = SubResource("LabelSettings_f7adn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Inicio/ColorRect2"]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 104.0
-offset_right = 1043.0
-offset_bottom = 255.0
-text = "¡Esquiva todos los obstáculos!
-¡Cuanto más tiempo sobrevivas más puntos ganas!
-¡Ojo con el medidor de oxigeno, si cae a cero perderás! Recoge burbujas para rellenar el oxígeno
-¡CUIDADO! La espatula es un golpe mortal 
-¡Recoge la burbuja dorada para obtener inmunidad!
-¿No te da tiempo a esquivar? Corre más rapido usando el sprint, pero correr cansará el doble
+offset_left = 172.0
+offset_top = 89.0
+offset_right = 510.0
+offset_bottom = 122.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Esquiva todos los obstáculos!
+"
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 106.0
+offset_right = 1111.0
+offset_bottom = 139.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Cuanto más tiempo sobrevivas más puntos ganas!"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 137.0
+offset_right = 724.0
+offset_bottom = 191.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Ojo con el medidor de oxígeno, si cae a cero perderás!"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 170.0
+offset_right = 1124.0
+offset_bottom = 207.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡CUIDADO! ¡La espátula es un golpe mortal!"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 208.0
+offset_right = 681.0
+offset_bottom = 287.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Recoge la burbuja dorada para obtener inmunidad!
+"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 241.0
+offset_right = 1107.0
+offset_bottom = 320.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¿No te da tiempo a esquivar? Corre más rápido usando el sprint, pero correr cansará el doble
+"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 491.0
+offset_right = 446.0
+offset_bottom = 570.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 40
+text = "MOVIMIENTO
+"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 481.0
+offset_right = 855.0
+offset_bottom = 560.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 40
+text = "SPRINT
+"
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 435.0
+offset_right = 885.0
+offset_bottom = 470.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fafqh")
+theme_override_font_sizes/normal_font_size = 30
+text = "ESPACIO
 "
 
 [node name="Label2" type="Label" parent="Inicio/ColorRect2"]
 layout_mode = 0
-offset_left = 499.0
-offset_top = 264.0
-offset_right = 885.0
-offset_bottom = 306.0
+offset_left = 488.0
+offset_top = 315.0
+offset_right = 687.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("3_bd3qo")
 text = "Controles"
 label_settings = SubResource("LabelSettings_f7adn")
+
+[node name="tile a" type="Sprite2D" parent="Inicio/ColorRect2"]
+position = Vector2(302, 450)
+scale = Vector2(3, 3)
+texture = ExtResource("5_0fa1l")
+
+[node name="tile s" type="Sprite2D" parent="Inicio/ColorRect2"]
+position = Vector2(362, 450)
+scale = Vector2(3, 3)
+texture = ExtResource("6_gshce")
+
+[node name="tile d" type="Sprite2D" parent="Inicio/ColorRect2"]
+position = Vector2(425, 450)
+scale = Vector2(3, 3)
+texture = ExtResource("7_6fpnk")
+
+[node name="tile w" type="Sprite2D" parent="Inicio/ColorRect2"]
+position = Vector2(362, 395)
+scale = Vector2(3, 3)
+texture = ExtResource("8_mnmyv")
+
+[node name="Tile0235" type="Sprite2D" parent="Inicio/ColorRect2"]
+position = Vector2(745, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("9_fik3k")
+
+[node name="Tile0236" type="Sprite2D" parent="Inicio/ColorRect2"]
+position = Vector2(809, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("10_60j6h")
+
+[node name="Tile0237" type="Sprite2D" parent="Inicio/ColorRect2"]
+position = Vector2(873, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("11_0t5ag")
 
 [node name="Button" type="TextureButton" parent="."]
 z_index = 7
 texture_filter = 1
-offset_left = 446.0
-offset_top = 430.0
-offset_right = 734.0
-offset_bottom = 552.0
+offset_left = 788.0
+offset_top = 525.0
+offset_right = 1076.0
+offset_bottom = 647.0
 texture_normal = ExtResource("2_w0ypc")
 stretch_mode = 0
 
