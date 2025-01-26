@@ -1,5 +1,7 @@
 extends Node
 
+var puntos 
+
 var Scores = {
 	"nombre1" : "", "puntos1" : 0,
 	"nombre2" : "", "puntos2" : 0,
@@ -11,3 +13,10 @@ var Scores = {
 	"nombre8" : "", "puntos8" : 0,
 	"nombre9" : "", "puntos9" : 0
 }
+
+var dictTemp : Dictionary
+
+func _setPuntos(points):
+	puntos = points
+func _getPuntos():
+	return puntos

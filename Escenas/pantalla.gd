@@ -23,7 +23,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$TextureRect.size.y += 80 * delta
-	print($bichote/burbuja/CollisionShape2D.disabled)
+	#print($bichote/burbuja/CollisionShape2D.disabled)
 	
 func _on_final_col_body_entered(body: Node2D) -> void:
 	if body.name == "bichote":
@@ -40,6 +40,7 @@ func _on_cronometro_timeout() -> void:
 
 func HAS_MUERTO():
 	cronometro.stop()
+	Scoreboard._setPuntos(segundos)
 	texture_progress_bar.value = 0
 	bichote.velocity.x =0
 	bichote.velocity.y =0
@@ -52,6 +53,7 @@ func HAS_MUERTO():
 	transicion_black.position.x = bichote.position.x
 	transicion_black.position.y = bichote.position.y
 	$ColorRect/AnimationPlayer.play("fade")
+	
 	
 func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
