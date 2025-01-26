@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx2cd02cow81x"]
+
+[ext_resource type="PackedScene" uid="uid://bioqi1tyrmj1a" path="res://Escenas/inicio.tscn" id="1_bxso6"]
+[ext_resource type="Script" path="res://Escenas/instrucciones.gd" id="1_lvtcr"]
+[ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="2_w0ypc"]
+[ext_resource type="AudioStream" uid="uid://g4hrr7ocyd3t" path="res://SOUNDS ESCARABUJA/smack-sound-192020.mp3" id="4_bw5jk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f7adn"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wkdr0"]
+line_spacing = 5.0
+font_size = 27
+outline_size = 5
+outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
+
+[node name="Instrucciones" type="Node2D"]
+script = ExtResource("1_lvtcr")
+
+[node name="Inicio" parent="." instance=ExtResource("1_bxso6")]
+position = Vector2(-5, -2)
+
+[node name="ColorRect2" type="ColorRect" parent="Inicio"]
+z_index = 7
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 653.0
+color = Color(0.111197, 0.111197, 0.111197, 0.639216)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 324.0
+offset_right = 1034.0
+offset_bottom = 448.0
+text = "WASD o teclas de dirección para moverte
+
+Barra espaciadora para Sprint"
+
+[node name="Label" type="Label" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 46.0
+offset_right = 775.0
+offset_bottom = 88.0
+text = "¡Bienvenidos A Escarabuja!"
+label_settings = SubResource("LabelSettings_f7adn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 104.0
+offset_right = 1043.0
+offset_bottom = 255.0
+text = "¡Esquiva todos los obstáculos!
+¡Cuanto más tiempo sobrevivas más puntos ganas!
+¡Ojo con el medidor de oxigeno, si cae a cero perderás! Recoge burbujas para rellenar el oxígeno
+¡CUIDADO! La espatula es un golpe mortal 
+¡Recoge la burbuja dorada para obtener inmunidad!
+¿No te da tiempo a esquivar? Corre más rapido usando el sprint, pero correr cansará el doble
+
+"
+
+[node name="Label2" type="Label" parent="Inicio/ColorRect2"]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 264.0
+offset_right = 885.0
+offset_bottom = 306.0
+text = "Controles"
+label_settings = SubResource("LabelSettings_f7adn")
+
+[node name="Button" type="TextureButton" parent="."]
+z_index = 7
+texture_filter = 1
+offset_left = 446.0
+offset_top = 430.0
+offset_right = 734.0
+offset_bottom = 552.0
+texture_normal = ExtResource("2_w0ypc")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 206.0
+offset_bottom = 82.0
+text = "VOLVER
+"
+label_settings = SubResource("LabelSettings_wkdr0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bw5jk")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

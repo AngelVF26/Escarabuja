@@ -359,10 +359,10 @@ texture = ExtResource("7_x0thh")
 [node name="Button" type="TextureButton" parent="."]
 z_index = 6
 texture_filter = 1
-offset_left = 460.0
-offset_top = 408.0
-offset_right = 723.0
-offset_bottom = 530.0
+offset_left = 452.0
+offset_top = 404.0
+offset_right = 740.0
+offset_bottom = 526.0
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
 
@@ -378,4 +378,25 @@ label_settings = SubResource("LabelSettings_ed5v4")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cmy43")
 
+[node name="botonInstrucciones" type="TextureButton" parent="."]
+z_index = 6
+texture_filter = 1
+offset_left = 452.0
+offset_top = 504.0
+offset_right = 745.0
+offset_bottom = 626.0
+texture_normal = ExtResource("3_0qp4j")
+stretch_mode = 0
+
+[node name="Instrucciones" type="Label" parent="botonInstrucciones"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 40.0
+offset_right = 310.0
+offset_bottom = 82.0
+text = "INSTRUCCIONES"
+label_settings = SubResource("LabelSettings_ed5v4")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="botonInstrucciones" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="botonInstrucciones" to="." method="_on_boton_instrucciones_pressed"]

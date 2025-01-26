@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cy5tmfyxlb5ud"]
+[gd_scene load_steps=21 format=3 uid="uid://cy5tmfyxlb5ud"]
 
 [ext_resource type="PackedScene" uid="uid://dk5ukewnrg21m" path="res://Escenas/burbuja.tscn" id="1_0vsu3"]
 [ext_resource type="Script" path="res://Escenas/pantalla.gd" id="1_6khms"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3pf7wj8m276" path="res://Escenas/bichote.tscn" id="2_ro8sn"]
 [ext_resource type="Texture2D" uid="uid://bo8qlgpqggolv" path="res://assets/background.png" id="2_s3t2a"]
 [ext_resource type="PackedScene" uid="uid://bggmqqxxbnud" path="res://spawner.tscn" id="5_302w5"]
-[ext_resource type="PackedScene" uid="uid://do2mp7ncag5bv" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
+[ext_resource type="PackedScene" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
 [ext_resource type="PackedScene" uid="uid://bvbmg8fmit331" path="res://Escenas/burbuja_pickup.tscn" id="7_84bua"]
 [ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_vhn0k"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="7_x6iwt"]
