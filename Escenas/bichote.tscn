@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://3pf7wj8m276"]
+[gd_scene load_steps=11 format=3 uid="uid://3pf7wj8m276"]
 
 [ext_resource type="Script" path="res://Escenas/bichote.gd" id="1_i3vpt"]
 [ext_resource type="Texture2D" uid="uid://cieshuo4pecqy" path="res://assets/sprite escarabajo.png" id="2_aybd6"]
+[ext_resource type="Texture2D" uid="uid://bgwtnj6rggkgg" path="res://assets/escarabajo supersayayin.png" id="2_eu860"]
 [ext_resource type="Texture2D" uid="uid://drw47wer6kmir" path="res://assets/sprite escarabajo1.png" id="2_fxwlf"]
 [ext_resource type="Texture2D" uid="uid://104r5ot4niny" path="res://assets/sprite escarabajo2.png" id="3_0jt5l"]
 [ext_resource type="Texture2D" uid="uid://bkmtlcdtt6js0" path="res://assets/sprite escarabajo3.png" id="4_hfhqk"]
@@ -10,6 +11,14 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x84nh"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eu860")
+}],
+"loop": false,
+"name": &"bichodorado",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_fxwlf")
@@ -49,6 +58,7 @@ script = ExtResource("1_i3vpt")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_x84nh")
+animation = &"bichodorado"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

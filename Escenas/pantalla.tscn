@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy5tmfyxlb5ud"]
+[gd_scene load_steps=14 format=3 uid="uid://cy5tmfyxlb5ud"]
 
 [ext_resource type="PackedScene" uid="uid://dk5ukewnrg21m" path="res://Escenas/burbuja.tscn" id="1_0vsu3"]
 [ext_resource type="Script" path="res://Escenas/pantalla.gd" id="1_6khms"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bo8qlgpqggolv" path="res://assets/background.png" id="2_s3t2a"]
 [ext_resource type="PackedScene" uid="uid://bggmqqxxbnud" path="res://spawner.tscn" id="5_302w5"]
 [ext_resource type="PackedScene" uid="uid://do2mp7ncag5bv" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
+[ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_vhn0k"]
+[ext_resource type="Texture2D" uid="uid://deyqojvpbwn58" path="res://assets/relleno burbuja dorada2.png" id="8_ops8e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bvj52"]
 
@@ -125,6 +127,30 @@ offset_right = 107.667
 offset_bottom = 97.8333
 scale = Vector2(0.5, 0.5)
 
+[node name="Medidor Aire2" parent="GUI" instance=ExtResource("5_metew")]
+visible = false
+position = Vector2(407, -56)
+scale = Vector2(6, 6)
+
+[node name="TextureProgressBar" parent="GUI/Medidor Aire2" index="0"]
+offset_left = 80.6667
+offset_top = 67.8333
+offset_right = 130.667
+offset_bottom = 117.833
+scale = Vector2(0.5, 0.5)
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource("7_vhn0k")
+texture_progress = ExtResource("8_ops8e")
+
+[node name="Label" parent="GUI/Medidor Aire2" index="1"]
+offset_left = 87.6667
+offset_top = 74.8333
+offset_right = 107.667
+offset_bottom = 97.8333
+scale = Vector2(0.5, 0.5)
+text = "10"
+
 [node name="TimeAire" type="Timer" parent="."]
 autostart = true
 
@@ -132,9 +158,11 @@ autostart = true
 [connection signal="timeout" from="Cronometro" to="." method="_on_cronometro_timeout"]
 [connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
 [connection signal="value_changed" from="GUI/Medidor Aire/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="value_changed" from="GUI/Medidor Aire2/TextureProgressBar" to="." method="_on_texture_progress_dorada_value_changed"]
 [connection signal="timeout" from="TimeAire" to="." method="_on_time_aire_timeout"]
 
 [editable path="Spawner"]
 [editable path="bichote"]
 [editable path="bichote/burbuja"]
 [editable path="GUI/Medidor Aire"]
+[editable path="GUI/Medidor Aire2"]

@@ -8,6 +8,7 @@ var valorpresente : float = 0
 @onready var cronometro: Timer = $Cronometro
 @onready var label: Label = $GUI/Label
 @onready var texture_progress_bar: TextureProgressBar = $"GUI/Medidor Aire/TextureProgressBar"
+@onready var texture_progress_dorada: TextureProgressBar = $"GUI/Medidor Aire2/TextureProgressBar"
 @onready var burbuja: Area2D = $bichote/burbuja
 var escala_original: Vector2
 var valor_pasado : int = 30
@@ -48,6 +49,18 @@ func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
 	texture_progress_bar.value -= 1
 	valorpresente = texture_progress_bar.value
+	
+	
+	if $bichote/burbuja.tocodorada == true:
+		print("patata")
+		$bichote/Sprite2D.play("bichodorado")
+		$"GUI/Medidor Aire2".call_deferred("set_visible",true)
+		texture_progress_dorada.value -=1
+	elif $bichote/burbuja.tocodorada == false:
+		print("falsisimo")
+		$"GUI/Medidor Aire2".call_deferred("set_visible",false)
+		
+
 	#if valorpasado > valorpresente:
 		#$bichote/burbuja.scale -= Vector2(0.025,0.025)
 	#elif valorpasado < valorpresente:
@@ -58,15 +71,21 @@ func _on_time_aire_timeout() -> void:
 
 
 func _on_texture_progress_bar_value_changed(value: float) -> void:
-	print("valor: " + str(value))
 	valor_pasado = valor_actual
 	valor_actual = value
-	print("actual: " + str(valor_actual))
-	print("pasado: " + str(valor_pasado))
 	if value<=0:
 		HAS_MUERTO()
 	elif value > valor_pasado:
 		$bichote/burbuja.scale += Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
 	elif value < valor_pasado:
 		$bichote/burbuja.scale -= Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
+		
+
+
+func _on_texture_progress_dorada_value_changed(value: float) -> void:
+	if value<=0:
+		$bichote/burbuja.tocodorada = false
+		texture_progress_dorada.value =10
+		$"GUI/Medidor Aire2".call_deferred("set_visible",false)
+		$bichote/Sprite2D.play("default")
 		

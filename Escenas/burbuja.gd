@@ -2,10 +2,10 @@ extends Area2D
 @onready var time_aire: Timer = $"../../TimeAire"
 @onready var texture_progress_bar: TextureProgressBar = $"../../GUI/Medidor Aire/TextureProgressBar"
 @onready var nivel: Area2D = $"../.."
-
+var tocodorada : bool
 @onready var bichote: CharacterBody2D = $bichote
 var nombre: String = "Burbuja"
-var burbuja_explota: bool = false
+var burbuja_explota: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -29,6 +29,9 @@ func _on_body_entered(body: Node2D) -> void:
 		texture_progress_bar.value +=-5
 		pass
 	if body.nombre == "Burbuja":
+		if body.dorada == true:
+			print("dorada oh oh")
+			tocodorada = true
 		print("burbujita oh oh")
 		texture_progress_bar.value +=10
 	if body.nombre == "Matamoscas":
