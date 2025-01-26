@@ -63,6 +63,7 @@ texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
 
 [node name="Guardar" type="Label" parent="Submit"]
+layout_mode = 0
 offset_left = 73.0
 offset_top = 37.0
 offset_right = 154.0
@@ -72,12 +73,12 @@ label_settings = SubResource("LabelSettings_odi16")
 
 [node name="puntuacionesFinales" type="Area2D" parent="."]
 
-[node name="puntazos" type="Label" parent="puntuacionesFinales"]
+[node name="nombres" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_l13yl")
 offset_right = 238.0
 offset_bottom = 63.0
-text = "PUNTAZOS"
+text = "Nombres"
 label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="Segundos" type="Label" parent="puntuacionesFinales"]
@@ -90,14 +91,14 @@ offset_bottom = 68.0
 text = "SEGUNDOS"
 label_settings = SubResource("LabelSettings_5fefk")
 
-[node name="totalPuntos" type="Label" parent="puntuacionesFinales"]
+[node name="listaNombres" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_l13yl")
 offset_left = 4.0
 offset_top = 71.0
 offset_right = 427.0
 offset_bottom = 134.0
-text = "aqui van los puntos
+text = "aqui van los nombres
 "
 label_settings = SubResource("LabelSettings_5fefk")
 
@@ -134,6 +135,7 @@ stretch_mode = 0
 [node name="volver" type="Label" parent="puntuacionesFinales/Rejugar"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_l13yl")
+layout_mode = 0
 offset_left = 45.0
 offset_top = 54.0
 offset_right = 433.0

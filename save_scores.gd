@@ -1,6 +1,6 @@
 extends Node
 
-var file = "C://Users//Brayan//savegame.save"
+var file = "user://savegame.save"
 var blSaveLoad = null
 
 var default_dict = {
