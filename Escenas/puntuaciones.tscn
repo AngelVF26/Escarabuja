@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bigyguom7ggbr"]
+[gd_scene load_steps=13 format=3 uid="uid://bigyguom7ggbr"]
 
 [ext_resource type="Script" path="res://Escenas/puntuaciones.gd" id="1_go8q5"]
 [ext_resource type="Texture2D" uid="uid://ckcy0la1pewyu" path="res://assets/banner.png" id="2_pigrv"]
@@ -36,6 +36,22 @@ default_font_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_odi16"]
 font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_aqqn2"]
+font_size = 27
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+outline_color = Color(1, 0.0980392, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4n27"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uy3i2"]
+font_size = 19
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Puntuaciones" type="Node2D"]
 script = ExtResource("1_go8q5")
@@ -157,6 +173,130 @@ offset_bottom = 117.0
 text = "Volver al menú"
 label_settings = SubResource("LabelSettings_5fefk")
 
+[node name="Creditos" type="TextureButton" parent="puntuacionesFinales"]
+texture_filter = 1
+offset_left = 781.0
+offset_top = 394.0
+offset_right = 1067.0
+offset_bottom = 550.0
+texture_normal = ExtResource("4_hkodh")
+stretch_mode = 0
+
+[node name="creditos" type="Label" parent="puntuacionesFinales/Creditos"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l13yl")
+layout_mode = 0
+offset_left = 45.0
+offset_top = 54.0
+offset_right = 433.0
+offset_bottom = 117.0
+text = "Ver Créditos
+"
+label_settings = SubResource("LabelSettings_5fefk")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 7
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 653.0
+color = Color(0.111197, 0.111197, 0.111197, 0.639216)
+
+[node name="Label4" type="Label" parent="ColorRect2"]
+offset_left = 474.0
+offset_top = 244.0
+offset_right = 860.0
+offset_bottom = 289.0
+text = "Diseño y Arte"
+label_settings = SubResource("LabelSettings_aqqn2")
+
+[node name="Label2" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 58.0
+offset_right = 883.0
+offset_bottom = 100.0
+text = "Créditos"
+label_settings = SubResource("LabelSettings_o4n27")
+
+[node name="Label3" type="Label" parent="ColorRect2"]
+offset_left = 479.0
+offset_top = 116.0
+offset_right = 865.0
+offset_bottom = 161.0
+text = "Música y SFX"
+label_settings = SubResource("LabelSettings_aqqn2")
+
+[node name="Label5" type="Label" parent="ColorRect2"]
+offset_left = 476.0
+offset_top = 350.0
+offset_right = 862.0
+offset_bottom = 395.0
+text = "Programación"
+label_settings = SubResource("LabelSettings_aqqn2")
+
+[node name="Label7" type="Label" parent="ColorRect2"]
+offset_left = 506.0
+offset_top = 160.0
+offset_right = 892.0
+offset_bottom = 205.0
+text = "MistiCristiX"
+label_settings = SubResource("LabelSettings_uy3i2")
+
+[node name="Label9" type="Label" parent="ColorRect2"]
+offset_left = 533.0
+offset_top = 201.0
+offset_right = 919.0
+offset_bottom = 246.0
+text = "Nory"
+label_settings = SubResource("LabelSettings_uy3i2")
+
+[node name="Label10" type="Label" parent="ColorRect2"]
+offset_left = 471.0
+offset_top = 443.0
+offset_right = 857.0
+offset_bottom = 488.0
+text = "Ángel Verges Ferrer"
+label_settings = SubResource("LabelSettings_uy3i2")
+
+[node name="Label11" type="Label" parent="ColorRect2"]
+offset_left = 469.0
+offset_top = 291.0
+offset_right = 855.0
+offset_bottom = 336.0
+text = "Pat Fuentes Canabal"
+label_settings = SubResource("LabelSettings_uy3i2")
+
+[node name="Label12" type="Label" parent="ColorRect2"]
+offset_left = 454.0
+offset_top = 399.0
+offset_right = 840.0
+offset_bottom = 444.0
+text = "Javier Fernandez Rivero"
+label_settings = SubResource("LabelSettings_uy3i2")
+
+[node name="VolverCredito" type="TextureButton" parent="ColorRect2"]
+texture_filter = 1
+offset_left = 472.0
+offset_top = 481.0
+offset_right = 650.0
+offset_bottom = 637.0
+texture_normal = ExtResource("4_hkodh")
+stretch_mode = 0
+
+[node name="creditos" type="Label" parent="ColorRect2/VolverCredito"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_l13yl")
+layout_mode = 0
+offset_left = 45.0
+offset_top = 54.0
+offset_right = 433.0
+offset_bottom = 117.0
+text = "Volver
+"
+label_settings = SubResource("LabelSettings_5fefk")
+
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
-[connection signal="pressed" from="puntuacionesFinales/Rejugar" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="puntuacionesFinales/Rejugar" to="." method="_on_rejugar_pressed"]
+[connection signal="pressed" from="puntuacionesFinales/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="ColorRect2/VolverCredito" to="." method="_on_volver_credito_pressed"]

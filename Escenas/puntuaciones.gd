@@ -128,5 +128,16 @@ func load_game():
 	return score_data
 	
 func _on_rejugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Escenas/inicio.tscn")
+	$ColorRect2.set_deferred("visible",true)
+	pass # Replace with function body.
+
+
+
+
+func _on_volver_credito_pressed() -> void:
+	$ColorRect2.set_deferred("visible",false)
+	pass # Replace with function body.
+
+
+func _on_creditos_pressed() -> void:
 	pass # Replace with function body.
