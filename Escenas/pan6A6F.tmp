@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy5tmfyxlb5ud"]
+[gd_scene load_steps=13 format=3 uid="uid://cy5tmfyxlb5ud"]
 
 [ext_resource type="PackedScene" uid="uid://dk5ukewnrg21m" path="res://Escenas/burbuja.tscn" id="1_0vsu3"]
 [ext_resource type="Script" path="res://Escenas/pantalla.gd" id="1_6khms"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bggmqqxxbnud" path="res://spawner.tscn" id="5_302w5"]
 [ext_resource type="PackedScene" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
 [ext_resource type="PackedScene" uid="uid://bvbmg8fmit331" path="res://Escenas/burbuja_pickup.tscn" id="7_84bua"]
-[ext_resource type="PackedScene" uid="uid://b54yea57oiwhy" path="res://Escenas/Transition.tscn" id="8_8wspb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bvj52"]
 
@@ -23,8 +22,6 @@ distance = -598.932
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd3bl"]
 size = Vector2(1139, 20)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bhtgd"]
 
 [node name="Nivel" type="Area2D"]
 position = Vector2(537, 327)
@@ -135,11 +132,6 @@ autostart = true
 
 [node name="burbuja_pickup" parent="." instance=ExtResource("7_84bua")]
 position = Vector2(193, 26)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_bhtgd")
-
-[node name="transicionFade" parent="." instance=ExtResource("8_8wspb")]
 
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]
 [connection signal="timeout" from="Cronometro" to="." method="_on_cronometro_timeout"]

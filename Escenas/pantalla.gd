@@ -1,5 +1,6 @@
 extends Area2D
 @onready var burbujaSprite: AnimatedSprite2D = $bichote/burbuja/AnimatedSprite2D
+@onready var transicion_fade: ColorRect = $transicionFade
 
 @onready var bichote: CharacterBody2D = $bichote
 var segundos: float = 0
@@ -19,7 +20,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$TextureRect.size.y += 0.95
+	$TextureRect.size.y += 80 * delta
 
 func _on_final_col_body_entered(body: Node2D) -> void:
 	if body.name == "bichote":
@@ -44,6 +45,8 @@ func HAS_MUERTO():
 	$bichote/burbuja/BurbujaBorde.visible = false
 	burbujaSprite.visible = true
 	burbujaSprite.play("Explosion")
+	transicion_fade.play("fade")
+	
 func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
 	texture_progress_bar.value -= 1
