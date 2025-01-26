@@ -47,10 +47,12 @@ collision_mask = 2
 script = ExtResource("1_7ocxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_fr803")
 
-[node name="Burbuja" type="Sprite2D" parent="." groups=["Spawneable"]]
+[node name="Burbuja" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.443137)
 texture_filter = 1
 texture = ExtResource("2_4i76x")
 
@@ -59,6 +61,7 @@ texture_filter = 1
 texture = ExtResource("3_eeqvb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_6ofyf")
