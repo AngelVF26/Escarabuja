@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bigyguom7ggbr"]
+[gd_scene load_steps=17 format=3 uid="uid://bigyguom7ggbr"]
 
 [ext_resource type="Script" path="res://Escenas/puntuaciones.gd" id="1_go8q5"]
 [ext_resource type="Texture2D" uid="uid://ckcy0la1pewyu" path="res://assets/banner.png" id="2_pigrv"]
@@ -28,7 +28,7 @@ cache/0/16/0/scale = 1.0
 [sub_resource type="LabelSettings" id="LabelSettings_5fefk"]
 font = SubResource("FontFile_4jv3h")
 font_size = 27
-font_color = Color(0.0313726, 1, 0.211765, 1)
+font_color = Color(0.0156863, 0.227451, 0.627451, 1)
 outline_size = 4
 outline_color = Color(0, 0.568627, 0.533333, 0.32549)
 
@@ -40,9 +40,9 @@ font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqqn2"]
 font_size = 27
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.31321, 0.522067, 1, 1)
 outline_size = 3
-outline_color = Color(1, 0.0980392, 1, 1)
+outline_color = Color(1, 0.804486, 0.987494, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o4n27"]
 font_size = 30
@@ -53,6 +53,67 @@ shadow_color = Color(0, 0, 0, 1)
 font_size = 19
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_x4nib"]
+resource_name = "flow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("puntuacionesFinales/Rejugar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.588908, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(36, 393), Vector2(36, 370), Vector2(36, 393)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("puntuacionesFinales/Creditos:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.315791, 0.836421, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(781, 394), Vector2(781, 404), Vector2(781, 388), Vector2(781, 394)]
+}
+
+[sub_resource type="Animation" id="Animation_8cw13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("puntuacionesFinales/Rejugar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(36, 393)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("puntuacionesFinales/Creditos:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(781, 394)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_22nhi"]
+_data = {
+"RESET": SubResource("Animation_8cw13"),
+"flow": SubResource("Animation_x4nib")
+}
 
 [node name="Puntuaciones" type="Node2D"]
 script = ExtResource("1_go8q5")
@@ -299,6 +360,12 @@ label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qkgnd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_22nhi")
+}
+autoplay = "flow"
 
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="puntuacionesFinales/Rejugar" to="." method="_on_rejugar_pressed"]
