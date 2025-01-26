@@ -54,7 +54,11 @@ func HAS_MUERTO():
 	
 func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
-	texture_progress_bar.value -= 1
+	if Input.is_action_pressed("sprint"):
+		texture_progress_bar.value -= 2
+	else:
+		texture_progress_bar.value -= 1
+		
 	valorpresente = texture_progress_bar.value
 	
 	
@@ -64,7 +68,7 @@ func _on_time_aire_timeout() -> void:
 		print("patata")
 		$bichote/Sprite2D.play("bichodorado")
 		$"GUI/Medidor Aire2".call_deferred("set_visible",true)
-		
+		$AudioTransformacion.play()
 		
 		texture_progress_dorada.value -=1
 	elif $bichote/burbuja.tocodorada == false:

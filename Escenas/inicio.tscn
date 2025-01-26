@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bioqi1tyrmj1a"]
+[gd_scene load_steps=13 format=3 uid="uid://bioqi1tyrmj1a"]
 
 [ext_resource type="Script" path="res://Escenas/inicio.gd" id="1_cqrg6"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="3_0qp4j"]
@@ -7,12 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="6_btpb2"]
 [ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_8cw3f"]
 [ext_resource type="Texture2D" uid="uid://bkbcnbrgplq6d" path="res://assets/logo.png" id="7_x0thh"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ed5v4"]
-line_spacing = 5.0
-font_size = 27
-outline_size = 5
-outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
+[ext_resource type="AudioStream" uid="uid://g4hrr7ocyd3t" path="res://SOUNDS ESCARABUJA/smack-sound-192020.mp3" id="8_cmy43"]
 
 [sub_resource type="Animation" id="Animation_i0dpa"]
 resource_name = "flotarArriba"
@@ -245,6 +240,12 @@ _data = {
 "flotarArriba": SubResource("Animation_i0dpa")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_ed5v4"]
+line_spacing = 5.0
+font_size = 27
+outline_size = 5
+outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
+
 [node name="Inicio" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_cqrg6")
 
@@ -257,25 +258,6 @@ offset_top = 1.0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("3_djfn5")
-
-[node name="Button" type="TextureButton" parent="."]
-z_index = 6
-texture_filter = 1
-offset_left = 460.0
-offset_top = 408.0
-offset_right = 723.0
-offset_bottom = 530.0
-texture_normal = ExtResource("3_0qp4j")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Button"]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 40.0
-offset_right = 206.0
-offset_bottom = 82.0
-text = "JUGAR"
-label_settings = SubResource("LabelSettings_ed5v4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 4.0
@@ -373,5 +355,27 @@ texture_filter = 1
 position = Vector2(594, 297)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
+
+[node name="Button" type="TextureButton" parent="."]
+z_index = 6
+texture_filter = 1
+offset_left = 460.0
+offset_top = 408.0
+offset_right = 723.0
+offset_bottom = 530.0
+texture_normal = ExtResource("3_0qp4j")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 206.0
+offset_bottom = 82.0
+text = "JUGAR"
+label_settings = SubResource("LabelSettings_ed5v4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_cmy43")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

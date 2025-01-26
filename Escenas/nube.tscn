@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmq4a8hcb8ebi"]
+[gd_scene load_steps=11 format=3 uid="uid://cmq4a8hcb8ebi"]
 
 [ext_resource type="Script" path="res://Escenas/nube.gd" id="1_32tg8"]
 [ext_resource type="Texture2D" uid="uid://d32sw835tljp" path="res://assets/nube venenosa1.png" id="2_0wf6g"]
 [ext_resource type="Texture2D" uid="uid://bd30dxbket0pd" path="res://assets/nube venenosa2.png" id="3_pcg8y"]
 [ext_resource type="Texture2D" uid="uid://d2auoqqgak6p1" path="res://assets/nube venenosa3.png" id="4_a7v04"]
+[ext_resource type="AudioStream" uid="uid://ck648y1p0sk63" path="res://SOUNDS ESCARABUJA/gas.mp3" id="5_vk8hm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1pjj0"]
 blend_mode = 1
@@ -72,3 +73,6 @@ collision_mask = 2
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaNube"]
 position = Vector2(-28, -115.469)
 shape = SubResource("RectangleShape2D_hqkjo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vk8hm")

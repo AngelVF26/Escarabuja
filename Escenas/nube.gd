@@ -4,7 +4,10 @@ var nombre: String = "Nube"
 # Called when the node enters the scene tree for the first time.
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
+func playSound():
+	audio_stream_player.play()
 
 func _physics_process(delta: float) -> void:
 

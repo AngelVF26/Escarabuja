@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch2tl1bvoj3h5"]
+[gd_scene load_steps=11 format=3 uid="uid://cwg4nr70fpq7v"]
 
 [ext_resource type="Script" path="res://Escenas/matamoscas.gd" id="1_emgb8"]
 [ext_resource type="Texture2D" uid="uid://b2qaqql6codaa" path="res://assets/matabichos3.png" id="2_rej5c"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b27w5fpxykkbs" path="res://assets/matabichos1.png" id="4_qjhdf"]
 [ext_resource type="Texture2D" uid="uid://v6f1mgs10vx4" path="res://assets/matabichos4.png" id="5_ef2y4"]
 [ext_resource type="Texture2D" uid="uid://dj4d5jm1oxojv" path="res://assets/matabichos5.png" id="6_2g7o5"]
+[ext_resource type="AudioStream" uid="uid://g4hrr7ocyd3t" path="res://SOUNDS ESCARABUJA/smack-sound-192020.mp3" id="7_0ogcn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wjr1"]
 size = Vector2(71, 72)
@@ -59,3 +60,6 @@ disabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_078gm")
 autoplay = "default"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0ogcn")

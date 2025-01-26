@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -400.0
 @onready var animated_moscas: AnimatedSprite2D = $AnimatedMoscas
 @onready var area_2d: Area2D = $Area2D
 
+func playSound():
+	$AudioStreamPlayer.play()
 
 func _physics_process(delta: float) -> void:
 

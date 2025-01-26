@@ -59,5 +59,6 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_button_pressed() -> void:
+	$AudioStreamPlayer.play()
 	get_tree().change_scene_to_file("res://Escenas/pantalla.tscn")
 	pass # Replace with function body.

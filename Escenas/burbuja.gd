@@ -6,13 +6,14 @@ var tocodorada : bool
 @onready var bichote: CharacterBody2D = $bichote
 var nombre: String = "Burbuja"
 var burbuja_explota: bool = true
+@onready var audio_stream_player: AudioStreamPlayer = $"../../AudioStreamPlayer"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#$Burbuja.texture = load("res://assets/relleno burbuja dorada2.png")
 	#$BurbujaBorde.texture = load("res://assets/burbuja dorada borde2.png")
 	#$CollisionShape2D.disabled = true
 	pass # Replace with function body.
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.nombre == "Nube":
 		print("nubecita")
 		texture_progress_bar.value +=-5
+		body.playSound()
 		pass
 	if body.nombre == "Burbuja":
 		if body.dorada == true:
@@ -37,13 +39,15 @@ func _on_body_entered(body: Node2D) -> void:
 			$CollisionShape2D.disabled = true
 			$Burbuja.texture = load("res://assets/relleno burbuja dorada2.png")
 			$BurbujaBorde.texture = load("res://assets/burbuja dorada borde2.png")
-			
-			
 
+			
 		print("burbujita oh oh")
 		texture_progress_bar.value +=10
+		body.playSound()
+		
 	if body.nombre == "Matamoscas":
 		print("MUERTE Y DESTRUCCION")
+		body.playSound()
 		nivel.HAS_MUERTO()
 
 func _on_body_exited(body: Node2D) -> void:

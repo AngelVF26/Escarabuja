@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var nombre: String = "Burbuja"
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -31,7 +32,8 @@ func _ready() -> void:
 func _on_areaburbuja_area_entered(area: Area2D) -> void:
 	$Sprite2D.set_deferred("visible",false)
 	
-
+func playSound():
+	audio_stream_player.play()
 
 func _on_areaburbuja_body_entered(body: Node2D) -> void:
 	#print("airee")

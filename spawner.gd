@@ -46,7 +46,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_timer_spawns_timeout() -> void:
-	print("spawn")
 	if spawneados.size() > 4 && !spawneados.has(Burbuja) :
 		spawneados.append(Burbuja)
 	else:
