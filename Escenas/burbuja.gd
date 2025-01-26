@@ -8,14 +8,16 @@ var nombre: String = "Burbuja"
 var burbuja_explota: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	#$Burbuja.texture = load("res://assets/relleno burbuja dorada2.png")
+	#$BurbujaBorde.texture = load("res://assets/burbuja dorada borde2.png")
+	#$CollisionShape2D.disabled = true
 	pass # Replace with function body.
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	#print($CollisionShape2D.disabled)
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -32,6 +34,12 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.dorada == true:
 			print("dorada oh oh")
 			tocodorada = true
+			$CollisionShape2D.disabled = true
+			$Burbuja.texture = load("res://assets/relleno burbuja dorada2.png")
+			$BurbujaBorde.texture = load("res://assets/burbuja dorada borde2.png")
+			
+			
+
 		print("burbujita oh oh")
 		texture_progress_bar.value +=10
 	if body.nombre == "Matamoscas":
