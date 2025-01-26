@@ -110,4 +110,14 @@ offset_bottom = 282.0
 text = "MARCADOR"
 label_settings = SubResource("LabelSettings_5fefk")
 
+[node name="Rejugar" type="Button" parent="puntuacionesFinales"]
+offset_left = 45.0
+offset_top = 480.0
+offset_right = 277.0
+offset_bottom = 575.0
+text = "Volver al menú"
+icon = ExtResource("4_fjebu")
+
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="puntuacionesFinales/Rejugar" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="puntuacionesFinales/Rejugar" to="." method="_on_rejugar_pressed"]

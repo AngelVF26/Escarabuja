@@ -25,3 +25,8 @@ func _on_submit_pressed() -> void:
 		$"Añade tu nombre".visible = false
 		guardar_partida()
 	pass # Replace with function body.
+
+
+func _on_rejugar_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/inicio.tscn")
+	pass # Replace with function body.
