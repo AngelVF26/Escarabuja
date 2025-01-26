@@ -1,42 +1,249 @@
-[gd_scene load_steps=7 format=3 uid="uid://bioqi1tyrmj1a"]
+[gd_scene load_steps=12 format=3 uid="uid://bioqi1tyrmj1a"]
 
 [ext_resource type="Script" path="res://Escenas/inicio.gd" id="1_cqrg6"]
-[ext_resource type="Script" path="res://Escenas/button.gd" id="1_xaahv"]
-[ext_resource type="Texture2D" uid="uid://ct0103etl76d" path="res://icon.svg" id="2_ql6s7"]
+[ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="3_0qp4j"]
 [ext_resource type="Texture2D" uid="uid://cu83o0mqk31cr" path="res://assets/burbuja.png" id="3_djfn5"]
+[ext_resource type="Texture2D" uid="uid://dmajyfckuowlt" path="res://assets/burbuja borde y detalles.png" id="5_y7hqj"]
+[ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="6_btpb2"]
+[ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_8cw3f"]
+[ext_resource type="Texture2D" uid="uid://bkbcnbrgplq6d" path="res://assets/logo.png" id="7_x0thh"]
 
-[sub_resource type="FontFile" id="FontFile_r00wm"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/78/0/ascent = 0.0
-cache/0/78/0/descent = 0.0
-cache/0/78/0/underline_position = 0.0
-cache/0/78/0/underline_thickness = 0.0
-cache/0/78/0/scale = 1.0
-cache/0/65/0/ascent = 0.0
-cache/0/65/0/descent = 0.0
-cache/0/65/0/underline_position = 0.0
-cache/0/65/0/underline_thickness = 0.0
-cache/0/65/0/scale = 1.0
-cache/0/49/0/ascent = 0.0
-cache/0/49/0/descent = 0.0
-cache/0/49/0/underline_position = 0.0
-cache/0/49/0/underline_thickness = 0.0
-cache/0/49/0/scale = 1.0
-cache/0/36/0/ascent = 0.0
-cache/0/36/0/descent = 0.0
-cache/0/36/0/underline_position = 0.0
-cache/0/36/0/underline_thickness = 0.0
-cache/0/36/0/scale = 1.0
+[sub_resource type="LabelSettings" id="LabelSettings_ed5v4"]
+line_spacing = 5.0
+font_size = 27
+outline_size = 5
+outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_p4u2o"]
-font = SubResource("FontFile_r00wm")
-font_size = 36
-font_color = Color(1, 1, 0, 1)
-outline_color = Color(0.109804, 0, 1, 1)
+[sub_resource type="Animation" id="Animation_i0dpa"]
+resource_name = "flotarArriba"
+length = 2.0
+loop_mode = 1
+step = 0.0123
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(374, 23), Vector2(374, 32), Vector2(374, 23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(109, 410), Vector2(109, 406), Vector2(109, 410)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.233333, 1.1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(119, 150), Vector2(119, 133), Vector2(119, 150), Vector2(119, 140)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.666667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(265, 368), Vector2(265, 375), Vector2(265, 368)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect8:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.966667, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(370, 536), Vector2(370, 531), Vector2(370, 535), Vector2(370, 536)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect6:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.366667, 1.23333, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(722, 240), Vector2(722, 251), Vector2(722, 240)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.566667, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(842, 178), Vector2(842, 186), Vector2(842, 159), Vector2(842, 178)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect7:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.53333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(816, 495), Vector2(816, 456), Vector2(816, 495)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect9:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.633333, 1.03333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1006, 466), Vector2(1006, 458), Vector2(1006, 442), Vector2(1006, 466)]
+}
+
+[sub_resource type="Animation" id="Animation_h60v3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(374, 23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(109, 410)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(119, 150)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(265, 368)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect8:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(370, 536)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect6:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(722, 240)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(842, 178)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect7:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(816, 495)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect9:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1006, 466)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3axs"]
+_data = {
+"RESET": SubResource("Animation_h60v3"),
+"flotarArriba": SubResource("Animation_i0dpa")
+}
 
 [node name="Inicio" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_cqrg6")
@@ -51,32 +258,120 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("3_djfn5")
 
-[node name="Button" type="Button" parent="."]
-z_index = 2
-offset_left = 482.0
-offset_top = 302.0
-offset_right = 649.0
-offset_bottom = 366.0
-text = "Iniciar"
-script = ExtResource("1_xaahv")
+[node name="Button" type="TextureButton" parent="."]
+z_index = 6
+texture_filter = 1
+offset_left = 460.0
+offset_top = 408.0
+offset_right = 723.0
+offset_bottom = 530.0
+texture_normal = ExtResource("3_0qp4j")
+stretch_mode = 0
 
-[node name="Logo" type="TextureRect" parent="."]
-z_index = 2
-offset_left = 114.0
-offset_top = 71.0
-offset_right = 242.0
-offset_bottom = 199.0
-texture = ExtResource("2_ql6s7")
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 206.0
+offset_bottom = 82.0
+text = "JUGAR"
+label_settings = SubResource("LabelSettings_ed5v4")
 
-[node name="Esto ya vere" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 1151.0
+offset_bottom = 643.0
+color = Color(0.928044, 0.64759, 0.759463, 1)
 
-[node name="Label" type="Label" parent="."]
-z_index = 2
-offset_left = 247.0
-offset_top = 78.0
-offset_right = 997.0
-offset_bottom = 291.0
-text = "HOSTIA PERO SI ES EL ESCARABAJO POMPERO"
-label_settings = SubResource("LabelSettings_p4u2o")
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.964706)
+texture_filter = 1
+offset_left = 119.0
+offset_top = 150.0
+offset_right = 279.0
+offset_bottom = 310.0
+texture = ExtResource("5_y7hqj")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 842.0
+offset_top = 178.0
+offset_right = 1042.0
+offset_bottom = 378.0
+rotation = -0.0150857
+texture = ExtResource("5_y7hqj")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 109.0
+offset_top = 410.0
+offset_right = 209.0
+offset_bottom = 510.0
+rotation = 0.0157086
+texture = ExtResource("3_djfn5")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = 374.0
+offset_top = 23.0
+offset_right = 674.0
+offset_bottom = 323.0
+rotation = 6.28319
+texture = ExtResource("5_y7hqj")
+flip_v = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 265.0
+offset_top = 368.0
+offset_right = 315.0
+offset_bottom = 418.0
+texture = ExtResource("6_btpb2")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 722.0
+offset_top = 240.0
+offset_right = 772.0
+offset_bottom = 290.0
+texture = ExtResource("6_btpb2")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 816.0
+offset_top = 495.0
+offset_right = 866.0
+offset_bottom = 545.0
+texture = ExtResource("6_btpb2")
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 370.0
+offset_top = 536.0
+offset_right = 420.0
+offset_bottom = 586.0
+texture = ExtResource("6_btpb2")
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 1006.0
+offset_top = 466.0
+offset_right = 1086.0
+offset_bottom = 546.0
+texture = ExtResource("7_8cw3f")
+
+[node name="Flotar" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r3axs")
+}
+autoplay = "flotarArriba"
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(594, 297)
+scale = Vector2(4.95, 6.35)
+texture = ExtResource("7_x0thh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
