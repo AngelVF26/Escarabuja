@@ -5,14 +5,16 @@ var nombre : String = ""
 var file = "user://scores.cfg"
 var nombre_libre : int = 1
 var dictPunt : Dictionary
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 #var save_file = FileAccess.open("user://savegame.save", FileAccess.READ_WRITE)
 #var load_file = FileAccess.open(file, FileAccess.READ)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$puntuacionesFinales.visible = false
-	
+	$ColorRect2.visible = false
+	audio_stream_player.play()
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -99,4 +101,17 @@ func load_game():
 	
 func _on_rejugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://Escenas/inicio.tscn")
+	pass # Replace with function body.
+
+
+
+
+func _on_volver_credito_pressed() -> void:
+	$ColorRect2.set_deferred("visible",false)
+	pass # Replace with function body.
+
+
+func _on_creditos_pressed() -> void:
+	$ColorRect2.set_deferred("visible",true)
+	
 	pass # Replace with function body.
