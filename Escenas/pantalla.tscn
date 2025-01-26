@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://3pf7wj8m276" path="res://Escenas/bichote.tscn" id="2_ro8sn"]
 [ext_resource type="Texture2D" uid="uid://bo8qlgpqggolv" path="res://assets/background.png" id="2_s3t2a"]
 [ext_resource type="PackedScene" uid="uid://bggmqqxxbnud" path="res://spawner.tscn" id="5_302w5"]
-[ext_resource type="PackedScene" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
+[ext_resource type="PackedScene" uid="uid://do2mp7ncag5bv" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
 [ext_resource type="PackedScene" uid="uid://bvbmg8fmit331" path="res://Escenas/burbuja_pickup.tscn" id="7_84bua"]
 [ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_vhn0k"]
+[ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="7_x6iwt"]
 [ext_resource type="Texture2D" uid="uid://deyqojvpbwn58" path="res://assets/relleno burbuja dorada2.png" id="8_ops8e"]
 [ext_resource type="AudioStream" uid="uid://tjkwrj3rhmaf" path="res://SOUNDS ESCARABUJA/TRANSFORMATION.mp3" id="14_46hqv"]
 
@@ -90,9 +91,9 @@ libraries = {
 z_index = -2
 texture_filter = 1
 offset_left = 598.0
-offset_top = 2193.0
+offset_top = 2022.0
 offset_right = 791.0
-offset_bottom = 2593.0
+offset_bottom = 2422.0
 rotation = -3.14159
 scale = Vector2(6, 6)
 texture = ExtResource("2_s3t2a")
@@ -165,11 +166,21 @@ drag_right_margin = 1.0
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
+[node name="TextureRect" type="TextureRect" parent="GUI"]
+z_index = -1
+texture_filter = 1
+offset_right = 151.0
+offset_bottom = 101.0
+texture = ExtResource("7_x6iwt")
+
 [node name="Label" type="Label" parent="GUI"]
-offset_left = 39.0
-offset_top = 43.0
-offset_right = 79.0
-offset_bottom = 66.0
+texture_filter = 1
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 122.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 32
+text = "00.00"
 
 [node name="Medidor Aire" parent="GUI" instance=ExtResource("5_metew")]
 position = Vector2(402, 85)

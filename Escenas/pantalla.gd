@@ -46,6 +46,7 @@ func HAS_MUERTO():
 	bichote.sacabao()
 	$Spawner.spawnFuera()
 	$bichote/burbuja/BurbujaBorde.visible = false
+	$bichote/burbuja/Burbuja.visible = false
 	burbujaSprite.visible = true
 	burbujaSprite.play("Explosion")
 	transicion_black.position.x = bichote.position.x
