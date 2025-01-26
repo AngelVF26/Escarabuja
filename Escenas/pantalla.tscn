@@ -30,12 +30,12 @@ script = ExtResource("1_6khms")
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
 texture_filter = 1
-offset_left = 596.0
-offset_top = 2197.0
-offset_right = 789.0
-offset_bottom = 2597.0
+offset_left = 598.0
+offset_top = 2010.0
+offset_right = 791.0
+offset_bottom = 2410.0
 rotation = -3.14159
-scale = Vector2(6, 6)
+scale = Vector2(9, 9)
 texture = ExtResource("2_s3t2a")
 stretch_mode = 1
 

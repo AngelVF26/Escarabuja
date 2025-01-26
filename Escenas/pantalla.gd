@@ -19,7 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$TextureRect.size.y += 0.55
+	$TextureRect.size.y += 80 * delta
 
 func _on_final_col_body_entered(body: Node2D) -> void:
 	if body.name == "bichote":
