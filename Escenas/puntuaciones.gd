@@ -37,54 +37,14 @@ func _on_submit_pressed() -> void:
 		save(nombre)
 		
 		print(str(load_game()))
-#
-#
-#dic["number"] = 
-		#print(str(load_game()))
-		#var truedic : Dictionary = {"nombre" : "", "puntos" : 0}
-		##while truedic["nombre"+str(nombre_libre)] != "" && nombre_libre < 9:
-			##nombre_libre+=1
-		#truedic["nombre"] = nombre
-		#save((truedic["nombre"]))
-		#print(str(load_game()))
-		#save((truedic["puntos"]))
-		
-		#print(str(load_game()))
-		#lista_nombres.text = str(truedic)
-		
-		#for i in truedic: 
-			#if typeof(truedic[i]) == TYPE_STRING:
-				#lista_nombres.text += str(truedic[i] + "\n")
-				#print(truedic[i])
-				#if truedic[i] == "":
-					#break
-			#elif typeof(truedic[i]) == TYPE_INT:
-				#$puntuacionesFinales/totalSegundos.text += str(truedic[i]) + "\n"
-				#print(truedic[i])
-		#print(str(truedic["nombre"])
-		#print(str(truedic))
-	pass # Replace with function body.
 
-#func save(content):
-	#var filo
-	#if FileAccess.file_exists(file):
-		#print("existe")
-		#filo = FileAccess.open(file,FileAccess.READ_WRITE)
-		#print(filo.get_position())
-		##filo.seek(filo.get_length())
-#
-	#else:
-		#print("no existe")
-		#filo = FileAccess.open(file,FileAccess.WRITE)
-	#filo.store_var(content)
-	#print(filo.get_position())
-#
-	#filo = null
+
 	
 func save(nombre):
 	# Create new ConfigFile object.
 	var config = ConfigFile.new()
-	
+	#if config.get_value(player, "player_name") != null:
+		
 # Store some values.nombre_libre:
 	print("Player " + str(nombre_libre) + nombre)
 	print("Player " + str(nombre_libre) + str(Scoreboard._getPuntos()))
