@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=3 uid="uid://cy5tmfyxlb5ud"]
+
+[ext_resource type="PackedScene" uid="uid://dk5ukewnrg21m" path="res://Escenas/burbuja.tscn" id="1_0vsu3"]
+[ext_resource type="Script" path="res://Escenas/pantalla.gd" id="1_6khms"]
+[ext_resource type="PackedScene" uid="uid://3pf7wj8m276" path="res://Escenas/bichote.tscn" id="2_ro8sn"]
+[ext_resource type="Texture2D" uid="uid://bo8qlgpqggolv" path="res://assets/background.png" id="2_s3t2a"]
+[ext_resource type="PackedScene" uid="uid://bggmqqxxbnud" path="res://spawner.tscn" id="5_302w5"]
+[ext_resource type="PackedScene" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
+[ext_resource type="PackedScene" uid="uid://bvbmg8fmit331" path="res://Escenas/burbuja_pickup.tscn" id="7_84bua"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bvj52"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i5bho"]
+normal = Vector2(1, 0)
+distance = -184.701
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4jcib"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_28bt4"]
+normal = Vector2(-1, 0)
+distance = -598.932
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd3bl"]
+size = Vector2(1139, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhtgd"]
+
+[node name="Nivel" type="Area2D"]
+position = Vector2(537, 327)
+script = ExtResource("1_6khms")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+texture_filter = 1
+offset_left = 596.0
+offset_top = 2197.0
+offset_right = 789.0
+offset_bottom = 2597.0
+rotation = -3.14159
+scale = Vector2(6, 6)
+texture = ExtResource("2_s3t2a")
+stretch_mode = 1
+
+[node name="Pared_Izq_Col" type="StaticBody2D" parent="."]
+scale = Vector2(3, 3)
+physics_material_override = SubResource("PhysicsMaterial_bvj52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared_Izq_Col"]
+position = Vector2(-2.33331, -42.6667)
+scale = Vector2(1, 1.0704)
+shape = SubResource("WorldBoundaryShape2D_i5bho")
+
+[node name="Pared_Der_Col" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_4jcib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared_Der_Col"]
+shape = SubResource("WorldBoundaryShape2D_28bt4")
+
+[node name="Final_col" type="Area2D" parent="."]
+position = Vector2(3599, -1982)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Final_col"]
+position = Vector2(6078, 906)
+scale = Vector2(1.01342, -17.2065)
+shape = SubResource("RectangleShape2D_hd3bl")
+
+[node name="Cronometro" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[node name="GameWorld" type="CanvasLayer" parent="."]
+
+[node name="Spawner" parent="." instance=ExtResource("5_302w5")]
+position = Vector2(-529, -1011)
+
+[node name="CollisionShape2D" parent="Spawner" index="0"]
+position = Vector2(567, -204)
+
+[node name="Area2D" parent="Spawner" index="1"]
+position = Vector2(-3, -167)
+
+[node name="CollisionShape2D" parent="Spawner/Area2D" index="0"]
+position = Vector2(576, -42)
+
+[node name="bichote" parent="." instance=ExtResource("2_ro8sn")]
+position = Vector2(19, 134)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" parent="bichote" index="1"]
+position = Vector2(0.583328, -1.5)
+
+[node name="burbuja" parent="bichote" instance=ExtResource("1_0vsu3")]
+z_index = -1
+position = Vector2(1, -0.5)
+
+[node name="Burbuja" parent="bichote/burbuja" index="1"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="bichote"]
+offset = Vector2(0, -200)
+drag_horizontal_enabled = true
+drag_left_margin = 1.0
+drag_right_margin = 1.0
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="GUI"]
+offset_left = 39.0
+offset_top = 43.0
+offset_right = 79.0
+offset_bottom = 66.0
+
+[node name="Medidor Aire" parent="GUI" instance=ExtResource("5_metew")]
+position = Vector2(402, 85)
+scale = Vector2(6, 6)
+
+[node name="TextureProgressBar" parent="GUI/Medidor Aire" index="0"]
+offset_left = 80.6667
+offset_top = 67.8333
+offset_right = 130.667
+offset_bottom = 117.833
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" parent="GUI/Medidor Aire" index="1"]
+offset_left = 87.6667
+offset_top = 74.8333
+offset_right = 107.667
+offset_bottom = 97.8333
+scale = Vector2(0.5, 0.5)
+
+[node name="TimeAire" type="Timer" parent="."]
+autostart = true
+
+[node name="burbuja_pickup" parent="." instance=ExtResource("7_84bua")]
+position = Vector2(193, 26)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bhtgd")
+
+[connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]
+[connection signal="timeout" from="Cronometro" to="." method="_on_cronometro_timeout"]
+[connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
+[connection signal="value_changed" from="GUI/Medidor Aire/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="timeout" from="TimeAire" to="." method="_on_time_aire_timeout"]
+
+[editable path="Spawner"]
+[editable path="bichote"]
+[editable path="bichote/burbuja"]
+[editable path="GUI/Medidor Aire"]
