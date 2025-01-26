@@ -85,14 +85,14 @@ func save(content):
 		print("existe")
 		filo = FileAccess.open(file,FileAccess.READ_WRITE)
 		print(filo.get_position())
-		filo.seek(filo.get_length())
-		print(filo.get_position())
+		#filo.seek(filo.get_length())
 
 	else:
 		print("no existe")
 		filo = FileAccess.open(file,FileAccess.WRITE)
 	filo.store_var(content)
-	
+	print(filo.get_position())
+
 	filo = null
 
 #func read(file: FileAccess):
