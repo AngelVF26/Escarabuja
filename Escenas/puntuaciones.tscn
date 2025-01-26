@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckcy0la1pewyu" path="res://assets/banner.png" id="2_pigrv"]
 [ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="3_vw8q5"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="4_hkodh"]
-[ext_resource type="AudioStream" uid="uid://2v7rkrasrj36" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_DEFEAT_THEME.mp3" id="5_qkgnd"]
+[ext_resource type="AudioStream" uid="uid://4aryae2dvl3n" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_DEFEAT_THEME.mp3" id="5_qkgnd"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l13yl"]
 blend_mode = 1
@@ -28,9 +28,9 @@ cache/0/16/0/scale = 1.0
 [sub_resource type="LabelSettings" id="LabelSettings_5fefk"]
 font = SubResource("FontFile_4jv3h")
 font_size = 27
-font_color = Color(0.0156863, 0.227451, 0.627451, 1)
+font_color = Color(1, 1, 128.498, 1)
 outline_size = 4
-outline_color = Color(0, 0.568627, 0.533333, 0.32549)
+outline_color = Color(0, 0, 0, 0.952941)
 
 [sub_resource type="Theme" id="Theme_6m7e6"]
 default_font_size = 16
@@ -53,6 +53,45 @@ shadow_color = Color(0, 0, 0, 1)
 font_size = 19
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_8cw13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("puntuacionesFinales/Rejugar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(36, 393)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("puntuacionesFinales/Creditos:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(781, 394)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2/VolverCredito:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_x4nib"]
 resource_name = "flow"
@@ -92,45 +131,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0628319, -0.0628319]
-}
-
-[sub_resource type="Animation" id="Animation_8cw13"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("puntuacionesFinales/Rejugar:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(36, 393)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("puntuacionesFinales/Creditos:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(781, 394)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect2/VolverCredito:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_22nhi"]
@@ -196,6 +196,8 @@ offset_left = 137.0
 offset_top = 7.0
 offset_right = 375.0
 offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Nombres"
 label_settings = SubResource("LabelSettings_5fefk")
 horizontal_alignment = 1
@@ -207,8 +209,11 @@ offset_left = 826.0
 offset_top = 5.0
 offset_right = 1070.0
 offset_bottom = 68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Tiempo"
 label_settings = SubResource("LabelSettings_5fefk")
+horizontal_alignment = 1
 
 [node name="listaNombres" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
@@ -217,7 +222,10 @@ offset_left = 48.0
 offset_top = 66.0
 offset_right = 471.0
 offset_bottom = 405.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 label_settings = SubResource("LabelSettings_5fefk")
+horizontal_alignment = 1
 
 [node name="totalSegundos" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
@@ -226,7 +234,10 @@ offset_left = 765.0
 offset_top = 74.0
 offset_right = 1153.0
 offset_bottom = 411.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 label_settings = SubResource("LabelSettings_5fefk")
+horizontal_alignment = 1
 
 [node name="marcador" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
@@ -241,10 +252,10 @@ label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="Rejugar" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
-offset_left = 14.0
-offset_top = 498.0
-offset_right = 300.0
-offset_bottom = 654.0
+offset_left = 36.0
+offset_top = 393.0
+offset_right = 322.0
+offset_bottom = 549.0
 texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
 
@@ -281,6 +292,7 @@ text = "Ver Créditos
 label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 z_index = 7
 offset_left = 2.0
 offset_top = 2.0
@@ -289,6 +301,7 @@ offset_bottom = 653.0
 color = Color(0.111197, 0.111197, 0.111197, 0.639216)
 
 [node name="Label4" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 474.0
 offset_top = 244.0
 offset_right = 860.0
@@ -306,6 +319,7 @@ text = "Créditos"
 label_settings = SubResource("LabelSettings_o4n27")
 
 [node name="Label3" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 479.0
 offset_top = 116.0
 offset_right = 865.0
@@ -314,6 +328,7 @@ text = "Música y SFX"
 label_settings = SubResource("LabelSettings_aqqn2")
 
 [node name="Label5" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 476.0
 offset_top = 350.0
 offset_right = 862.0
@@ -322,6 +337,7 @@ text = "Programación"
 label_settings = SubResource("LabelSettings_aqqn2")
 
 [node name="Label7" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 506.0
 offset_top = 160.0
 offset_right = 892.0
@@ -330,6 +346,7 @@ text = "MistiCristiX"
 label_settings = SubResource("LabelSettings_uy3i2")
 
 [node name="Label9" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 533.0
 offset_top = 201.0
 offset_right = 919.0
@@ -338,6 +355,7 @@ text = "Nory"
 label_settings = SubResource("LabelSettings_uy3i2")
 
 [node name="Label10" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 471.0
 offset_top = 443.0
 offset_right = 857.0
@@ -346,6 +364,7 @@ text = "Ángel Verges Ferrer"
 label_settings = SubResource("LabelSettings_uy3i2")
 
 [node name="Label11" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 469.0
 offset_top = 291.0
 offset_right = 855.0
@@ -354,6 +373,7 @@ text = "Pat Fuentes Canabal"
 label_settings = SubResource("LabelSettings_uy3i2")
 
 [node name="Label12" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 454.0
 offset_top = 399.0
 offset_right = 840.0
@@ -363,6 +383,7 @@ label_settings = SubResource("LabelSettings_uy3i2")
 
 [node name="VolverCredito" type="TextureButton" parent="ColorRect2"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 472.0
 offset_top = 481.0
 offset_right = 650.0
