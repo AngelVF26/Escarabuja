@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://3pf7wj8m276" path="res://Escenas/bichote.tscn" id="2_ro8sn"]
 [ext_resource type="Texture2D" uid="uid://bo8qlgpqggolv" path="res://assets/background.png" id="2_s3t2a"]
 [ext_resource type="PackedScene" uid="uid://bggmqqxxbnud" path="res://spawner.tscn" id="5_302w5"]
-[ext_resource type="PackedScene" uid="uid://do2mp7ncag5bv" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
 [ext_resource type="PackedScene" path="res://Escenas/medidor_aire.tscn" id="5_metew"]
 [ext_resource type="PackedScene" uid="uid://bvbmg8fmit331" path="res://Escenas/burbuja_pickup.tscn" id="7_84bua"]
 [ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_vhn0k"]
@@ -155,7 +154,11 @@ position = Vector2(1, -0.5)
 visible = true
 
 [node name="Burbuja" parent="bichote/burbuja" index="1" groups=["Spawneable"]]
+self_modulate = Color(1, 1, 1, 0)
 z_index = 1
+
+[node name="AnimatedSprite2D" parent="bichote/burbuja" index="3"]
+visible = true
 
 [node name="Camera2D" type="Camera2D" parent="bichote"]
 offset = Vector2(0, -200)
