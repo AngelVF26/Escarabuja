@@ -4,12 +4,16 @@ var nombre : String = ""
 @onready var lista_nombres: Label = $puntuacionesFinales/listaNombres
 var file = "user://savegame.txt"
 var nombre_libre : int = 1
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
+
 #var save_file = FileAccess.open("user://savegame.save", FileAccess.READ_WRITE)
 #var load_file = FileAccess.open(file, FileAccess.READ)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$puntuacionesFinales.visible = false
-	
+	$ColorRect2.visible = false
+	audio_stream_player.play()
 	pass # Replace with function body.
 
 
@@ -88,7 +92,7 @@ func load_game():
 	return score_data
 	
 func _on_rejugar_pressed() -> void:
-	$ColorRect2.set_deferred("visible",true)
+	get_tree().change_scene_to_file("res://Escenas/inicio.tscn")
 	pass # Replace with function body.
 
 
@@ -100,4 +104,6 @@ func _on_volver_credito_pressed() -> void:
 
 
 func _on_creditos_pressed() -> void:
+	$ColorRect2.set_deferred("visible",true)
+	
 	pass # Replace with function body.

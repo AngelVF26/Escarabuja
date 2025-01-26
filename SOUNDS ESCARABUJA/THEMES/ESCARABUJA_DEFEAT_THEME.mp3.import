@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2v7rkrasrj36"
+path="res://.godot/imported/ESCARABUJA_DEFEAT_THEME.mp3-afc7a70410ac0d6ac8facc30fc67e06b.mp3str"
+
+[deps]
+
+source_file="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_DEFEAT_THEME.mp3"
+dest_files=["res://.godot/imported/ESCARABUJA_DEFEAT_THEME.mp3-afc7a70410ac0d6ac8facc30fc67e06b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
