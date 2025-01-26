@@ -295,7 +295,6 @@ text = "Ver Créditos
 label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 z_index = 7
 offset_left = 2.0
 offset_top = 2.0
@@ -408,6 +407,7 @@ text = "Volver
 label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="Label13" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 465.0
 offset_top = 325.0
 offset_right = 851.0

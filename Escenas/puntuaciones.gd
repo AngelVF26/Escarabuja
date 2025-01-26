@@ -41,13 +41,13 @@ func _on_submit_pressed() -> void:
 		Scoreboard.save_game(Scoreboard.dictTemp)
 		dictPunt = Scoreboard.load_game()
 		print(str(dictPunt))
-		#sort_dict(dictPunt)
+		print("ordenado")
+		sort_dict(dictPunt)
 		dictPunt=sorted_dict(dictPunt)
 		print(str(dictPunt))
 		for i in dictPunt:
 			lista_nombres.text += str(i) + "\n"
 			$puntuacionesFinales/totalSegundos.text += str(dictPunt[i]).pad_decimals(2) + "\n"
-		#Scoreboard.dictTemp += load_game()
 		print(str(Scoreboard.dictTemp))
 		
 		#print(str(load_game()))
@@ -57,6 +57,7 @@ func sort_dict(dict: Dictionary) -> void:
 	pairs.sort()
 	dict.clear()
 	for p in pairs:
+		print(str(p))
 		dict[p[0]] = p[1]
 
 func sorted_dict(dict: Dictionary) -> Dictionary:
