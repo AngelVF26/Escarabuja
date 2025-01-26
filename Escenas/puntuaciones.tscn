@@ -1,17 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bigyguom7ggbr"]
+[gd_scene load_steps=20 format=3 uid="uid://bigyguom7ggbr"]
 
 [ext_resource type="Script" path="res://Escenas/puntuaciones.gd" id="1_go8q5"]
 [ext_resource type="Texture2D" uid="uid://ckcy0la1pewyu" path="res://assets/banner.png" id="2_pigrv"]
 [ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="3_vw8q5"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="4_hkodh"]
 [ext_resource type="AudioStream" uid="uid://4aryae2dvl3n" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_DEFEAT_THEME.mp3" id="5_qkgnd"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l13yl"]
-blend_mode = 1
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
 
 [sub_resource type="FontFile" id="FontFile_4jv3h"]
 subpixel_positioning = 0
@@ -27,19 +20,210 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/44/0/ascent = 0.0
+cache/0/44/0/descent = 0.0
+cache/0/44/0/underline_position = 0.0
+cache/0/44/0/underline_thickness = 0.0
+cache/0/44/0/scale = 1.0
+cache/0/43/0/ascent = 0.0
+cache/0/43/0/descent = 0.0
+cache/0/43/0/underline_position = 0.0
+cache/0/43/0/underline_thickness = 0.0
+cache/0/43/0/scale = 1.0
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/38/0/ascent = 0.0
+cache/0/38/0/descent = 0.0
+cache/0/38/0/underline_position = 0.0
+cache/0/38/0/underline_thickness = 0.0
+cache/0/38/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_5fefk"]
 font = SubResource("FontFile_4jv3h")
-font_size = 27
-font_color = Color(1, 1, 128.498, 1)
-outline_size = 4
-outline_color = Color(0, 0, 0, 0.952941)
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_size = 11
+outline_color = Color(0.6, 0.898039, 0.313726, 1)
 
 [sub_resource type="Theme" id="Theme_6m7e6"]
 default_font_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_odi16"]
 font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 11
+outline_color = Color(0.6, 0.898039, 0.313726, 1)
+
+[sub_resource type="FontFile" id="FontFile_t1xug"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/38/0/ascent = 0.0
+cache/0/38/0/descent = 0.0
+cache/0/38/0/underline_position = 0.0
+cache/0/38/0/underline_thickness = 0.0
+cache/0/38/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/43/0/ascent = 0.0
+cache/0/43/0/descent = 0.0
+cache/0/43/0/underline_position = 0.0
+cache/0/43/0/underline_thickness = 0.0
+cache/0/43/0/scale = 1.0
+cache/0/44/0/ascent = 0.0
+cache/0/44/0/descent = 0.0
+cache/0/44/0/underline_position = 0.0
+cache/0/44/0/underline_thickness = 0.0
+cache/0/44/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryhns"]
+line_spacing = 5.0
+font = SubResource("FontFile_t1xug")
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+outline_size = 11
+outline_color = Color(0.6, 0.898039, 0.313726, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_etdga"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 11
+outline_color = Color(0.6, 0.898039, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_myohp"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 11
+outline_color = Color(0.6, 0.898039, 0.313726, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqqn2"]
 font_size = 27
@@ -154,11 +338,10 @@ texture = ExtResource("2_pigrv")
 
 [node name="Añade tu nombre" type="Label" parent="." groups=["Persist"]]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
-offset_left = 447.0
-offset_top = 365.0
-offset_right = 890.0
-offset_bottom = 428.0
+offset_left = 393.0
+offset_top = 342.0
+offset_right = 836.0
+offset_bottom = 405.0
 text = "AÑADE TU NOMBRE:"
 label_settings = SubResource("LabelSettings_5fefk")
 
@@ -194,7 +377,6 @@ label_settings = SubResource("LabelSettings_odi16")
 
 [node name="nombres" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
 offset_left = 137.0
 offset_top = 7.0
 offset_right = 375.0
@@ -202,12 +384,11 @@ offset_bottom = 70.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Nombres"
-label_settings = SubResource("LabelSettings_5fefk")
+label_settings = SubResource("LabelSettings_ryhns")
 horizontal_alignment = 1
 
 [node name="Segundos" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
 offset_left = 826.0
 offset_top = 5.0
 offset_right = 1070.0
@@ -220,7 +401,6 @@ horizontal_alignment = 1
 
 [node name="listaNombres" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
 offset_left = 48.0
 offset_top = 66.0
 offset_right = 471.0
@@ -232,7 +412,6 @@ horizontal_alignment = 1
 
 [node name="totalSegundos" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
 offset_left = 765.0
 offset_top = 74.0
 offset_right = 1153.0
@@ -244,11 +423,10 @@ horizontal_alignment = 1
 
 [node name="marcador" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
-offset_left = 378.0
-offset_top = 219.0
-offset_right = 766.0
-offset_bottom = 282.0
+offset_left = 406.0
+offset_top = 207.0
+offset_right = 794.0
+offset_bottom = 270.0
 text = "
 "
 label_settings = SubResource("LabelSettings_5fefk")
@@ -264,14 +442,13 @@ stretch_mode = 0
 
 [node name="volver" type="Label" parent="puntuacionesFinales/Rejugar"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
 layout_mode = 0
 offset_left = 45.0
-offset_top = 54.0
-offset_right = 433.0
+offset_top = 56.0
+offset_right = 422.0
 offset_bottom = 117.0
 text = "Volver al menú"
-label_settings = SubResource("LabelSettings_5fefk")
+label_settings = SubResource("LabelSettings_etdga")
 
 [node name="Creditos" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
@@ -284,18 +461,16 @@ stretch_mode = 0
 
 [node name="creditos" type="Label" parent="puntuacionesFinales/Creditos"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
 layout_mode = 0
-offset_left = 45.0
-offset_top = 54.0
-offset_right = 433.0
-offset_bottom = 117.0
+offset_left = 64.0
+offset_top = 57.0
+offset_right = 452.0
+offset_bottom = 120.0
 text = "Ver Créditos
 "
-label_settings = SubResource("LabelSettings_5fefk")
+label_settings = SubResource("LabelSettings_myohp")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 z_index = 7
 offset_left = 2.0
 offset_top = 2.0
@@ -397,17 +572,17 @@ stretch_mode = 0
 
 [node name="creditos" type="Label" parent="ColorRect2/VolverCredito"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_l13yl")
 layout_mode = 0
-offset_left = 45.0
-offset_top = 54.0
-offset_right = 433.0
-offset_bottom = 117.0
+offset_left = 30.0
+offset_top = 47.0
+offset_right = 418.0
+offset_bottom = 110.0
 text = "Volver
 "
 label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="Label13" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 465.0
 offset_top = 325.0
 offset_right = 851.0
@@ -424,14 +599,6 @@ libraries = {
 "": SubResource("AnimationLibrary_22nhi")
 }
 autoplay = "flow"
-
-[node name="Label11" type="Label" parent="."]
-offset_left = 469.0
-offset_top = 291.0
-offset_right = 855.0
-offset_bottom = 336.0
-text = "Pat Fuentes Canabal"
-label_settings = SubResource("LabelSettings_uy3i2")
 
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="puntuacionesFinales/Rejugar" to="." method="_on_rejugar_pressed"]

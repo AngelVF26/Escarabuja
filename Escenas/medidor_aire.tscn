@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://do2mp7ncag5bv"]
+[gd_scene load_steps=4 format=3 uid="uid://cqpynmua7xbpp"]
 
 [ext_resource type="Texture2D" uid="uid://dmajyfckuowlt" path="res://assets/burbuja borde y detalles.png" id="1_a4s40"]
 [ext_resource type="Script" path="res://Escenas/medidor_aire.gd" id="1_p25aq"]
