@@ -75,3 +75,8 @@ func _on_texture_progress_bar_value_changed(value: float) -> void:
 	elif value < valor_pasado:
 		$bichote/burbuja.scale -= Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
 		
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	SceneTree.change_scene
+	pass # Replace with function body.
