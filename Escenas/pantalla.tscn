@@ -236,6 +236,7 @@ stream = ExtResource("12_e0oj1")
 
 [node name="AudioMusica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_3tmpu")
+parameters/looping = true
 
 [connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]

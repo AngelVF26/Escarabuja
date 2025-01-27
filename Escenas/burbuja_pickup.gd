@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	print(random)
-	if random > 2.3:
+	if random > 2.7:
 		dorada = true
 		$Sprite2D.texture = load("res://assets/burbuja dorada borde2.png")
 

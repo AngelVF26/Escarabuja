@@ -71,6 +71,12 @@ func _on_button_pressed() -> void:
 
 
 func _on_boton_instrucciones_pressed() -> void:
-	$AudioStreamPlayer.play()
-	get_tree().change_scene_to_file("res://Escenas/instrucciones.tscn")
+	$instrucciones.visible = true
+	
+	#$AudioStreamPlayer.play()
+	#get_tree().change_scene_to_file("res://Escenas/instrucciones.tscn")
 	pass # Replace with function body.
+
+
+func _on_boton_volver_pressed():
+	$instrucciones.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bioqi1tyrmj1a"]
+[gd_scene load_steps=25 format=3 uid="uid://bioqi1tyrmj1a"]
 
 [ext_resource type="Script" path="res://Escenas/inicio.gd" id="1_cqrg6"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="3_0qp4j"]
@@ -7,14 +7,24 @@
 [ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="6_btpb2"]
 [ext_resource type="Texture2D" uid="uid://jlx3gtwiyxwq" path="res://assets/burbuja dorada borde2.png" id="7_8cw3f"]
 [ext_resource type="Texture2D" uid="uid://bkbcnbrgplq6d" path="res://assets/logo.png" id="7_x0thh"]
+[ext_resource type="Script" path="res://Escenas/audio_manager.gd" id="8_kiret"]
 [ext_resource type="AudioStream" uid="uid://d31kvvomt6ir5" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_MENU_THEME.mp3" id="8_sb3rd"]
+[ext_resource type="FontFile" uid="uid://bljosobunt31s" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="10_3sb3w"]
+[ext_resource type="FontFile" uid="uid://cxaeoatk6vopw" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="11_ploat"]
+[ext_resource type="Texture2D" uid="uid://csnxicmss7r04" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0120.png" id="12_f1r31"]
+[ext_resource type="Texture2D" uid="uid://mxggkjowneuq" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0121.png" id="13_k5mrj"]
+[ext_resource type="Texture2D" uid="uid://b1e1dlh4h136a" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0122.png" id="14_r3x8g"]
+[ext_resource type="Texture2D" uid="uid://gkury60enog6" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0086.png" id="15_h45wv"]
+[ext_resource type="Texture2D" uid="uid://b66so6g1ssu3f" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0235.png" id="16_x4oy8"]
+[ext_resource type="Texture2D" uid="uid://cj2gt47c1w1s8" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0236.png" id="17_oh10g"]
+[ext_resource type="Texture2D" uid="uid://8lp0skhaji2i" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0237.png" id="18_266rp"]
 
 [sub_resource type="Animation" id="Animation_h60v3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect4:position")
+tracks/0/path = NodePath("main_menu/TextureRect4:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +36,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect3:position")
+tracks/1/path = NodePath("main_menu/TextureRect3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -38,7 +48,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:position")
+tracks/2/path = NodePath("main_menu/TextureRect:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -50,7 +60,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect5:position")
+tracks/3/path = NodePath("main_menu/TextureRect5:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -62,7 +72,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextureRect8:position")
+tracks/4/path = NodePath("main_menu/TextureRect8:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -74,7 +84,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TextureRect6:position")
+tracks/5/path = NodePath("main_menu/TextureRect6:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -86,7 +96,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("TextureRect2:position")
+tracks/6/path = NodePath("main_menu/TextureRect2:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -98,7 +108,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("TextureRect7:position")
+tracks/7/path = NodePath("main_menu/TextureRect7:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -110,7 +120,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("TextureRect9:position")
+tracks/8/path = NodePath("main_menu/TextureRect9:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -122,7 +132,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Button:rotation")
+tracks/9/path = NodePath("main_menu/Button:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -134,7 +144,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("botonInstrucciones:rotation")
+tracks/10/path = NodePath("main_menu/botonInstrucciones:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -152,7 +162,7 @@ step = 0.0123
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect4:position")
+tracks/0/path = NodePath("main_menu/TextureRect4:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -164,7 +174,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect3:position")
+tracks/1/path = NodePath("main_menu/TextureRect3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -176,7 +186,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:position")
+tracks/2/path = NodePath("main_menu/TextureRect:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -188,7 +198,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect5:position")
+tracks/3/path = NodePath("main_menu/TextureRect5:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -200,7 +210,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextureRect8:position")
+tracks/4/path = NodePath("main_menu/TextureRect8:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -212,7 +222,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TextureRect6:position")
+tracks/5/path = NodePath("main_menu/TextureRect6:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -224,7 +234,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("TextureRect2:position")
+tracks/6/path = NodePath("main_menu/TextureRect2:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -236,7 +246,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("TextureRect7:position")
+tracks/7/path = NodePath("main_menu/TextureRect7:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -248,7 +258,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("TextureRect9:position")
+tracks/8/path = NodePath("main_menu/TextureRect9:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -260,7 +270,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Button:rotation")
+tracks/9/path = NodePath("main_menu/Button:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -272,7 +282,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("botonInstrucciones:rotation")
+tracks/10/path = NodePath("main_menu/botonInstrucciones:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -294,10 +304,27 @@ font_size = 27
 outline_size = 5
 outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
+font_size = 30
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1tbgr"]
+line_spacing = 5.0
+font_size = 27
+outline_size = 5
+outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
+
 [node name="Inicio" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_cqrg6")
 
-[node name="Ilustracion" type="TextureRect" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_sb3rd")
+parameters/looping = true
+
+[node name="main_menu" type="Node2D" parent="."]
+
+[node name="Ilustracion" type="TextureRect" parent="main_menu"]
 light_mask = 2
 visibility_layer = 2
 z_index = -3
@@ -307,23 +334,23 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("3_djfn5")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="main_menu"]
 offset_left = 4.0
 offset_top = 3.0
 offset_right = 1151.0
 offset_bottom = 643.0
 color = Color(0.928044, 0.64759, 0.759463, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="main_menu"]
 modulate = Color(1, 1, 1, 0.964706)
 texture_filter = 1
 offset_left = 119.0
-offset_top = 140.0
+offset_top = 150.0
 offset_right = 279.0
-offset_bottom = 300.0
+offset_bottom = 310.0
 texture = ExtResource("5_y7hqj")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="main_menu"]
 texture_filter = 1
 offset_left = 842.0
 offset_top = 178.0
@@ -332,7 +359,7 @@ offset_bottom = 378.0
 rotation = -0.0150857
 texture = ExtResource("5_y7hqj")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="main_menu"]
 texture_filter = 1
 offset_left = 109.0
 offset_top = 410.0
@@ -341,7 +368,7 @@ offset_bottom = 510.0
 rotation = 0.0157086
 texture = ExtResource("3_djfn5")
 
-[node name="TextureRect4" type="TextureRect" parent="."]
+[node name="TextureRect4" type="TextureRect" parent="main_menu"]
 z_index = 1
 texture_filter = 1
 offset_left = 374.0
@@ -352,7 +379,7 @@ rotation = 6.28319
 texture = ExtResource("5_y7hqj")
 flip_v = true
 
-[node name="TextureRect5" type="TextureRect" parent="."]
+[node name="TextureRect5" type="TextureRect" parent="main_menu"]
 texture_filter = 1
 offset_left = 265.0
 offset_top = 368.0
@@ -360,7 +387,7 @@ offset_right = 315.0
 offset_bottom = 418.0
 texture = ExtResource("6_btpb2")
 
-[node name="TextureRect6" type="TextureRect" parent="."]
+[node name="TextureRect6" type="TextureRect" parent="main_menu"]
 texture_filter = 1
 offset_left = 722.0
 offset_top = 240.0
@@ -368,7 +395,7 @@ offset_right = 772.0
 offset_bottom = 290.0
 texture = ExtResource("6_btpb2")
 
-[node name="TextureRect7" type="TextureRect" parent="."]
+[node name="TextureRect7" type="TextureRect" parent="main_menu"]
 texture_filter = 1
 offset_left = 816.0
 offset_top = 495.0
@@ -376,7 +403,7 @@ offset_right = 866.0
 offset_bottom = 545.0
 texture = ExtResource("6_btpb2")
 
-[node name="TextureRect8" type="TextureRect" parent="."]
+[node name="TextureRect8" type="TextureRect" parent="main_menu"]
 texture_filter = 1
 offset_left = 370.0
 offset_top = 536.0
@@ -384,7 +411,7 @@ offset_right = 420.0
 offset_bottom = 586.0
 texture = ExtResource("6_btpb2")
 
-[node name="TextureRect9" type="TextureRect" parent="."]
+[node name="TextureRect9" type="TextureRect" parent="main_menu"]
 texture_filter = 1
 offset_left = 1006.0
 offset_top = 466.0
@@ -392,42 +419,20 @@ offset_right = 1086.0
 offset_bottom = 546.0
 texture = ExtResource("7_8cw3f")
 
-[node name="Flotar" type="AnimationPlayer" parent="."]
+[node name="Flotar" type="AnimationPlayer" parent="main_menu"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_r3axs")
 }
 autoplay = "flotarArriba"
 
-[node name="Logo" type="Sprite2D" parent="."]
+[node name="Logo" type="Sprite2D" parent="main_menu"]
 texture_filter = 1
 position = Vector2(594, 297)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
 
-[node name="Button" type="TextureButton" parent="."]
-z_index = 6
-texture_filter = 1
-offset_left = 452.0
-offset_top = 404.0
-offset_right = 740.0
-offset_bottom = 526.0
-pivot_offset = Vector2(139, 61)
-texture_normal = ExtResource("3_0qp4j")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Button"]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 40.0
-offset_right = 206.0
-offset_bottom = 82.0
-text = "JUGAR"
-label_settings = SubResource("LabelSettings_ed5v4")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_sb3rd")
-
-[node name="botonInstrucciones" type="TextureButton" parent="."]
+[node name="botonInstrucciones" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
 offset_left = 452.0
@@ -438,7 +443,7 @@ pivot_offset = Vector2(144, 59)
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
 
-[node name="Instrucciones" type="Label" parent="botonInstrucciones"]
+[node name="Instrucciones" type="Label" parent="main_menu/botonInstrucciones"]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 40.0
@@ -447,5 +452,249 @@ offset_bottom = 82.0
 text = "INSTRUCCIONES"
 label_settings = SubResource("LabelSettings_ed5v4")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="botonInstrucciones" to="." method="_on_boton_instrucciones_pressed"]
+[node name="Button" type="TextureButton" parent="main_menu"]
+z_index = 6
+texture_filter = 1
+offset_left = 452.0
+offset_top = 404.0
+offset_right = 740.0
+offset_bottom = 526.0
+pivot_offset = Vector2(139, 61)
+texture_normal = ExtResource("3_0qp4j")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="main_menu/Button"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 206.0
+offset_bottom = 82.0
+text = "JUGAR"
+label_settings = SubResource("LabelSettings_ed5v4")
+
+[node name="audio_manager" type="Node2D" parent="main_menu"]
+script = ExtResource("8_kiret")
+
+[node name="HSlider" type="HSlider" parent="main_menu/audio_manager"]
+offset_left = 891.0
+offset_top = 582.0
+offset_right = 1101.0
+offset_bottom = 604.0
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="volumen_txt" type="Label" parent="main_menu/audio_manager/HSlider"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -39.0
+offset_right = 273.0
+offset_bottom = 3.0
+text = "VOLUMEN"
+label_settings = SubResource("LabelSettings_ed5v4")
+
+[node name="instrucciones" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="instrucciones"]
+z_index = 7
+offset_left = -3.0
+offset_right = 1148.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 0.639216)
+
+[node name="Label" type="Label" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 30.0
+offset_right = 844.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("10_3sb3w")
+text = "¡Bienvenidos a Escarabuja!"
+label_settings = SubResource("LabelSettings_3dyhm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 89.0
+offset_right = 510.0
+offset_bottom = 122.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Esquiva todos los obstáculos!
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 106.0
+offset_right = 1111.0
+offset_bottom = 139.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Cuanto más tiempo sobrevivas más puntos ganas!"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 137.0
+offset_right = 724.0
+offset_bottom = 191.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Ojo con el medidor de oxígeno, si cae a cero perderás!"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 170.0
+offset_right = 1124.0
+offset_bottom = 207.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡CUIDADO! ¡La espátula es un golpe mortal!"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 208.0
+offset_right = 681.0
+offset_bottom = 287.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¡Recoge la burbuja dorada para obtener inmunidad!
+"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 241.0
+offset_right = 1107.0
+offset_bottom = 320.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 32
+text = "- ¿No te da tiempo a esquivar? Corre más rápido usando el sprint, pero correr cansará el doble
+"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 491.0
+offset_right = 446.0
+offset_bottom = 570.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 40
+text = "MOVIMIENTO
+"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 481.0
+offset_right = 855.0
+offset_bottom = 560.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 40
+text = "SPRINT
+"
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 435.0
+offset_right = 885.0
+offset_bottom = 470.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("11_ploat")
+theme_override_font_sizes/normal_font_size = 30
+text = "ESPACIO
+"
+
+[node name="Label2" type="Label" parent="instrucciones/ColorRect2"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 315.0
+offset_right = 687.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("10_3sb3w")
+text = "Controles"
+label_settings = SubResource("LabelSettings_3dyhm")
+
+[node name="tile a" type="Sprite2D" parent="instrucciones/ColorRect2"]
+texture_filter = 1
+position = Vector2(302, 450)
+scale = Vector2(3, 3)
+texture = ExtResource("12_f1r31")
+
+[node name="tile s" type="Sprite2D" parent="instrucciones/ColorRect2"]
+texture_filter = 1
+position = Vector2(362, 450)
+scale = Vector2(3, 3)
+texture = ExtResource("13_k5mrj")
+
+[node name="tile d" type="Sprite2D" parent="instrucciones/ColorRect2"]
+texture_filter = 1
+position = Vector2(425, 450)
+scale = Vector2(3, 3)
+texture = ExtResource("14_r3x8g")
+
+[node name="tile w" type="Sprite2D" parent="instrucciones/ColorRect2"]
+texture_filter = 1
+position = Vector2(362, 395)
+scale = Vector2(3, 3)
+texture = ExtResource("15_h45wv")
+
+[node name="Tile0235" type="Sprite2D" parent="instrucciones/ColorRect2"]
+texture_filter = 1
+position = Vector2(745, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("16_x4oy8")
+
+[node name="Tile0236" type="Sprite2D" parent="instrucciones/ColorRect2"]
+texture_filter = 1
+position = Vector2(809, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("17_oh10g")
+
+[node name="Tile0237" type="Sprite2D" parent="instrucciones/ColorRect2"]
+texture_filter = 1
+position = Vector2(873, 448)
+scale = Vector2(4, 4)
+texture = ExtResource("18_266rp")
+
+[node name="boton_volver" type="TextureButton" parent="instrucciones"]
+z_index = 7
+texture_filter = 1
+offset_left = 788.0
+offset_top = 525.0
+offset_right = 1076.0
+offset_bottom = 647.0
+texture_normal = ExtResource("3_0qp4j")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="instrucciones/boton_volver"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 206.0
+offset_bottom = 82.0
+text = "VOLVER
+"
+label_settings = SubResource("LabelSettings_1tbgr")
+
+[connection signal="pressed" from="main_menu/botonInstrucciones" to="." method="_on_boton_instrucciones_pressed"]
+[connection signal="pressed" from="main_menu/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="main_menu/audio_manager/HSlider" to="main_menu/audio_manager" method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="instrucciones/boton_volver" to="." method="_on_boton_volver_pressed"]
