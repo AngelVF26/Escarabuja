@@ -81,14 +81,17 @@ func _on_area_entered(area: Area2D) -> void:
 		texture_progress_bar.value +=-5
 		pass
 	if area.name == "Areaburbuja":
+		area.get_parent().playSound()
 		if area.get_parent().dorada == true:
 			print("dorada oh oh")
 			tocodorada = true
 			burbuja.texture = load("res://assets/relleno burbuja dorada2.png")
 			$BurbujaBorde.texture = load("res://assets/burbuja dorada borde2.png")
+			texture_progress_bar.value +=20
+		else:
+			texture_progress_bar.value +=10
 		print("burbujita oh oh")
-		texture_progress_bar.value +=10
-		area.get_parent().playSound()
+		
 		#
 	if area.name == "AreaMoscas":
 		print("MUERTE Y DESTRUCCION")

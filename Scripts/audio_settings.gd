@@ -1,3 +1,3 @@
 extends Node
 
-var audio_value : float = 0.5
+var audio_value : float = 0.1

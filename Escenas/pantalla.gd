@@ -98,7 +98,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 func _on_texture_progress_dorada_value_changed(value: float) -> void:
 	if value == 9:
-		texture_progress_bar.value += 20
+		#texture_progress_bar.value += 15
 		$bichote/burbuja/CollisionShape2D.disabled = true
 		if($AudioMusica.stream_paused == false):
 			$AudioTransformacion.play()
