@@ -380,6 +380,7 @@ anchors_preset = 0
 
 [node name="Posiciones" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 131.0
 offset_top = -2.0
 offset_right = 369.0
@@ -392,6 +393,7 @@ horizontal_alignment = 1
 
 [node name="nombres" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 385.0
 offset_right = 623.0
 offset_bottom = 63.0
@@ -403,6 +405,7 @@ horizontal_alignment = 1
 
 [node name="Segundos" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 906.0
 offset_top = 2.0
 offset_right = 1150.0
@@ -416,6 +419,7 @@ horizontal_alignment = 1
 [node name="listaNombres" type="RichTextLabel" parent="puntuacionesFinales"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 160.0
 offset_top = 65.0
 offset_right = 528.0
@@ -430,6 +434,7 @@ text_direction = 1
 visible = false
 texture_filter = 1
 layout_direction = 2
+layout_mode = 0
 offset_left = 886.0
 offset_top = 62.0
 offset_right = 1112.0
@@ -441,6 +446,7 @@ theme_override_font_sizes/normal_font_size = 40
 
 [node name="marcador" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 406.0
 offset_top = 207.0
 offset_right = 794.0
@@ -451,6 +457,7 @@ label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="Rejugar" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 36.0
 offset_top = 393.0
 offset_right = 322.0
@@ -470,6 +477,7 @@ label_settings = SubResource("LabelSettings_etdga")
 
 [node name="Creditos" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 781.0
 offset_top = 394.0
 offset_right = 1067.0
