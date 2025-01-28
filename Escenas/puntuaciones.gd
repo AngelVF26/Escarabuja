@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 
 
 func _on_submit_pressed() -> void:
-	
+	%Submit.disabled = true
 	if $LineEdit.text != "":
 		Scoreboard.player_name = $LineEdit.text
 		Scoreboard.puntos = Scoreboard._getPuntos()
@@ -29,11 +29,12 @@ func _on_submit_pressed() -> void:
 		print(str(Scoreboard.player_name) + " " + str(Scoreboard.puntos))
 		print("Score persisted successfully: " + str(sw_result.score_id))
 		#self.hide()
-		$Submit.visible = false
+		%Submit.visible = false
 		$LineEdit.visible = false
 		$puntuacionesFinales.visible = true
 		$"Añade tu nombre".visible = false
 		nombre = $LineEdit.text
+		
 		#print(str(Scoreboard.dictTemp))
 		#Scoreboard.dictTemp = Scoreboard.datos_originales
 		#Scoreboard.dictTemp[nombre] = Scoreboard._getPuntos()
@@ -117,3 +118,12 @@ func _on_creditos_pressed() -> void:
 	$ColorRect2.set_deferred("visible",true)
 	
 	pass # Replace with function body.
+
+
+func _on_line_edit_text_changed(new_text: String) -> void:
+	if new_text != "":
+		print("hola")
+		%Submit.disabled = false
+	else:
+		print("adiosadios")
+		%Submit.disabled = true
