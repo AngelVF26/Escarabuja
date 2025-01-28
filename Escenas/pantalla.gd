@@ -17,7 +17,6 @@ var valor_actual : int = 30
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	escala_original = $bichote/burbuja.scale
-	#$bichote/burbuja/CollisionShape2D.disabled = true
 	$AudioMusica.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,27 +60,15 @@ func _on_time_aire_timeout() -> void:
 		texture_progress_bar.value -= 2
 	else:
 		texture_progress_bar.value -= 1
-		
 	valorpresente = texture_progress_bar.value
-	
-	
+	print(str($bichote/burbuja/CollisionShape2D.disabled))
 	if $bichote/burbuja.tocodorada == true:
-		#$bichote/burbuja.set_deferred("disable_mode",true)
-		$bichote/burbuja/CollisionShape2D.disabled = true
-		print("patata")
-		$bichote/Sprite2D.play("bichodorado")
-		$"GUI/Medidor Aire2".call_deferred("set_visible",true)
-		if($AudioMusica.stream_paused == false):
-			$AudioTransformacion.play()
-			$AudioMusica.stream_paused = true
-		
 		texture_progress_dorada.value -=1
 	elif $bichote/burbuja.tocodorada == false:
-		$bichote/burbuja/CollisionShape2D.disabled = false
-		print("falsisimo")
-		$"GUI/Medidor Aire2".call_deferred("set_visible",false)
-		
-		$AudioMusica.stream_paused = false
+		#$bichote/burbuja/CollisionShape2D.disabled = false
+		#$"GUI/Medidor Aire2".call_deferred("set_visible",false)
+		#$AudioMusica.stream_paused = false
+		pass
 	
 
 	#if valorpasado > valorpresente:
@@ -89,7 +76,6 @@ func _on_time_aire_timeout() -> void:
 	#elif valorpasado < valorpresente:
 		#$bichote/burbuja.scale += Vector2(0.025,0.025)
 	$TimeAire.start()
-	ParallaxBackground
 	
 
 
@@ -113,15 +99,32 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_texture_progress_dorada_value_changed(value: float) -> void:
 	if value == 9:
 		texture_progress_bar.value += 20
+		$bichote/burbuja/CollisionShape2D.disabled = true
+		if($AudioMusica.stream_paused == false):
+			$AudioTransformacion.play()
+			$AudioMusica.stream_paused = true
+
 	
 	if value<=0:
 		$bichote/burbuja.tocodorada = false
 		texture_progress_dorada.value =10
 		$bichote/burbuja/Burbuja.texture = load("res://assets/burbuja.png")
 		$bichote/burbuja/BurbujaBorde.texture = load("res://assets/burbuja borde y detalles.png")
-
-
 		$"GUI/Medidor Aire2".call_deferred("set_visible",false)
 		$bichote/Sprite2D.play("default")
 		$bichote/burbuja.set_deferred("disable_mode",false)
+		$bichote/burbuja/CollisionShape2D.disabled = false
+		$"GUI/Medidor Aire2".call_deferred("set_visible",false)
+		$AudioMusica.stream_paused = false
 		
+
+
+func _on_burbuja_texture_changed() -> void:
+	if $bichote/burbuja.tocodorada == true:
+		#$bichote/burbuja.set_deferred("disable_mode",true)
+		#$bichote/burbuja/CollisionShape2D.disabled = true
+		$bichote/Sprite2D.play("bichodorado")
+		$"GUI/Medidor Aire2".call_deferred("set_visible",true)
+	else:
+		#$bichote/burbuja.set_deferred("disable_mode",false)
+		pass

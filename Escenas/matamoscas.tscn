@@ -46,12 +46,13 @@ script = ExtResource("1_emgb8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -19)
 shape = SubResource("RectangleShape2D_8wjr1")
+disabled = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AreaMoscas" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMoscas"]
 position = Vector2(0, -21.5)
 shape = SubResource("RectangleShape2D_k027a")
 disabled = true
@@ -63,3 +64,6 @@ autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0ogcn")
+pitch_scale = 1.64
+
+[connection signal="frame_changed" from="AnimatedMoscas" to="." method="_on_animated_moscas_frame_changed"]

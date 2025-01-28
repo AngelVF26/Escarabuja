@@ -6,11 +6,8 @@ var file = "user://scores.cfg"
 var nombre_libre : int = 1
 var dictPunt : Dictionary
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-
 var dictOrdenado : Dictionary
-#var save_file = FileAccess.open("user://savegame.save", FileAccess.READ_WRITE)
-#var load_file = FileAccess.open(file, FileAccess.READ)
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	$puntuacionesFinales.visible = false
 	$ColorRect2.visible = false
@@ -21,13 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-#func guardar_partida():	
-#
-	#
-	#save_file.store_string(nombre)
-	## Now, we can call our save function on each node.
-		#
-	#
+
 func _on_submit_pressed() -> void:
 	if $LineEdit.text != "":
 		$Submit.visible = false
@@ -75,27 +66,15 @@ func sorted_dict(dict: Dictionary) -> Dictionary:
 	return new_dict
 
 func save(dict : Dictionary):
-	# Create new ConfigFile object.
 	var config = ConfigFile.new()
-	#if config.get_value(player, "player_name") != null:
 		
-# Store some values.nombre_libre:
-	#print("Player " + str(nombre_libre) + nombre)
-	#print("Player " + str(nombre_libre) + str(Scoreboard._getPuntos()))
 	for i in dict:
 		config.set_value("Player", str(i), str(dict.get(nombre)) )
 		
 	
-	#config.set_value("Player2", "player_name", "V3geta")
-	#config.set_value("Player2", "score", 9001)
-	
 	config.save("user://scores.cfg")
 
 func load_game():
-	#var fila = FileAccess.open(file,FileAccess.READ)
-	#fila.seek(0)
-	#var content = fila.get_var()
-	#return content
 	var score_data = {}
 	var config = ConfigFile.new()
 # Load data from a file.
@@ -104,22 +83,14 @@ func load_game():
 # If the file didn't load, ignore it.
 	if err != OK:
 		print("error")
-	#save(nombre)
 		return
 
 # Iterate over all sections.
 	for player in config.get_sections():
-		# Fetch the data for each section.
 		var player_name = config.get_value(player, "player_name")
 		var player_score = config.get_value(player, "score")
 		score_data[player_name] = player_score
 		nombre_libre += 1
-		for i in score_data:
-			print("score data 1")
-			print(str(i))
-			print(str(player_score))
-			
-	
 	return score_data
 	
 func _on_rejugar_pressed() -> void:

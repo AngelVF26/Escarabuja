@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b54yea57oiwhy"]
-
-[ext_resource type="Script" path="res://Escenas/transition.gd" id="1_rwq57"]
+[gd_scene load_steps=4 format=3 uid="uid://b54yea57oiwhy"]
 
 [sub_resource type="Animation" id="Animation_q3hss"]
 length = 0.001
@@ -46,7 +44,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
-script = ExtResource("1_rwq57")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

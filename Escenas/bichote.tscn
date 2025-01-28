@@ -58,7 +58,6 @@ script = ExtResource("1_i3vpt")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_x84nh")
-animation = &"bichodorado"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

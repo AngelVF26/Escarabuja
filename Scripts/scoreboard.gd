@@ -4,17 +4,7 @@ var blSaveLoad = null
 var puntos 
 var pos_dict = {}
 var datos_originales
-var Scores = {
-	"nombre1" : "", "puntos1" : 0,
-	"nombre2" : "", "puntos2" : 0,
-	"nombre3" : "", "puntos3" : 0,
-	"nombre4" : "", "puntos4" : 0,
-	"nombre5" : "", "puntos5" : 0,
-	"nombre6" : "", "puntos6" : 0,
-	"nombre7" : "", "puntos7" : 0,
-	"nombre8" : "", "puntos8" : 0,
-	"nombre9" : "", "puntos9" : 0
-}
+
 var dat_pasados
 var dictTemp : Dictionary 
 
@@ -25,12 +15,7 @@ func _getPuntos():
 	
 	
 var file = "user://scores.cfg"
-var default_dict = {
-		"Javi" : 0
-		,
-		"Manu" : 0
-		
-	}
+var default_dict 
 func _ready():
 	dat_pasados = datos_originales
 	#borrarPartida()

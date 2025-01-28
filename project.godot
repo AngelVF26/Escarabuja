@@ -17,8 +17,8 @@ config/icon="res://assets/sprite escarabajo.png"
 
 [autoload]
 
-Scoreboard="*res://scoreboard.gd"
-AudioSettings="*res://audio_settings.gd"
+Scoreboard="*res://Scripts/scoreboard.gd"
+AudioSettings="*res://Scripts/audio_settings.gd"
 
 [display]
 
