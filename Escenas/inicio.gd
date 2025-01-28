@@ -15,7 +15,7 @@ func _ready() -> void:
 	audio_stream_player.play()
 	#print(Scoreboard.datos_originales)
 	#Scoreboard.dictTemp = Scoreboard.datos_originales
-	Scoreboard.save_game(Scoreboard.dictTemp)
+	#Scoreboard.save_game(Scoreboard.dictTemp)
 	#Scoreboard.dictTemp[Scoreboard.load_game()]
 	
 	#if not FileAccess.file_exists(file):

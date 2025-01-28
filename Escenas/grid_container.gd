@@ -58,7 +58,7 @@ func sort_players_and_add_position(player_list):
 
 func _on_submit_pressed() -> void:
 	print("PRESSED GRID")
-	var sw_result: Dictionary = await  SilentWolf.Scores.get_scores(0).sw_get_scores_complete
+	var sw_result: Dictionary = await  SilentWolf.Scores.get_scores(20).sw_get_scores_complete
 	
 	player_list_with_pos =sort_players_and_add_position(SilentWolf.Scores.scores)
 	add_player_to_grid(player_list_with_pos)
