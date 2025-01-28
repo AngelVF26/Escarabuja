@@ -1,12 +1,16 @@
 extends Node
 
 var blSaveLoad = null
-var puntos 
+var puntos = 0
 var pos_dict = {}
 var datos_originales
 
 var dat_pasados
 var dictTemp : Dictionary 
+
+var player_name : String
+var player_list = []
+
 
 func _setPuntos(points):
 	puntos = points
@@ -17,6 +21,16 @@ func _getPuntos():
 var file = "user://scores.cfg"
 var default_dict 
 func _ready():
+	SilentWolf.configure({
+		"api_key": "pzKpjSHRPxaQlCLMi1mXF3Xpt2ns2Yd98cF3eYTX",
+		"game_id": "Escarabuja",
+		"log_level": 1
+	})
+	
+	SilentWolf.configure_scores({
+		"open_scene_on_close": "res://scenes/MainPage.tscn"
+	})
+	
 	dat_pasados = datos_originales
 	#borrarPartida()
 	if not FileAccess.file_exists(file):
@@ -26,6 +40,13 @@ func _ready():
 		load_game()
 	else:
 		pass
+
+func _physics_process(delta: float) -> void:
+	leaderboard()
+	
+func leaderboard():
+	for puntos in Scoreboard.puntos:
+		Scoreboard.player_list.append(Scoreboard.player_name)
 
 func save_game(datos_nuevos: Dictionary):
 	var json_string

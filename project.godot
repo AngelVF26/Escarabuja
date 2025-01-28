@@ -19,10 +19,15 @@ config/icon="res://assets/sprite escarabajo.png"
 
 Scoreboard="*res://Scripts/scoreboard.gd"
 AudioSettings="*res://Scripts/audio_settings.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [global_group]
 

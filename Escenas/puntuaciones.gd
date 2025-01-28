@@ -20,7 +20,15 @@ func _process(delta: float) -> void:
 
 
 func _on_submit_pressed() -> void:
+	
 	if $LineEdit.text != "":
+		Scoreboard.player_name = $LineEdit.text
+		Scoreboard.puntos = Scoreboard._getPuntos()
+		var sw_result : Dictionary = await  SilentWolf.Scores.save_score(Scoreboard.player_name, Scoreboard.puntos).sw_save_score_complete
+		print("pressed punt")
+		print(str(Scoreboard.player_name) + " " + str(Scoreboard.puntos))
+		print("Score persisted successfully: " + str(sw_result.score_id))
+		#self.hide()
 		$Submit.visible = false
 		$LineEdit.visible = false
 		$puntuacionesFinales.visible = true

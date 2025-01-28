@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://bigyguom7ggbr"]
+[gd_scene load_steps=21 format=3 uid="uid://bigyguom7ggbr"]
 
 [ext_resource type="Script" path="res://Escenas/puntuaciones.gd" id="1_go8q5"]
 [ext_resource type="Texture2D" uid="uid://ckcy0la1pewyu" path="res://assets/banner.png" id="2_pigrv"]
 [ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="3_vw8q5"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="4_hkodh"]
+[ext_resource type="Script" path="res://Escenas/grid_container.gd" id="5_ivhgb"]
 [ext_resource type="AudioStream" uid="uid://4aryae2dvl3n" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_DEFEAT_THEME.mp3" id="5_qkgnd"]
 
 [sub_resource type="FontFile" id="FontFile_4jv3h"]
@@ -103,7 +104,7 @@ cache/0/30/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_5fefk"]
 font = SubResource("FontFile_4jv3h")
-font_size = 40
+font_size = 45
 font_color = Color(0, 0, 0, 1)
 outline_size = 11
 outline_color = Color(0.6, 0.898039, 0.313726, 1)
@@ -373,14 +374,27 @@ offset_bottom = 65.0
 text = "Guardar"
 label_settings = SubResource("LabelSettings_odi16")
 
-[node name="puntuacionesFinales" type="Area2D" parent="."]
+[node name="puntuacionesFinales" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Posiciones" type="Label" parent="puntuacionesFinales"]
+texture_filter = 1
+offset_left = 131.0
+offset_top = -2.0
+offset_right = 369.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Posicion"
+label_settings = SubResource("LabelSettings_ryhns")
+horizontal_alignment = 1
 
 [node name="nombres" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
-offset_left = 137.0
-offset_top = 7.0
-offset_right = 375.0
-offset_bottom = 70.0
+offset_left = 385.0
+offset_right = 623.0
+offset_bottom = 63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Nombres"
@@ -389,10 +403,10 @@ horizontal_alignment = 1
 
 [node name="Segundos" type="Label" parent="puntuacionesFinales"]
 texture_filter = 1
-offset_left = 826.0
-offset_top = 5.0
-offset_right = 1070.0
-offset_bottom = 68.0
+offset_left = 906.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 65.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Tiempo"
@@ -400,6 +414,7 @@ label_settings = SubResource("LabelSettings_5fefk")
 horizontal_alignment = 1
 
 [node name="listaNombres" type="RichTextLabel" parent="puntuacionesFinales"]
+visible = false
 texture_filter = 1
 offset_left = 160.0
 offset_top = 65.0
@@ -412,6 +427,7 @@ theme_override_font_sizes/normal_font_size = 40
 text_direction = 1
 
 [node name="totalSegundos" type="RichTextLabel" parent="puntuacionesFinales"]
+visible = false
 texture_filter = 1
 layout_direction = 2
 offset_left = 886.0
@@ -471,6 +487,19 @@ offset_bottom = 120.0
 text = "Ver Créditos
 "
 label_settings = SubResource("LabelSettings_myohp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="puntuacionesFinales"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 98.0
+offset_right = 1130.0
+offset_bottom = 407.0
+
+[node name="GridContainer" type="GridContainer" parent="puntuacionesFinales/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 200
+columns = 3
+script = ExtResource("5_ivhgb")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
@@ -605,6 +634,7 @@ libraries = {
 autoplay = "flow"
 
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Submit" to="puntuacionesFinales/ScrollContainer/GridContainer" method="_on_submit_pressed"]
 [connection signal="pressed" from="puntuacionesFinales/Rejugar" to="." method="_on_rejugar_pressed"]
 [connection signal="pressed" from="puntuacionesFinales/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="ColorRect2/VolverCredito" to="." method="_on_volver_credito_pressed"]
