@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bioqi1tyrmj1a"]
+[gd_scene load_steps=24 format=3 uid="uid://bioqi1tyrmj1a"]
 
 [ext_resource type="Script" path="res://Escenas/inicio.gd" id="1_cqrg6"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="3_0qp4j"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://csnxicmss7r04" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0120.png" id="12_f1r31"]
 [ext_resource type="Texture2D" uid="uid://mxggkjowneuq" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0121.png" id="13_k5mrj"]
 [ext_resource type="Texture2D" uid="uid://b1e1dlh4h136a" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0122.png" id="14_r3x8g"]
-[ext_resource type="Texture2D" uid="uid://gkury60enog6" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0086.png" id="15_h45wv"]
 [ext_resource type="Texture2D" uid="uid://b66so6g1ssu3f" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0235.png" id="16_x4oy8"]
 [ext_resource type="Texture2D" uid="uid://cj2gt47c1w1s8" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0236.png" id="17_oh10g"]
 [ext_resource type="Texture2D" uid="uid://8lp0skhaji2i" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0237.png" id="18_266rp"]
@@ -649,12 +648,6 @@ texture_filter = 1
 position = Vector2(425, 450)
 scale = Vector2(3, 3)
 texture = ExtResource("14_r3x8g")
-
-[node name="tile w" type="Sprite2D" parent="instrucciones/ColorRect2"]
-texture_filter = 1
-position = Vector2(362, 395)
-scale = Vector2(3, 3)
-texture = ExtResource("15_h45wv")
 
 [node name="Tile0235" type="Sprite2D" parent="instrucciones/ColorRect2"]
 texture_filter = 1
