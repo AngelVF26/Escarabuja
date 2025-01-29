@@ -22,8 +22,8 @@ default_font_size = 16
 font_size = 22
 font_color = Color(0.960784, 0.901961, 0.929412, 1)
 outline_size = 10
-outline_color = Color(0.282353, 0.345098, 0.8, 1)
-shadow_color = Color(0.176401, 0.213233, 0.571781, 1)
+outline_color = Color(0.368627, 0.45098, 0.894118, 1)
+shadow_color = Color(0.239216, 0.286275, 0.717647, 1)
 shadow_offset = Vector2(-4, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1vyrn"]
@@ -32,7 +32,7 @@ font_size = 40
 font_color = Color(0.6, 0.898039, 0.313726, 1)
 outline_size = 6
 outline_color = Color(0.156863, 0.513726, 0.207843, 0.839216)
-shadow_color = Color(0.260782, 0.617143, 0.205674, 1)
+shadow_color = Color(0.225442, 0.534795, 0.177746, 1)
 shadow_offset = Vector2(-4, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_etdga"]
@@ -40,16 +40,16 @@ line_spacing = 0.2
 font_size = 25
 font_color = Color(0.960784, 0.901961, 0.929412, 1)
 outline_size = 12
-outline_color = Color(0.282353, 0.345098, 0.8, 1)
-shadow_color = Color(0.176471, 0.211765, 0.572549, 1)
+outline_color = Color(0.368627, 0.45098, 0.894118, 1)
+shadow_color = Color(0.239216, 0.286275, 0.717647, 1)
 shadow_offset = Vector2(-4, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_myohp"]
 font_size = 25
-font_color = Color(0.959909, 0.903695, 0.931267, 1)
+font_color = Color(0.956863, 0.976471, 0.984314, 1)
 outline_size = 12
-outline_color = Color(0.283758, 0.343451, 0.800556, 1)
-shadow_color = Color(0.176471, 0.211765, 0.572549, 1)
+outline_color = Color(0.368627, 0.45098, 0.894118, 1)
+shadow_color = Color(0.237389, 0.285295, 0.71904, 1)
 shadow_offset = Vector2(-4, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqqn2"]
@@ -186,10 +186,10 @@ right_icon = ExtResource("3_vw8q5")
 [node name="Submit" type="TextureButton" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
-offset_left = 454.0
-offset_top = 473.0
-offset_right = 687.0
-offset_bottom = 582.0
+offset_left = 448.0
+offset_top = 472.0
+offset_right = 681.0
+offset_bottom = 581.0
 disabled = true
 texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
@@ -210,6 +210,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Posiciones" type="Label" parent="puntuacionesFinales"]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 5.0
 offset_right = 359.0
@@ -221,6 +222,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="nombres" type="Label" parent="puntuacionesFinales"]
+layout_mode = 0
 offset_left = 406.0
 offset_top = 5.0
 offset_right = 602.0
@@ -231,6 +233,7 @@ label_settings = SubResource("LabelSettings_1vyrn")
 horizontal_alignment = 1
 
 [node name="Segundos" type="Label" parent="puntuacionesFinales"]
+layout_mode = 0
 offset_left = 937.0
 offset_right = 1133.0
 offset_bottom = 55.0
@@ -280,10 +283,10 @@ label_settings = SubResource("LabelSettings_5fefk")
 [node name="Rejugar" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 96.0
-offset_top = 448.0
-offset_right = 382.0
-offset_bottom = 604.0
+offset_left = 36.0
+offset_top = 393.0
+offset_right = 322.0
+offset_bottom = 549.0
 texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
 
@@ -303,10 +306,10 @@ vertical_alignment = 1
 [node name="Creditos" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 744.0
-offset_top = 448.0
-offset_right = 1030.0
-offset_bottom = 604.0
+offset_left = 781.0
+offset_top = 394.0
+offset_right = 1067.0
+offset_bottom = 550.0
 texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
 
@@ -335,6 +338,10 @@ layout_mode = 2
 theme_override_constants/h_separation = 200
 columns = 3
 script = ExtResource("5_ivhgb")
+
+[node name="ColorRect" type="ColorRect" parent="puntuacionesFinales/ScrollContainer"]
+layout_mode = 2
+color = Color(0.928044, 0.64759, 0.759463, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
