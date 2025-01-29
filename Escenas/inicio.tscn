@@ -300,8 +300,11 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_ed5v4"]
 line_spacing = 5.0
 font_size = 27
-outline_size = 5
-outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
+font_color = Color(0.956788, 0.978402, 0.984509, 1)
+outline_size = 8
+outline_color = Color(0.370094, 0.449397, 0.892412, 1)
+shadow_color = Color(0.174198, 0.209103, 0.566695, 1)
+shadow_offset = Vector2(-3, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
 font_size = 30
@@ -427,17 +430,17 @@ autoplay = "flotarArriba"
 
 [node name="Logo" type="Sprite2D" parent="main_menu"]
 texture_filter = 1
-position = Vector2(594, 297)
+position = Vector2(568, 320)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
 
 [node name="botonInstrucciones" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 452.0
-offset_top = 504.0
-offset_right = 745.0
-offset_bottom = 626.0
+offset_left = 432.0
+offset_top = 496.0
+offset_right = 725.0
+offset_bottom = 618.0
 pivot_offset = Vector2(144, 59)
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
@@ -446,18 +449,19 @@ stretch_mode = 0
 layout_mode = 0
 offset_left = 39.0
 offset_top = 40.0
-offset_right = 310.0
+offset_right = 251.0
 offset_bottom = 82.0
 text = "INSTRUCCIONES"
 label_settings = SubResource("LabelSettings_ed5v4")
+horizontal_alignment = 1
 
 [node name="Button" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 452.0
-offset_top = 404.0
-offset_right = 740.0
-offset_bottom = 526.0
+offset_left = 432.0
+offset_top = 384.0
+offset_right = 720.0
+offset_bottom = 506.0
 pivot_offset = Vector2(139, 61)
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
@@ -470,6 +474,7 @@ offset_right = 206.0
 offset_bottom = 82.0
 text = "JUGAR"
 label_settings = SubResource("LabelSettings_ed5v4")
+horizontal_alignment = 1
 
 [node name="audio_manager" type="Node2D" parent="main_menu"]
 script = ExtResource("8_kiret")
