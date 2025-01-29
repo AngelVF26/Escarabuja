@@ -9,38 +9,45 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_5fefk"]
 font_size = 45
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.6, 0.898039, 0.313726, 1)
 outline_size = 11
-outline_color = Color(0.6, 0.898039, 0.313726, 1)
+outline_color = Color(0.156863, 0.513726, 0.207843, 0.756863)
+shadow_color = Color(0.333333, 0.631373, 0.129412, 1)
+shadow_offset = Vector2(-6, 3)
 
 [sub_resource type="Theme" id="Theme_6m7e6"]
 default_font_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_odi16"]
 font_size = 20
-font_color = Color(0, 0, 0, 1)
-outline_size = 11
-outline_color = Color(0.6, 0.898039, 0.313726, 1)
+font_color = Color(0.6, 0.898039, 0.313726, 1)
+outline_size = 12
+outline_color = Color(0.109804, 0.380392, 0.14902, 0.929412)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ryhns"]
+[sub_resource type="LabelSettings" id="LabelSettings_1vyrn"]
 line_spacing = 5.0
-font_size = 45
-font_color = Color(0, 0, 0, 1)
-outline_size = 11
-outline_color = Color(0.6, 0.898039, 0.313726, 1)
-shadow_color = Color(0, 0, 0, 1)
+font_size = 40
+font_color = Color(0.6, 0.898039, 0.313726, 1)
+outline_size = 5
+outline_color = Color(0.156863, 0.513726, 0.207843, 0.756863)
+shadow_color = Color(0.171065, 0.41518, 0.133521, 1)
+shadow_offset = Vector2(-3, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_etdga"]
+line_spacing = 0.2
 font_size = 25
-font_color = Color(0, 0, 0, 1)
-outline_size = 11
-outline_color = Color(0.6, 0.898039, 0.313726, 1)
+font_color = Color(0.6, 0.898039, 0.313726, 1)
+outline_size = 12
+outline_color = Color(0.109804, 0.380392, 0.14902, 0.929412)
+shadow_size = 2
+shadow_color = Color(0.333333, 0.631373, 0.129412, 0)
+shadow_offset = Vector2(-4, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_myohp"]
 font_size = 25
-font_color = Color(0, 0, 0, 1)
-outline_size = 11
-outline_color = Color(0.6, 0.898039, 0.313726, 1)
+font_color = Color(0.741176, 0.792157, 0.976471, 1)
+outline_size = 13
+outline_color = Color(0.109804, 0.380392, 0.14902, 0.929412)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqqn2"]
 font_size = 27
@@ -186,51 +193,46 @@ stretch_mode = 0
 
 [node name="Guardar" type="Label" parent="Submit"]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 37.0
-offset_right = 154.0
-offset_bottom = 65.0
-text = "Guardar"
+offset_left = 66.0
+offset_top = 39.0
+offset_right = 163.0
+offset_bottom = 67.0
+text = "GUARDAR"
 label_settings = SubResource("LabelSettings_odi16")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="puntuacionesFinales" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 
 [node name="Posiciones" type="Label" parent="puntuacionesFinales"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 131.0
-offset_top = -2.0
-offset_right = 369.0
-offset_bottom = 61.0
-text = "Posicion"
-label_settings = SubResource("LabelSettings_ryhns")
+offset_left = 144.0
+offset_top = 5.0
+offset_right = 359.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 1
+text = "POSICIÓN"
+label_settings = SubResource("LabelSettings_1vyrn")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="nombres" type="Label" parent="puntuacionesFinales"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 385.0
-offset_right = 623.0
-offset_bottom = 63.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Nombres"
-label_settings = SubResource("LabelSettings_ryhns")
+offset_left = 406.0
+offset_top = 5.0
+offset_right = 602.0
+offset_bottom = 60.0
+text = "NOMBRES
+"
+label_settings = SubResource("LabelSettings_1vyrn")
 horizontal_alignment = 1
 
 [node name="Segundos" type="Label" parent="puntuacionesFinales"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 906.0
-offset_top = 2.0
-offset_right = 1150.0
-offset_bottom = 65.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Tiempo"
-label_settings = SubResource("LabelSettings_5fefk")
+offset_left = 937.0
+offset_right = 1133.0
+offset_bottom = 55.0
+text = "TIEMPO"
+label_settings = SubResource("LabelSettings_1vyrn")
 horizontal_alignment = 1
 
 [node name="listaNombres" type="RichTextLabel" parent="puntuacionesFinales"]
@@ -285,12 +287,15 @@ stretch_mode = 0
 [node name="volver" type="Label" parent="puntuacionesFinales/Rejugar"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 45.0
-offset_top = 56.0
-offset_right = 422.0
-offset_bottom = 117.0
-text = "Volver al menú"
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 243.0
+offset_bottom = 110.0
+text = "VOLVER AL
+MENÚ"
 label_settings = SubResource("LabelSettings_etdga")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Creditos" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
@@ -305,13 +310,14 @@ stretch_mode = 0
 [node name="creditos" type="Label" parent="puntuacionesFinales/Creditos"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 64.0
-offset_top = 57.0
-offset_right = 452.0
-offset_bottom = 120.0
-text = "Ver Créditos
-"
+offset_left = 56.0
+offset_top = 48.0
+offset_right = 227.0
+offset_bottom = 96.0
+text = "VER CRÉDITOS"
 label_settings = SubResource("LabelSettings_myohp")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="puntuacionesFinales"]
 layout_mode = 0

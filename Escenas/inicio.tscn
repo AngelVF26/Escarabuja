@@ -300,8 +300,11 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_ed5v4"]
 line_spacing = 5.0
 font_size = 27
+font_color = Color(0.659987, 0.952036, 0.396272, 1)
 outline_size = 5
-outline_color = Color(1.34766e-06, 0.748095, 0.372718, 1)
+outline_color = Color(0.156863, 0.513726, 0.207843, 0.756863)
+shadow_color = Color(0.172549, 0.415686, 0.133333, 1)
+shadow_offset = Vector2(-2, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
 font_size = 30
@@ -427,17 +430,17 @@ autoplay = "flotarArriba"
 
 [node name="Logo" type="Sprite2D" parent="main_menu"]
 texture_filter = 1
-position = Vector2(578, 297)
+position = Vector2(576, 320)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
 
 [node name="botonInstrucciones" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 436.0
-offset_top = 504.0
-offset_right = 729.0
-offset_bottom = 626.0
+offset_left = 432.0
+offset_top = 496.0
+offset_right = 725.0
+offset_bottom = 618.0
 pivot_offset = Vector2(144, 59)
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
@@ -455,10 +458,10 @@ horizontal_alignment = 1
 [node name="Button" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 436.0
-offset_top = 404.0
-offset_right = 724.0
-offset_bottom = 526.0
+offset_left = 432.0
+offset_top = 384.0
+offset_right = 720.0
+offset_bottom = 506.0
 pivot_offset = Vector2(139, 61)
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
