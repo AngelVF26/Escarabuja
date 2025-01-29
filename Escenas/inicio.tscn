@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bioqi1tyrmj1a"]
+[gd_scene load_steps=17 format=3 uid="uid://bioqi1tyrmj1a"]
 
 [ext_resource type="Script" path="res://Escenas/inicio.gd" id="1_cqrg6"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="3_0qp4j"]
@@ -9,13 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bkbcnbrgplq6d" path="res://assets/logo.png" id="7_x0thh"]
 [ext_resource type="Script" path="res://Escenas/audio_manager.gd" id="8_kiret"]
 [ext_resource type="AudioStream" uid="uid://d31kvvomt6ir5" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_MENU_THEME.mp3" id="8_sb3rd"]
-[ext_resource type="FontFile" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="10_3sb3w"]
-[ext_resource type="Texture2D" uid="uid://csnxicmss7r04" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0120.png" id="12_f1r31"]
-[ext_resource type="Texture2D" uid="uid://mxggkjowneuq" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0121.png" id="13_k5mrj"]
-[ext_resource type="Texture2D" uid="uid://b1e1dlh4h136a" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0122.png" id="14_r3x8g"]
-[ext_resource type="Texture2D" uid="uid://b66so6g1ssu3f" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0235.png" id="16_x4oy8"]
-[ext_resource type="Texture2D" uid="uid://cj2gt47c1w1s8" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0236.png" id="17_oh10g"]
-[ext_resource type="Texture2D" uid="uid://8lp0skhaji2i" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0237.png" id="18_266rp"]
+[ext_resource type="Texture2D" uid="uid://lhdfswikr5av" path="res://assets/instrucciones.png" id="10_hjbjl"]
 
 [sub_resource type="Animation" id="Animation_h60v3"]
 length = 0.001
@@ -308,7 +302,8 @@ shadow_offset = Vector2(-3, 2)
 [sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
 font_size = 30
 shadow_size = 3
-shadow_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.270588, 0.32549, 0.662745, 1)
+shadow_offset = Vector2(3, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1tbgr"]
 line_spacing = 5.0
@@ -498,79 +493,39 @@ text = "VOLUMEN"
 label_settings = SubResource("LabelSettings_ed5v4")
 
 [node name="instrucciones" type="Node2D" parent="."]
-visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="instrucciones"]
 z_index = 7
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0, 0, 0, 0.529412)
+color = Color(0, 0, 0, 0.0352941)
 
 [node name="Label" type="Label" parent="instrucciones/ColorRect2"]
 layout_mode = 0
-offset_left = 346.0
-offset_top = 38.0
-offset_right = 849.0
-offset_bottom = 84.0
-theme_override_fonts/font = ExtResource("10_3sb3w")
-text = "¡Bienvenidos a Escarabuja!"
+offset_left = 312.0
+offset_right = 815.0
+offset_bottom = 46.0
+text = "Cómo jugar a ¡Escarabuja!"
 label_settings = SubResource("LabelSettings_3dyhm")
-
-[node name="RichTextLabel8" type="RichTextLabel" parent="instrucciones/ColorRect2"]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 481.0
-offset_right = 855.0
-offset_bottom = 560.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 30
-text = "SPRINT
-"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="instrucciones/ColorRect2"]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 315.0
-offset_right = 687.0
-offset_bottom = 361.0
+offset_left = 87.0
+offset_top = 469.0
+offset_right = 286.0
+offset_bottom = 515.0
 text = "Controles"
 label_settings = SubResource("LabelSettings_3dyhm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="tile a" type="Sprite2D" parent="instrucciones/ColorRect2"]
-texture_filter = 1
-position = Vector2(302, 450)
-scale = Vector2(3, 3)
-texture = ExtResource("12_f1r31")
-
-[node name="tile s" type="Sprite2D" parent="instrucciones/ColorRect2"]
-texture_filter = 1
-position = Vector2(362, 450)
-scale = Vector2(3, 3)
-texture = ExtResource("13_k5mrj")
-
-[node name="tile d" type="Sprite2D" parent="instrucciones/ColorRect2"]
-texture_filter = 1
-position = Vector2(425, 450)
-scale = Vector2(3, 3)
-texture = ExtResource("14_r3x8g")
-
-[node name="Tile0235" type="Sprite2D" parent="instrucciones/ColorRect2"]
-texture_filter = 1
-position = Vector2(745, 448)
-scale = Vector2(4, 4)
-texture = ExtResource("16_x4oy8")
-
-[node name="Tile0236" type="Sprite2D" parent="instrucciones/ColorRect2"]
-texture_filter = 1
-position = Vector2(809, 448)
-scale = Vector2(4, 4)
-texture = ExtResource("17_oh10g")
-
-[node name="Tile0237" type="Sprite2D" parent="instrucciones/ColorRect2"]
-texture_filter = 1
-position = Vector2(873, 448)
-scale = Vector2(4, 4)
-texture = ExtResource("18_266rp")
+[node name="Instrucciones" type="Sprite2D" parent="instrucciones/ColorRect2"]
+z_index = -1
+position = Vector2(575.469, 324)
+scale = Vector2(0.762103, 0.799451)
+texture = ExtResource("10_hjbjl")
 
 [node name="boton_volver" type="TextureButton" parent="instrucciones"]
 z_index = 7
