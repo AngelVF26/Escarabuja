@@ -318,7 +318,6 @@ script = ExtResource("1_cqrg6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_sb3rd")
-parameters/looping = true
 
 [node name="main_menu" type="Node2D" parent="."]
 
