@@ -469,9 +469,9 @@ stretch_mode = 0
 
 [node name="Label" type="Label" parent="main_menu/Button"]
 layout_mode = 0
-offset_left = 90.0
+offset_left = 88.0
 offset_top = 40.0
-offset_right = 206.0
+offset_right = 204.0
 offset_bottom = 82.0
 text = "JUGAR"
 label_settings = SubResource("LabelSettings_ed5v4")
