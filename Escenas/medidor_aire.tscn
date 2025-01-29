@@ -28,13 +28,15 @@ texture_under = ExtResource("1_a4s40")
 texture_progress = ExtResource("2_5lrrh")
 
 [node name="Label" type="Label" parent="."]
+z_index = -1
 texture_filter = 1
-offset_left = 86.0
+offset_left = 88.0
 offset_top = 49.0
-offset_right = 106.0
+offset_right = 108.0
 offset_bottom = 72.0
 theme_override_colors/font_outline_color = Color(0.180245, 0.220537, 0.584389, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = SubResource("FontFile_tkf33")
 text = "30"
-horizontal_alignment = 2
+horizontal_alignment = 1
+vertical_alignment = 1
