@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bkbcnbrgplq6d" path="res://assets/logo.png" id="7_x0thh"]
 [ext_resource type="Script" path="res://Escenas/audio_manager.gd" id="8_kiret"]
 [ext_resource type="AudioStream" uid="uid://d31kvvomt6ir5" path="res://SOUNDS ESCARABUJA/THEMES/ESCARABUJA_MENU_THEME.mp3" id="8_sb3rd"]
-[ext_resource type="FontFile" uid="uid://bljosobunt31s" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="10_3sb3w"]
+[ext_resource type="FontFile" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="10_3sb3w"]
 [ext_resource type="Texture2D" uid="uid://csnxicmss7r04" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0120.png" id="12_f1r31"]
 [ext_resource type="Texture2D" uid="uid://mxggkjowneuq" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0121.png" id="13_k5mrj"]
 [ext_resource type="Texture2D" uid="uid://b1e1dlh4h136a" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0122.png" id="14_r3x8g"]
@@ -338,10 +338,8 @@ offset_bottom = 648.0
 texture = ExtResource("3_djfn5")
 
 [node name="ColorRect" type="ColorRect" parent="main_menu"]
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 1159.0
-offset_bottom = 651.0
+offset_right = 1152.0
+offset_bottom = 648.0
 color = Color(0.929412, 0.647059, 0.760784, 1)
 
 [node name="TextureRect" type="TextureRect" parent="main_menu"]
@@ -432,16 +430,16 @@ autoplay = "flotarArriba"
 
 [node name="Logo" type="Sprite2D" parent="main_menu"]
 texture_filter = 1
-position = Vector2(568, 328)
+position = Vector2(560, 328)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
 
 [node name="botonInstrucciones" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 432.0
+offset_left = 416.0
 offset_top = 480.0
-offset_right = 725.0
+offset_right = 709.0
 offset_bottom = 602.0
 pivot_offset = Vector2(144, 59)
 texture_normal = ExtResource("3_0qp4j")
@@ -460,9 +458,9 @@ horizontal_alignment = 1
 [node name="Button" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 432.0
+offset_left = 416.0
 offset_top = 384.0
-offset_right = 720.0
+offset_right = 704.0
 offset_bottom = 506.0
 pivot_offset = Vector2(139, 61)
 texture_normal = ExtResource("3_0qp4j")
@@ -504,11 +502,9 @@ visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="instrucciones"]
 z_index = 7
-offset_left = -26.0
-offset_top = -14.0
-offset_right = 1174.0
-offset_bottom = 670.0
-color = Color(0, 0, 0, 0.639216)
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.529412)
 
 [node name="Label" type="Label" parent="instrucciones/ColorRect2"]
 layout_mode = 0
