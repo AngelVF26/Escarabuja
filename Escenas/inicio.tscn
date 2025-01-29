@@ -300,11 +300,11 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_ed5v4"]
 line_spacing = 5.0
 font_size = 27
-font_color = Color(0.659987, 0.952036, 0.396272, 1)
-outline_size = 5
-outline_color = Color(0.156863, 0.513726, 0.207843, 0.756863)
-shadow_color = Color(0.172549, 0.415686, 0.133333, 1)
-shadow_offset = Vector2(-2, 1)
+font_color = Color(0.960784, 0.901961, 0.929412, 1)
+outline_size = 8
+outline_color = Color(0.282353, 0.345098, 0.8, 1)
+shadow_color = Color(0.176471, 0.211765, 0.572549, 1)
+shadow_offset = Vector2(-3, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
 font_size = 30
