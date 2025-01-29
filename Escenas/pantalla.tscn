@@ -193,11 +193,13 @@ offset_bottom = 117.833
 scale = Vector2(0.5, 0.5)
 
 [node name="Label" parent="GUI/Medidor Aire" index="1"]
-offset_left = 87.6667
-offset_top = 74.8333
-offset_right = 107.667
-offset_bottom = 97.8333
+offset_left = 87.5
+offset_top = 74.6667
+offset_right = 109.5
+offset_bottom = 97.6667
 scale = Vector2(0.5, 0.5)
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Medidor Aire2" parent="GUI" instance=ExtResource("5_metew")]
 visible = false

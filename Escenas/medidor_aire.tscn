@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cu83o0mqk31cr" path="res://assets/burbuja.png" id="2_5lrrh"]
 
 [sub_resource type="FontFile" id="FontFile_tkf33"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -26,9 +29,9 @@ texture_progress = ExtResource("2_5lrrh")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 88.0
+offset_left = 86.0
 offset_top = 49.0
-offset_right = 108.0
+offset_right = 106.0
 offset_bottom = 72.0
 theme_override_colors/font_outline_color = Color(0.180245, 0.220537, 0.584389, 1)
 theme_override_constants/outline_size = 5

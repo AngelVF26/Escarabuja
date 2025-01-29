@@ -84,7 +84,7 @@ tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/path = NodePath("main_menu/TextureRect6:position")
-tracks/5/interp = 1
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
@@ -303,7 +303,7 @@ font_size = 27
 font_color = Color(0.956788, 0.978402, 0.984509, 1)
 outline_size = 8
 outline_color = Color(0.370094, 0.449397, 0.892412, 1)
-shadow_color = Color(0.174198, 0.209103, 0.566695, 1)
+shadow_color = Color(0.36021, 0.433849, 0.886552, 1)
 shadow_offset = Vector2(-3, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
@@ -390,6 +390,7 @@ offset_bottom = 418.0
 texture = ExtResource("6_btpb2")
 
 [node name="TextureRect6" type="TextureRect" parent="main_menu"]
+z_index = 2
 texture_filter = 1
 offset_left = 722.0
 offset_top = 240.0
@@ -430,7 +431,7 @@ autoplay = "flotarArriba"
 
 [node name="Logo" type="Sprite2D" parent="main_menu"]
 texture_filter = 1
-position = Vector2(568, 320)
+position = Vector2(568, 328)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
 
@@ -438,9 +439,9 @@ texture = ExtResource("7_x0thh")
 z_index = 6
 texture_filter = 1
 offset_left = 432.0
-offset_top = 496.0
+offset_top = 480.0
 offset_right = 725.0
-offset_bottom = 618.0
+offset_bottom = 602.0
 pivot_offset = Vector2(144, 59)
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
