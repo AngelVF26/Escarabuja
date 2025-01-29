@@ -39,21 +39,26 @@ func _on_rejugar_pressed() -> void:
 	pass # Replace with function body.
 
 
-
-
 func _on_volver_credito_pressed() -> void:
 	$ColorRect2.set_deferred("visible",false)
 	pass # Replace with function body.
-
 
 func _on_creditos_pressed() -> void:
 	$ColorRect2.set_deferred("visible",true)
 	
 	pass # Replace with function body.
 
-
 func _on_line_edit_text_changed(new_text: String) -> void:
 	if new_text != "":
 		%Submit.disabled = false
 	else:
 		%Submit.disabled = true
+
+func _on_label_itch_meta_clicked(meta):
+	OS.shell_open("https://saturnia-games.itch.io/")
+	pass # Replace with function body.
+
+
+func _on_tag_bluesky_meta_clicked(meta):
+	OS.shell_open("https://bsky.app/profile/saturniagames.bsky.social")
+	pass # Replace with function body.
