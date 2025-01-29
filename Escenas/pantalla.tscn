@@ -235,6 +235,7 @@ texture = ExtResource("7_x6iwt")
 
 [node name="Label" type="Label" parent="GUI/TextureRect2"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 30.0
 offset_top = 28.0
 offset_right = 114.0
