@@ -300,10 +300,10 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_ed5v4"]
 line_spacing = 5.0
 font_size = 27
-font_color = Color(0.960784, 0.901961, 0.929412, 1)
+font_color = Color(0.956788, 0.978402, 0.984509, 1)
 outline_size = 8
-outline_color = Color(0.282353, 0.345098, 0.8, 1)
-shadow_color = Color(0.176471, 0.211765, 0.572549, 1)
+outline_color = Color(0.370094, 0.449397, 0.892412, 1)
+shadow_color = Color(0.174198, 0.209103, 0.566695, 1)
 shadow_offset = Vector2(-3, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
@@ -430,7 +430,7 @@ autoplay = "flotarArriba"
 
 [node name="Logo" type="Sprite2D" parent="main_menu"]
 texture_filter = 1
-position = Vector2(576, 320)
+position = Vector2(568, 320)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
 
