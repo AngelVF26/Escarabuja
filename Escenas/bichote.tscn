@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3pf7wj8m276"]
+[gd_scene load_steps=12 format=3 uid="uid://3pf7wj8m276"]
 
 [ext_resource type="Script" path="res://Escenas/bichote.gd" id="1_i3vpt"]
 [ext_resource type="Texture2D" uid="uid://cieshuo4pecqy" path="res://assets/sprite escarabajo.png" id="2_aybd6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bkmtlcdtt6js0" path="res://assets/sprite escarabajo3.png" id="4_hfhqk"]
 [ext_resource type="Texture2D" uid="uid://ddteoij488dbs" path="res://assets/sprite escarabajo4.png" id="5_tkqh8"]
 [ext_resource type="Texture2D" uid="uid://btq1tsbqhb2f5" path="res://assets/sprite escarabajo muerto.png" id="7_0mqfx"]
+[ext_resource type="Texture2D" uid="uid://cpfj560rjkm84" path="res://assets/sprite velocidad escarabajo.png" id="9_kb30e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x84nh"]
 animations = [{
@@ -63,3 +64,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_vohhh")
+
+[node name="SpriteVelocidadEscarabajo" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -1.33334)
+texture = ExtResource("9_kb30e")

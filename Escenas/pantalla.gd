@@ -23,18 +23,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_pressed("pabajo"):
+		velPantalla = 160
+	if Input.is_action_just_released("pabajo"):
+		velPantalla = 320
 	if !muerto:
 		$TextureRect.position.y += velPantalla * delta
 	#print(str($TextureRect.position.y))
 	if 	$TextureRect.position.y >= 1219:
-		print("cambio")
-		print(str($TextureRect.position.y))
 		$TextureRect.position.y = 259
-		print(str($TextureRect.position.y))
 	#print($bichote/burbuja/CollisionShape2D.disabled)
 	
-	if muerto == false:
-		segundos += delta
+	if !muerto:
+		if Input.is_action_pressed("pabajo"):
+			segundos += 0.3 * delta
+		else:
+			segundos += delta
 	label.text = str(segundos).pad_decimals(2)
 	
 func _on_final_col_body_entered(body: Node2D) -> void:
@@ -64,12 +68,12 @@ func HAS_MUERTO():
 	
 func _on_time_aire_timeout() -> void:
 	valorpasado = texture_progress_bar.value
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") && (Input.is_action_pressed("paderecha") || Input.is_action_pressed("paizquierda")):
 		texture_progress_bar.value -= 2
 	else:
 		texture_progress_bar.value -= 1
 	valorpresente = texture_progress_bar.value
-	print(str($bichote/burbuja/CollisionShape2D.disabled))
+	#print(str($bichote/burbuja/CollisionShape2D.disabled))
 	if $bichote/burbuja.tocodorada == true:
 		texture_progress_dorada.value -=1
 	elif $bichote/burbuja.tocodorada == false:

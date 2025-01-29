@@ -16,16 +16,16 @@ func _physics_process(delta: float) -> void:
 	#var direction_y:=Input.get_axis("parriba", "pabajo")
 	velocity.y = SPEED * 0.8
 	
-	#if Input.is_action_pressed("pabajo"):
+	if Input.is_action_pressed("pabajo"):
 		#if !Input.is_action_pressed("sprint"):
-			#velocity.y = SPEED * 0.3
-	#if Input.is_action_just_released("pabajo"):
-		#velocity.y = SPEED * 0.8
+		velocity.y = SPEED * 0.3
+	if Input.is_action_just_released("pabajo"):
+		velocity.y = SPEED * 0.8
 	move_and_slide()
 
 func _ready() -> void:
 	print(random)
-	if random > 0:
+	if random > 2.8:
 		dorada = true
 		$Sprite2D.texture = load("res://assets/burbuja dorada borde2.png")
 
