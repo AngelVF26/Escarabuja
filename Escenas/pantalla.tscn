@@ -66,7 +66,7 @@ distance = -598.932
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd3bl"]
 size = Vector2(1139, 20)
 
-[node name="Nivel" type="Area2D"]
+[node name="Nivel" type="Node2D"]
 position = Vector2(537, 327)
 script = ExtResource("1_6khms")
 
@@ -122,10 +122,6 @@ position = Vector2(3599, -1982)
 position = Vector2(6078, 906)
 scale = Vector2(1.01342, -17.2065)
 shape = SubResource("RectangleShape2D_hd3bl")
-
-[node name="Cronometro" type="Timer" parent="."]
-wait_time = 0.01
-autostart = true
 
 [node name="GameWorld" type="CanvasLayer" parent="."]
 
@@ -240,7 +236,6 @@ parameters/looping = true
 
 [connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]
-[connection signal="timeout" from="Cronometro" to="." method="_on_cronometro_timeout"]
 [connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
 [connection signal="texture_changed" from="bichote/burbuja/Burbuja" to="." method="_on_burbuja_texture_changed"]
 [connection signal="value_changed" from="GUI/Medidor Aire/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

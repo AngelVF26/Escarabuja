@@ -1,7 +1,7 @@
 extends Area2D
 @onready var time_aire: Timer = $"../../TimeAire"
 @onready var texture_progress_bar: TextureProgressBar = $"../../GUI/Medidor Aire/TextureProgressBar"
-@onready var nivel: Area2D = $"../.."
+@onready var nivel: Node2D = $"../.."
 var tocodorada : bool
 @onready var bichote: CharacterBody2D = $bichote
 var nombre: String = "Burbuja"

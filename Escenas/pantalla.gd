@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 @onready var burbujaSprite: AnimatedSprite2D = $bichote/burbuja/AnimatedSprite2D
 @onready var transicion_black: ColorRect = $ColorRect
 
@@ -14,6 +14,7 @@ var valorpresente : float = 0
 var escala_original: Vector2
 var valor_pasado : int = 30
 var valor_actual : int = 30
+var muerto: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	escala_original = $bichote/burbuja.scale
@@ -24,7 +25,8 @@ func _process(delta: float) -> void:
 	$TextureRect.size.y += 80 * delta
 	#print($bichote/burbuja/CollisionShape2D.disabled)
 	
-	segundos += delta
+	if muerto == false:
+		segundos += delta
 	label.text = str(segundos).pad_decimals(2)
 	
 func _on_final_col_body_entered(body: Node2D) -> void:
@@ -34,15 +36,9 @@ func _on_final_col_body_entered(body: Node2D) -> void:
 	
 	pass # Replace with function body.
 
-
-func _on_cronometro_timeout() -> void:
-	#segundos += cronometro.wait_time
-	#label.text = str(segundos).pad_decimals(2)
-	#cronometro.start
-	pass
-
 func HAS_MUERTO():
-	cronometro.stop()
+	#cronometro.stop()
+	muerto = true
 	Scoreboard._setPuntos(segundos)
 	texture_progress_bar.value = 0
 	bichote.velocity.x =0
