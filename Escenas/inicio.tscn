@@ -492,6 +492,7 @@ text = "VOLUMEN"
 label_settings = SubResource("LabelSettings_ed5v4")
 
 [node name="instrucciones" type="Node2D" parent="."]
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="instrucciones"]
 z_index = 7
