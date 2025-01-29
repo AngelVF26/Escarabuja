@@ -16,6 +16,8 @@ var valor_pasado : int = 30
 var valor_actual : int = 30
 var muerto: bool = false
 var velPantalla : int = 320
+var dificultad : int
+var valorAire : float = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	escala_original = $bichote/burbuja.scale
@@ -36,11 +38,12 @@ func _process(delta: float) -> void:
 	
 	if !muerto:
 		if Input.is_action_pressed("pabajo"):
-			segundos += 0.3 * delta
+			segundos += valorAire * 0.3 * delta
 		else:
-			segundos += delta
+			segundos += valorAire * delta
 	label.text = str(segundos).pad_decimals(2)
-	
+
+
 func _on_final_col_body_entered(body: Node2D) -> void:
 	if body.name == "bichote":
 		body.position = Vector2(body.position.x,70)
@@ -97,10 +100,13 @@ func _on_texture_progress_bar_value_changed(value: float) -> void:
 	if value<=0:
 		HAS_MUERTO()
 	elif value > valor_pasado:
+		valorAire += abs(valor_actual-valor_pasado)*0.01
 		$bichote/burbuja.scale += Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
 	elif value < valor_pasado:
+		valorAire -= abs(valor_actual-valor_pasado)*0.01
 		$bichote/burbuja.scale -= Vector2(0.025*abs(valor_actual-valor_pasado),0.025*abs(valor_actual-valor_pasado))
-		
+	$GUI/TextureRect2/Label.text = "Pts x " + str(valorAire).pad_decimals(1)
+	print("valor aire " + str(valorAire))
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -147,3 +153,12 @@ func _on_medidor_aire_2_visibility_changed() -> void:
 		$bichote/burbuja/CollisionShape2D.disabled = true
 	else:
 		$bichote/burbuja/CollisionShape2D.disabled = false
+
+
+func _on_timer_spawns_timeout() -> void:
+	var tiempo = 1
+	var reduccion = segundos / 2500
+	if segundos > 250 && segundos < 2500:
+		set_deferred("wait_time",tiempo - reduccion)
+		print("patatuelas" + str(tiempo-reduccion))
+		

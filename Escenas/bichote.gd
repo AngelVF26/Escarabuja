@@ -28,12 +28,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("sprint") && direction_x == 1:
 		velocity.x = SPEED *2
 		$SpriteVelocidadEscarabajo.visible = true
-
 	if Input.is_action_just_released("sprint"):
 		velocity.x = direction_x * SPEED
 		$SpriteVelocidadEscarabajo.visible = false
 	#if Input.is_action_pressed("pabajo"):
-		##if !Input.is_action_pressed("sprint"):
+		#if !Input.is_action_pressed("sprint"):
 		#velocity.y = -SPEED * 0.3
 	#if Input.is_action_just_released("pabajo"):
 		#velocity.y = -SPEED * 0.8

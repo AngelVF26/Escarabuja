@@ -224,6 +224,25 @@ offset_bottom = 97.8333
 scale = Vector2(0.5, 0.5)
 text = "10"
 
+[node name="TextureRect2" type="TextureRect" parent="GUI"]
+z_index = -1
+texture_filter = 1
+offset_left = 980.0
+offset_top = 461.0
+offset_right = 1119.0
+offset_bottom = 552.0
+texture = ExtResource("7_x6iwt")
+
+[node name="Label" type="Label" parent="GUI/TextureRect2"]
+texture_filter = 1
+offset_left = 30.0
+offset_top = 28.0
+offset_right = 114.0
+offset_bottom = 56.0
+theme_override_colors/font_outline_color = Color(0.14902, 0.184314, 0.501961, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+
 [node name="TimeAire" type="Timer" parent="."]
 autostart = true
 
@@ -236,6 +255,7 @@ parameters/looping = true
 
 [connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Final_col" to="." method="_on_final_col_body_entered"]
+[connection signal="timeout" from="Spawner/TimerSpawns" to="." method="_on_timer_spawns_timeout"]
 [connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
 [connection signal="texture_changed" from="bichote/burbuja/Burbuja" to="." method="_on_burbuja_texture_changed"]
 [connection signal="value_changed" from="GUI/Medidor Aire/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

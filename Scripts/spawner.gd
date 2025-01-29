@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func _on_timer_spawns_timeout() -> void:
-	if spawneados.size() > 4 && !spawneados.has(Burbuja) :
+	if spawneados.size() > 9 && !spawneados.has(Burbuja) :
 		spawneados.append(Burbuja)
 	else:
 		spawneados.append(listaSpawn.pick_random())
@@ -57,8 +57,8 @@ func _on_timer_spawns_timeout() -> void:
 	new_spawn
 	call_deferred("add_sibling",new_spawn)
 	
-	if spawneados.size() > 5:
-		spawneados.remove_at(0)
+	if spawneados.size() > 10:
+		spawneados.clear()
 	timer_spawns.start()
 	
 func spawnFuera():
