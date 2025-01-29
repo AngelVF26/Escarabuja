@@ -337,10 +337,10 @@ offset_bottom = 648.0
 texture = ExtResource("3_djfn5")
 
 [node name="ColorRect" type="ColorRect" parent="main_menu"]
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 1151.0
-offset_bottom = 643.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 1159.0
+offset_bottom = 651.0
 color = Color(0.929412, 0.647059, 0.760784, 1)
 
 [node name="TextureRect" type="TextureRect" parent="main_menu"]
@@ -469,9 +469,9 @@ stretch_mode = 0
 
 [node name="Label" type="Label" parent="main_menu/Button"]
 layout_mode = 0
-offset_left = 90.0
+offset_left = 88.0
 offset_top = 40.0
-offset_right = 206.0
+offset_right = 204.0
 offset_bottom = 82.0
 text = "JUGAR"
 label_settings = SubResource("LabelSettings_ed5v4")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://bigyguom7ggbr"]
 
 [ext_resource type="Script" path="res://Escenas/puntuaciones.gd" id="1_go8q5"]
-[ext_resource type="Texture2D" uid="uid://ckcy0la1pewyu" path="res://assets/banner.png" id="2_pigrv"]
+[ext_resource type="Texture2D" uid="uid://dybt4ntqpwm5h" path="res://assets/banner mas claro.png" id="2_5yjac"]
 [ext_resource type="Texture2D" uid="uid://dywirkat8qcoi" path="res://assets/burbuja brillo.png" id="3_vw8q5"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="4_hkodh"]
 [ext_resource type="Script" path="res://Escenas/grid_container.gd" id="5_ivhgb"]
@@ -161,7 +161,7 @@ texture_filter = 1
 offset_left = 3.0
 offset_right = 1155.0
 offset_bottom = 648.0
-texture = ExtResource("2_pigrv")
+texture = ExtResource("2_5yjac")
 
 [node name="Añade tu nombre" type="Label" parent="." groups=["Persist"]]
 texture_filter = 1
@@ -283,10 +283,10 @@ label_settings = SubResource("LabelSettings_5fefk")
 [node name="Rejugar" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 36.0
-offset_top = 393.0
-offset_right = 322.0
-offset_bottom = 549.0
+offset_left = 96.0
+offset_top = 448.0
+offset_right = 382.0
+offset_bottom = 604.0
 texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
 
@@ -306,10 +306,10 @@ vertical_alignment = 1
 [node name="Creditos" type="TextureButton" parent="puntuacionesFinales"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 781.0
-offset_top = 394.0
-offset_right = 1067.0
-offset_bottom = 550.0
+offset_left = 744.0
+offset_top = 448.0
+offset_right = 1030.0
+offset_bottom = 604.0
 texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
 

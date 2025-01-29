@@ -1,18 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqpynmua7xbpp"]
+[gd_scene load_steps=4 format=3 uid="uid://cqpynmua7xbpp"]
 
 [ext_resource type="Texture2D" uid="uid://dmajyfckuowlt" path="res://assets/burbuja borde y detalles.png" id="1_a4s40"]
 [ext_resource type="Script" path="res://Escenas/medidor_aire.gd" id="1_p25aq"]
 [ext_resource type="Texture2D" uid="uid://cu83o0mqk31cr" path="res://assets/burbuja.png" id="2_5lrrh"]
-
-[sub_resource type="FontFile" id="FontFile_tkf33"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
 
 [node name="Medidor Aire" type="Node2D"]
 script = ExtResource("1_p25aq")
@@ -28,15 +18,13 @@ texture_under = ExtResource("1_a4s40")
 texture_progress = ExtResource("2_5lrrh")
 
 [node name="Label" type="Label" parent="."]
-z_index = -1
 texture_filter = 1
 offset_left = 88.0
-offset_top = 49.0
+offset_top = 48.0
 offset_right = 108.0
-offset_bottom = 72.0
-theme_override_colors/font_outline_color = Color(0.180245, 0.220537, 0.584389, 1)
+offset_bottom = 71.0
+theme_override_colors/font_outline_color = Color(0.277001, 0.247357, 0.686406, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = SubResource("FontFile_tkf33")
 text = "30"
 horizontal_alignment = 1
 vertical_alignment = 1
