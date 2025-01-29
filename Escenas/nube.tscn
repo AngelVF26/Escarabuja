@@ -76,3 +76,10 @@ shape = SubResource("RectangleShape2D_hqkjo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vk8hm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="area_entered" from="AreaNube" to="." method="_on_area_nube_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

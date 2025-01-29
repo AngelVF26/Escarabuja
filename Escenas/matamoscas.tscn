@@ -66,4 +66,9 @@ autoplay = "default"
 stream = ExtResource("7_0ogcn")
 pitch_scale = 1.64
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="frame_changed" from="AnimatedMoscas" to="." method="_on_animated_moscas_frame_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -92,9 +92,9 @@ libraries = {
 z_index = -2
 texture_filter = 1
 offset_left = 598.0
-offset_top = 2022.0
+offset_top = 1219.0
 offset_right = 791.0
-offset_bottom = 2422.0
+offset_bottom = 1550.0
 rotation = -3.14159
 scale = Vector2(6, 6)
 texture = ExtResource("2_s3t2a")
@@ -126,7 +126,7 @@ shape = SubResource("RectangleShape2D_hd3bl")
 [node name="GameWorld" type="CanvasLayer" parent="."]
 
 [node name="Spawner" parent="." instance=ExtResource("5_302w5")]
-position = Vector2(-529, -1011)
+position = Vector2(-550, -604)
 
 [node name="CollisionShape2D" parent="Spawner" index="0"]
 position = Vector2(567, -204)
@@ -239,6 +239,7 @@ parameters/looping = true
 [connection signal="area_exited" from="bichote/burbuja" to="bichote/burbuja" method="_on_area_exited"]
 [connection signal="texture_changed" from="bichote/burbuja/Burbuja" to="." method="_on_burbuja_texture_changed"]
 [connection signal="value_changed" from="GUI/Medidor Aire/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="visibility_changed" from="GUI/Medidor Aire2" to="." method="_on_medidor_aire_2_visibility_changed"]
 [connection signal="value_changed" from="GUI/Medidor Aire2/TextureProgressBar" to="." method="_on_texture_progress_dorada_value_changed"]
 [connection signal="timeout" from="TimeAire" to="." method="_on_time_aire_timeout"]
 
