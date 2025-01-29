@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	velocity.y = -SPEED * 0.8
+	#velocity.y = -SPEED * 0.8
 	
 	#if Input.is_action_pressed("paizquierda"):
 		#rotation_degrees = -15
@@ -33,17 +33,18 @@ func _physics_process(delta: float) -> void:
 		#rotation_degrees = 0
 	#if Input.is_action_just_released("paizquierda"):
 		#rotation_degrees = 0
-	if Input.is_action_pressed("sprint"):
-		velocity.y = -SPEED *1.5
-	if Input.is_action_just_released("sprint"):
-		velocity.y = -SPEED * 0.8
-	if Input.is_action_pressed("pabajo"):
-		if !Input.is_action_pressed("sprint"):
-			velocity.y = -SPEED * 0.3
-	if Input.is_action_just_released("pabajo"):
-		velocity.y = -SPEED * 0.8
+	#if Input.is_action_pressed("sprint"):
+		#velocity.y = -SPEED *1.5
+	#if Input.is_action_just_released("sprint"):
+		#velocity.y = -SPEED * 0.8
+	#if Input.is_action_pressed("pabajo"):
+		#if !Input.is_action_pressed("sprint"):
+			#velocity.y = -SPEED * 0.3
+	#if Input.is_action_just_released("pabajo"):
+		#velocity.y = -SPEED * 0.8
 	
-	move_and_slide()
+	#move_and_slide()
+	pass
 
 func _on_timer_spawns_timeout() -> void:
 	if spawneados.size() > 4 && !spawneados.has(Burbuja) :

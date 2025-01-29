@@ -15,6 +15,7 @@ var escala_original: Vector2
 var valor_pasado : int = 30
 var valor_actual : int = 30
 var muerto: bool = false
+var velPantalla : int = 320
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	escala_original = $bichote/burbuja.scale
@@ -22,7 +23,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$TextureRect.size.y += 80 * delta
+	if !muerto:
+		$TextureRect.position.y += velPantalla * delta
+	#print(str($TextureRect.position.y))
+	if 	$TextureRect.position.y >= 1219:
+		print("cambio")
+		print(str($TextureRect.position.y))
+		$TextureRect.position.y = 259
+		print(str($TextureRect.position.y))
 	#print($bichote/burbuja/CollisionShape2D.disabled)
 	
 	if muerto == false:
@@ -128,3 +136,10 @@ func _on_burbuja_texture_changed() -> void:
 	else:
 		#$bichote/burbuja.set_deferred("disable_mode",false)
 		pass
+
+
+func _on_medidor_aire_2_visibility_changed() -> void:
+	if $"GUI/Medidor Aire2".visible:
+		$bichote/burbuja/CollisionShape2D.disabled = true
+	else:
+		$bichote/burbuja/CollisionShape2D.disabled = false

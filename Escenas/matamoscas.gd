@@ -18,11 +18,11 @@ func _physics_process(delta: float) -> void:
 	#var direction_y:=Input.get_axis("parriba", "pabajo")
 	velocity.y = SPEED * 0.8
 	
-	if Input.is_action_pressed("pabajo"):
-		if !Input.is_action_pressed("sprint"):
-			velocity.y = SPEED * 0.3
-	if Input.is_action_just_released("pabajo"):
-		velocity.y = SPEED * 0.8
+	#if Input.is_action_pressed("pabajo"):
+		#if !Input.is_action_pressed("sprint"):
+			#velocity.y = SPEED * 0.3
+	#if Input.is_action_just_released("pabajo"):
+		#velocity.y = SPEED * 0.8
 	move_and_slide()
 	
 func _on_animated_moscas_frame_changed() -> void:
@@ -34,3 +34,8 @@ func _on_animated_moscas_frame_changed() -> void:
 		$AreaMoscas/CollisionShape2D.set_deferred("disabled", false)
 		$CollisionShape2D.set_deferred("disabled", false)
 		playSound()
+
+
+func _on_timer_timeout() -> void:
+	print("matamuertos")
+	self.queue_free()

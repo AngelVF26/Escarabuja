@@ -36,5 +36,10 @@ stream = ExtResource("3_il0cl")
 volume_db = 6.174
 pitch_scale = 1.54
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="area_entered" from="Areaburbuja" to="." method="_on_areaburbuja_area_entered"]
 [connection signal="body_entered" from="Areaburbuja" to="." method="_on_areaburbuja_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
