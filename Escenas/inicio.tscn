@@ -427,16 +427,16 @@ autoplay = "flotarArriba"
 
 [node name="Logo" type="Sprite2D" parent="main_menu"]
 texture_filter = 1
-position = Vector2(594, 297)
+position = Vector2(578, 297)
 scale = Vector2(4.95, 6.35)
 texture = ExtResource("7_x0thh")
 
 [node name="botonInstrucciones" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 452.0
+offset_left = 436.0
 offset_top = 504.0
-offset_right = 745.0
+offset_right = 729.0
 offset_bottom = 626.0
 pivot_offset = Vector2(144, 59)
 texture_normal = ExtResource("3_0qp4j")
@@ -446,17 +446,18 @@ stretch_mode = 0
 layout_mode = 0
 offset_left = 39.0
 offset_top = 40.0
-offset_right = 310.0
+offset_right = 251.0
 offset_bottom = 82.0
 text = "INSTRUCCIONES"
 label_settings = SubResource("LabelSettings_ed5v4")
+horizontal_alignment = 1
 
 [node name="Button" type="TextureButton" parent="main_menu"]
 z_index = 6
 texture_filter = 1
-offset_left = 452.0
+offset_left = 436.0
 offset_top = 404.0
-offset_right = 740.0
+offset_right = 724.0
 offset_bottom = 526.0
 pivot_offset = Vector2(139, 61)
 texture_normal = ExtResource("3_0qp4j")
@@ -470,6 +471,7 @@ offset_right = 206.0
 offset_bottom = 82.0
 text = "JUGAR"
 label_settings = SubResource("LabelSettings_ed5v4")
+horizontal_alignment = 1
 
 [node name="audio_manager" type="Node2D" parent="main_menu"]
 script = ExtResource("8_kiret")

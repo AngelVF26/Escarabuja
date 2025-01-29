@@ -155,9 +155,9 @@ texture = ExtResource("2_pigrv")
 
 [node name="Añade tu nombre" type="Label" parent="." groups=["Persist"]]
 texture_filter = 1
-offset_left = 393.0
+offset_left = 360.0
 offset_top = 342.0
-offset_right = 836.0
+offset_right = 803.0
 offset_bottom = 405.0
 text = "AÑADE TU NOMBRE:"
 label_settings = SubResource("LabelSettings_5fefk")
@@ -204,8 +204,6 @@ offset_left = 131.0
 offset_top = -2.0
 offset_right = 369.0
 offset_bottom = 61.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Posicion"
 label_settings = SubResource("LabelSettings_ryhns")
 horizontal_alignment = 1
