@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bioqi1tyrmj1a"]
+[gd_scene load_steps=21 format=3 uid="uid://bioqi1tyrmj1a"]
 
 [ext_resource type="Script" path="res://Escenas/inicio.gd" id="1_cqrg6"]
 [ext_resource type="Texture2D" uid="uid://duc3wr70ie3k3" path="res://assets/boton.png" id="3_0qp4j"]
@@ -300,14 +300,42 @@ shadow_color = Color(0.36021, 0.433849, 0.886552, 1)
 shadow_offset = Vector2(-3, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3dyhm"]
-font_size = 30
-shadow_size = 3
+font_size = 38
+shadow_size = 5
 shadow_color = Color(0.270588, 0.32549, 0.662745, 1)
 shadow_offset = Vector2(3, 2)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3dku2"]
+font_color = Color(0.954848, 0.887138, 0.918845, 1)
+outline_size = 3
+outline_color = Color(0.368627, 0.45098, 0.894118, 1)
+shadow_size = 3
+shadow_color = Color(0.188235, 0.227451, 0.6, 1)
+shadow_offset = Vector2(-3, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_soalm"]
+font_size = 20
+font_color = Color(0.952941, 0.886275, 0.917647, 1)
+outline_size = 3
+outline_color = Color(0.368627, 0.45098, 0.894118, 1)
+shadow_size = 3
+shadow_color = Color(0.188539, 0.225854, 0.598195, 1)
+shadow_offset = Vector2(-3, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tqqwh"]
+shadow_size = 18
+shadow_color = Color(0.188235, 0.227451, 0.6, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_av3o4"]
+font_size = 22
+outline_color = Color(0.368627, 0.45098, 0.894118, 1)
+shadow_size = 18
+shadow_color = Color(0.188235, 0.227451, 0.6, 1)
+shadow_offset = Vector2(-3, 2)
+
 [sub_resource type="LabelSettings" id="LabelSettings_1tbgr"]
 line_spacing = 5.0
-font_size = 27
+font_size = 20
 outline_size = 5
 outline_color = Color(0.227327, 0.280394, 0.704843, 1)
 shadow_color = Color(0.154675, 0.19272, 0.523142, 1)
@@ -492,7 +520,6 @@ text = "VOLUMEN"
 label_settings = SubResource("LabelSettings_ed5v4")
 
 [node name="instrucciones" type="Node2D" parent="."]
-visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="instrucciones"]
 z_index = 7
@@ -500,54 +527,201 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 0.0352941)
 
-[node name="Label" type="Label" parent="instrucciones/ColorRect2"]
-layout_mode = 0
-offset_left = 312.0
-offset_right = 815.0
-offset_bottom = 46.0
-text = "Cómo jugar a ¡Escarabuja!"
-label_settings = SubResource("LabelSettings_3dyhm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="instrucciones/ColorRect2"]
-layout_mode = 0
-offset_left = 87.0
-offset_top = 469.0
-offset_right = 286.0
-offset_bottom = 515.0
-text = "Controles"
-label_settings = SubResource("LabelSettings_3dyhm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Instrucciones" type="Sprite2D" parent="instrucciones/ColorRect2"]
+visible = false
 z_index = -1
 position = Vector2(575.469, 324)
 scale = Vector2(0.762103, 0.799451)
 texture = ExtResource("10_hjbjl")
 
-[node name="boton_volver" type="TextureButton" parent="instrucciones"]
+[node name="Label10" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -251.238
+offset_top = -405.278
+offset_right = 251.762
+offset_bottom = -352.278
+text = "Cómo jugar a ¡Escarabuja!"
+label_settings = SubResource("LabelSettings_3dyhm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -595.023
+offset_top = 196.385
+offset_right = -363.023
+offset_bottom = 227.385
+text = "CONTROLES DE MOVIMIENTO:"
+label_settings = SubResource("LabelSettings_3dku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="izq" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -618.642
+offset_top = 305.209
+offset_right = -512.642
+offset_bottom = 336.209
+text = "IZQUIERDA"
+label_settings = SubResource("LabelSettings_3dku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="der" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -503.0
+offset_top = 305.0
+offset_right = -397.0
+offset_bottom = 336.0
+text = "DERECHA"
+label_settings = SubResource("LabelSettings_3dku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ralent" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -398.199
+offset_top = 305.209
+offset_right = -246.199
+offset_bottom = 336.209
+text = "REDUCIR VELOCIDAD"
+label_settings = SubResource("LabelSettings_3dku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dash" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -196.127
+offset_top = 305.209
+offset_right = 42.873
+offset_bottom = 380.209
+text = "DASH IZQUIERDA/DERECHA
+(MANTENER PULSADO)
+¡OJO! CONSUME MÁS OXÍGENO"
+label_settings = SubResource("LabelSettings_3dku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="espacio" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -122.646
+offset_top = 261.429
+offset_right = -48.6461
+offset_bottom = 284.429
+text = "ESPACIO"
+label_settings = SubResource("LabelSettings_3dku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = 219.827
+offset_top = -306.46
+offset_right = 497.827
+offset_bottom = -123.46
+text = "¡LOS MATAMOSCAS TE MATARÁN AL INSTANTE!
+
+CUANTO MÁS GRANDE SEA TU BURBUJA, MÁS PROBABILIDAD DE MORIR"
+label_settings = SubResource("LabelSettings_soalm")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = 520.0
+offset_top = -85.0
+offset_right = 754.0
+offset_bottom = 129.0
+text = "¡LOS GASES DEL INSECTICIDA TE QUITARÁN OXÍGENO!
+
+NO MORIRÁS AL INSTANTE, PERO TEN CUIDADO"
+label_settings = SubResource("LabelSettings_soalm")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = 219.827
+offset_top = 113.828
+offset_right = 739.827
+offset_bottom = 234.828
+text = "ATRAPAR BURBUJAS DORADAS TE TRANSFORMARÁ Y PROPORCIONARÁ INMORTALIDAD TEMPORALMENTE"
+label_settings = SubResource("LabelSettings_soalm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -322.094
+offset_top = 137.594
+offset_right = -109.094
+offset_bottom = 185.594
+text = "ESTE ESCARABAJO ERES TÚ"
+label_settings = SubResource("LabelSettings_tqqwh")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -256.486
+offset_top = -142.598
+offset_right = 26.5137
+offset_bottom = -67.5978
+text = "ATRAPAR BURBUJAS NORMALES O DORADAS TE SUMARÁN OXÍGENO"
+label_settings = SubResource("LabelSettings_tqqwh")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -43.9166
+offset_top = 31.2715
+offset_right = 169.083
+offset_bottom = 106.271
+text = "ESTE ES TU MEDIDOR DE OXÍGENO"
+label_settings = SubResource("LabelSettings_tqqwh")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -717.054
+offset_top = -308.962
+offset_right = -351.054
+offset_bottom = -181.962
+text = "ESTA ES TU PUNTUACIÓN
+
+CUANTO MÁS OXÍGENO TENGAS Y A MAYOR VELOCIDAD VAYAS, SE TE APLICARÁN BONIFICACIONES DE PUNTOS"
+label_settings = SubResource("LabelSettings_tqqwh")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="instrucciones/ColorRect2/Instrucciones"]
+offset_left = -293.227
+offset_top = -335.23
+offset_right = 256.773
+offset_bottom = -236.23
+text = "¡¡CONSIGUE OXÍGENO Y ESQUIVA LOS OBSTÁCULOS PARA PODER GANAR LA PUNTUACIÓN MÁXIMA!"
+label_settings = SubResource("LabelSettings_av3o4")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="boton_volver" type="TextureButton" parent="instrucciones/ColorRect2/Instrucciones"]
 z_index = 7
 texture_filter = 1
-offset_left = 788.0
-offset_top = 525.0
-offset_right = 1076.0
-offset_bottom = 647.0
+offset_left = -744.609
+offset_top = 325.223
+offset_right = -581.609
+offset_bottom = 403.223
 texture_normal = ExtResource("3_0qp4j")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="instrucciones/boton_volver"]
+[node name="Label" type="Label" parent="instrucciones/ColorRect2/Instrucciones/boton_volver"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 40.0
-offset_right = 206.0
-offset_bottom = 82.0
+offset_left = 32.804
+offset_top = 20.0137
+offset_right = 133.804
+offset_bottom = 54.0137
 text = "VOLVER
 "
 label_settings = SubResource("LabelSettings_1tbgr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="main_menu/botonInstrucciones" to="." method="_on_boton_instrucciones_pressed"]
 [connection signal="pressed" from="main_menu/Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="main_menu/audio_manager/HSlider" to="main_menu/audio_manager" method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="instrucciones/boton_volver" to="." method="_on_boton_volver_pressed"]
+[connection signal="pressed" from="instrucciones/ColorRect2/Instrucciones/boton_volver" to="." method="_on_boton_volver_pressed"]

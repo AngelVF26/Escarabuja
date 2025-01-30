@@ -346,19 +346,20 @@ layout_mode = 2
 color = Color(0.928044, 0.64759, 0.759463, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 z_index = 7
 offset_left = 2.0
-offset_top = 2.0
-offset_right = 1153.0
+offset_top = -6.0
+offset_right = 1161.0
 offset_bottom = 653.0
 color = Color(0.111197, 0.111197, 0.111197, 0.639216)
 
 [node name="Label4" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 244.0
-offset_right = 860.0
-offset_bottom = 289.0
+offset_left = 466.0
+offset_top = 222.0
+offset_right = 852.0
+offset_bottom = 267.0
 text = "Diseño y Arte"
 label_settings = SubResource("LabelSettings_aqqn2")
 
@@ -382,10 +383,10 @@ label_settings = SubResource("LabelSettings_aqqn2")
 
 [node name="Label5" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 476.0
-offset_top = 363.0
-offset_right = 862.0
-offset_bottom = 408.0
+offset_left = 468.0
+offset_top = 341.0
+offset_right = 854.0
+offset_bottom = 386.0
 text = "Programación"
 label_settings = SubResource("LabelSettings_aqqn2")
 
@@ -400,39 +401,45 @@ label_settings = SubResource("LabelSettings_uy3i2")
 
 [node name="Label9" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 533.0
-offset_top = 201.0
-offset_right = 919.0
-offset_bottom = 246.0
+offset_left = 534.0
+offset_top = 190.0
+offset_right = 590.0
+offset_bottom = 235.0
 text = "Nory"
 label_settings = SubResource("LabelSettings_uy3i2")
 
 [node name="Label10" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 471.0
-offset_top = 456.0
-offset_right = 857.0
-offset_bottom = 501.0
+offset_left = 478.0
+offset_top = 414.0
+offset_right = 661.0
+offset_bottom = 459.0
 text = "Ángel Verges Ferrer"
 label_settings = SubResource("LabelSettings_uy3i2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label11" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 291.0
-offset_right = 855.0
-offset_bottom = 336.0
+offset_left = 454.0
+offset_top = 254.0
+offset_right = 663.0
+offset_bottom = 299.0
 text = "Pat Fuentes Canabal"
 label_settings = SubResource("LabelSettings_uy3i2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label12" type="Label" parent="ColorRect2"]
 layout_mode = 0
 offset_left = 454.0
-offset_top = 412.0
+offset_top = 382.0
 offset_right = 698.0
-offset_bottom = 457.0
-text = "Javier Fernandez Rivero"
+offset_bottom = 427.0
+text = "Javier Fernández Rivero"
 label_settings = SubResource("LabelSettings_uy3i2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Blusky" type="Sprite2D" parent="ColorRect2"]
 position = Vector2(107, 504)
@@ -447,10 +454,10 @@ texture = ExtResource("7_noj2f")
 [node name="VolverCredito" type="TextureButton" parent="ColorRect2"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 472.0
-offset_top = 494.0
-offset_right = 650.0
-offset_bottom = 650.0
+offset_left = 485.0
+offset_top = 486.0
+offset_right = 663.0
+offset_bottom = 642.0
 pivot_offset = Vector2(87, 74)
 texture_normal = ExtResource("4_hkodh")
 stretch_mode = 0
@@ -468,26 +475,27 @@ label_settings = SubResource("LabelSettings_5fefk")
 
 [node name="Label13" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 325.0
-offset_right = 851.0
-offset_bottom = 370.0
+offset_left = 478.0
+offset_top = 286.0
+offset_right = 630.0
+offset_bottom = 331.0
 pivot_offset = Vector2(186, 21)
-text = "Miriam Gonzalez Diaz"
+text = "Miriam González"
 label_settings = SubResource("LabelSettings_uy3i2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TagBluesky" type="RichTextLabel" parent="ColorRect2"]
 layout_mode = 0
 offset_left = 150.0
 offset_top = 493.0
-offset_right = 413.0
+offset_right = 433.0
 offset_bottom = 538.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
-text = "
- [url=https://bsky.app/profile/saturniagames.bsky.social]@SaturniaGames.bsky.social[/url]"
+text = "[url=https://bsky.app/profile/saturniagames.bsky.social]@SaturniaGames.bsky.social[/url]"
 
 [node name="LabelItch" type="RichTextLabel" parent="ColorRect2"]
 layout_mode = 0
@@ -501,6 +509,16 @@ theme_override_constants/shadow_outline_size = 8
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = " [url=https://saturnia-games.itch.io/]saturnia-games.itch.io[/url]"
+
+[node name="Label14" type="Label" parent="ColorRect2"]
+offset_left = 478.0
+offset_top = 448.0
+offset_right = 661.0
+offset_bottom = 493.0
+text = "Manu"
+label_settings = SubResource("LabelSettings_uy3i2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qkgnd")
