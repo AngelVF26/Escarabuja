@@ -511,6 +511,7 @@ bbcode_enabled = true
 text = " [url=https://saturnia-games.itch.io/]saturnia-games.itch.io[/url]"
 
 [node name="Label14" type="Label" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 478.0
 offset_top = 448.0
 offset_right = 661.0

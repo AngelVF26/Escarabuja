@@ -520,6 +520,7 @@ text = "VOLUMEN"
 label_settings = SubResource("LabelSettings_ed5v4")
 
 [node name="instrucciones" type="Node2D" parent="."]
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="instrucciones"]
 z_index = 7
@@ -528,7 +529,6 @@ offset_bottom = 648.0
 color = Color(0, 0, 0, 0.0352941)
 
 [node name="Instrucciones" type="Sprite2D" parent="instrucciones/ColorRect2"]
-visible = false
 z_index = -1
 position = Vector2(575.469, 324)
 scale = Vector2(0.762103, 0.799451)
